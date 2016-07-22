@@ -11,11 +11,13 @@ title: Chef Learn
 1. 先说applicaion相关的insight/cookbooks
 
 最重要的是metadata.rb文件，这个定义了recipe的名字，比如：
+
 ```
 name             'insight'
 ```
 
 然后还有在这里加载ruby的library，从而扩展ruby的function来操作系统，比如：
+
 ```
 depends "ant"
 depends "ark_equilar"
@@ -25,6 +27,7 @@ depends "cleanup"
 1.1 Recipes
 
 其实这就是一个recipe，是属于insight自己的recipe，直接的linux操作在cookbooks/recipes中，各种ruby可以直接对操作系统操作，比如：
+
 ```
 remote_file deploy_properties do
   source "#{download_base}/#{node.insight.server.dl_properties}.#{node.insight.server.deploy_env}"
@@ -39,6 +42,7 @@ remote_file就是ruby命令，可以通过include_recipe增加命令。
 1.2 attribute
 
 这个就是定义属性，很容易理解，比如：
+
 ```
 default[:insight][:user] =              'insight'
 default[:insight][:group] =             'insight'
@@ -50,6 +54,7 @@ default[:insight][:system_type] =       'qa'
 1.3 templates
 
 Insight/templates/default里面的文件是以erb为扩展名的，可以结果attribute和template命令来刷配置文件。比如：
+
 ```
 RMI_BIND_ADDRESS=<%= @bind_address %>
 RMI_LISTEN_PORT=<%= @listen_port %>
@@ -74,6 +79,7 @@ RMI_BIND_PORT=<%= @bind_port %>
 
 这个node和具体的虚拟机是一一对应的，
 通过run_list来使用recipe，比如：
+
 ```
   "run_list": [
     "recipe[equilar_base::hq_base]",
