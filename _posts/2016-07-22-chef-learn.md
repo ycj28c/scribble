@@ -14,12 +14,14 @@ title: Chef learn
 ```
 name             'insight'
 ```
+
 然后还有在这里加载ruby的library，从而扩展ruby的function来操作系统，比如：
 ```
 depends "ant"
 depends "ark_equilar"
 depends "cleanup"
 ```
+
 1.1 Recipes
 
 其实这就是一个recipe，是属于insight自己的recipe，直接的linux操作在cookbooks/recipes中，各种ruby可以直接对操作系统操作，比如：
@@ -29,6 +31,7 @@ remote_file deploy_properties do
   notifies :stop, "service[#{node[:insight][:server][:service]}]", :immediately
 end
 ```
+
 这个脚本就是从操作远程文件
 remote_file就是ruby命令，可以通过include_recipe增加命令。
 最常用的有file, service, package,template等chef自带的命令。
@@ -41,6 +44,7 @@ default[:insight][:user] =              'insight'
 default[:insight][:group] =             'insight'
 default[:insight][:system_type] =       'qa'
 ```
+
 全部都是键值对的关系
 
 1.3 templates
@@ -51,6 +55,7 @@ RMI_BIND_ADDRESS=<%= @bind_address %>
 RMI_LISTEN_PORT=<%= @listen_port %>
 RMI_BIND_PORT=<%= @bind_port %>
 ```
+
 当通过template命令设置时候，就能把各个机器自定义的attribute刷新过去
 
 2. 然后就是equilar_chef的node部分
@@ -78,6 +83,7 @@ RMI_BIND_PORT=<%= @bind_port %>
     "recipe[sayonpay]"
   ],
 ```
+
 就可以使用insight/cookbooks/recipes里面的deploy.rb，deploy-ps.rb等recipe了，注意顺序 
 通过"chef_environment": "build_env"表明所要使用的环境，
 然后还可以增加一堆自定义的attributes和ruby命令等等。
