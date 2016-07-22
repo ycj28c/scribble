@@ -10,10 +10,10 @@ links:
   - name:         About
     url:          /about
   - name:         Blog
-    url:          http://muan.co
+    url:          https://ycj28c.github.io/
     external:     true
   - name:         GitHub
-    url:          http://github.com/muan
+    url:          https://github.com/ycj28c
     external:     true
 highlighter:      pygments
 permalink:        pretty
