@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chef learn 
+title: Chef Learn 
 ---
 
 7/21/2016
