@@ -13,7 +13,11 @@ links:
     url:          https://ycj28c.github.io
     external:     true
   - name:         GitHub
+<<<<<<< HEAD
     url:          https://github.com/ycj28c
+=======
+    url:          http://github.com/ycj28c
+>>>>>>> f09d96057b64fc4ff7c1d86d88999a1a829b2c1b
     external:     true
 highlighter:      pygments
 permalink:        pretty
