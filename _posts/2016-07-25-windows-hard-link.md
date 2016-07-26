@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Windows Hard Link
+disqus: y
+share: y
 ---
 
 Introduction
