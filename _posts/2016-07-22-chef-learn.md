@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Chef Learn 
+disqus: y
+share: y
 ---
 
 7/21/2016
