@@ -20,3 +20,5 @@ markdown:         redcarpet
 redcarpet:
   extensions:
     - smart
+gems:
+  - jekyll-archives
