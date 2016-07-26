@@ -10,7 +10,7 @@ links:
   - name:         About
     url:          /about
   - name:         Home
-    url:          https://ycj28c.github.io
+    url:          /
   - name:         GitHub
     url:          https://github.com/ycj28c
     external:     true
