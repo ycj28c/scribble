@@ -12,14 +12,12 @@ Today succssfully add feature to my Jekyll blog, here is some **Tips**:
 Google search
 --------------
 Insert below html to the blog, then able to use google search to search your blogs
-
 ```html
 <form class="search" method="GET" action="https://www.google.com/search">
   <input type="text" name="as_q" class="search-query" placeholder="Internal Search">
   <input type="hidden" name="as_sitesearch" value="ycj28c.github.io">
 </form>
 ```
-
 It is the same behavior as the chef site:ycj28c.github.io, to let google find you, also need to link your site to google account. Just follow the steps guided by google, next day you will be able to search your publish.
 
 disqus Comments feature
@@ -29,7 +27,6 @@ At beginning follow the Scribble theme mannual, but can't make it work. here is 
 2. setting your website in disqus, make sure shortname, sitename, url is filled up.
 3. add your site in disqus trusted domain
 4. insert the disqus to your site, below is the script work for me 
-
 ```html
 <div class="block">
     <div id="disqus_thread"></div>
