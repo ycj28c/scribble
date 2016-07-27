@@ -13,7 +13,7 @@ Google search
 --------------
 Insert below html to the blog, then able to use google search to search your blogs
 
-```
+```html
 <form class="search" method="GET" action="https://www.google.com/search">
   <input type="text" name="as_q" class="search-query" placeholder="Internal Search">
   <input type="hidden" name="as_sitesearch" value="ycj28c.github.io">
@@ -30,7 +30,7 @@ At beginning follow the Scribble theme mannual, but can't make it work. here is 
 3. add your site in disqus trusted domain
 4. insert the disqus to your site, below is the script work for me 
 
-```
+```html
 <div class="block">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
