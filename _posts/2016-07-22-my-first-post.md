@@ -6,3 +6,6 @@ share: y
 ---
 
 Try post first blog
+
+the md(Markdown) file format:
+https://guides.github.com/features/mastering-markdown/
