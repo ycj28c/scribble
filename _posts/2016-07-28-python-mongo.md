@@ -7,11 +7,12 @@ share: y
 Didn't get chance to use Python and MongoDB in my work, so today try them both together.
 The goal is to use python to control the MongoDB, do the basic database operations.
 ___
-My environment
+My environment:
+
 + Windows 7
 + python-3.6.0a3
 + mongodb-win32-x86_64-2008plus-ssl-3.2.8-signed
-___
+
 1 Install MongoDB
 -----------------
 Download MongoDB Community Edition: [MongoDB Download Link](http://www.mongodb.org/downloads?_ga=1.90577299.887290330.1469727369)
