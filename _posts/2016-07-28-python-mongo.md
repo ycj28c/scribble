@@ -4,7 +4,6 @@ title: Python And MongoDB
 disqus: y
 share: y
 ---
-
 Didn't get chance to use Python and MongoDB in my work, so today try them both together.
 The goal is to use python to control the MongoDB, do the basic database operations.
 
@@ -41,13 +40,13 @@ C:\> mongod.exe --dbpath c:\MongoDB\data
 >>> db.color.insert({"pink":6 })
 >>> db.color.insert({"green":8,"blue":9})
 
->>> db.color.insert({“_id”:1},{"pink":6 }) //this just insert _id key
+>>> db.color.insert({â€œ_idâ€:1},{"pink":6 }) //this just insert _id key
 >>> db.color.insert({"_id":5,"pink":6})  //this record id is 5 
 >>> db.color.count()
 
 # search
 >>> db.color.find()
->>> db.color.find({“pink”:6})
+>>> db.color.find({â€œpinkâ€:6})
 
 # update
 >>> db.color.update({"_id" : ObjectId("579a6296512931366593462a")},{"pink":9})
