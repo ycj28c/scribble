@@ -14,7 +14,7 @@ links:
   - name:         GitHub
     url:          https://github.com/ycj28c
     external:     true
-highlighter:      pygments
+highlighter:      rouge
 permalink:        pretty
 markdown:         kramdown
 redcarpet:
