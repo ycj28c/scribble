@@ -4,14 +4,9 @@ title: Windows Hard Link
 disqus: y
 share: y
 ---
-
-Introduction
-------------
-current insight_test and insight-bdd-testing are running in EquilarPC45(10.1.6.45) machine, when make change, remember to modify the configuration on the server machine also.
  
-Hard Link change
+Hard Link
 ----------------
-If run insight_test or insight-bdd-testing in Jenkins mode, will use the server setting which will get chrome driver from "C:\tools\selenium\drivers\chromedriver" in XXX.XXX.XXX.XXX. It must be a hard link directory.
 
 Here is the command to create hard link for a folder:
 mklink [flag] link target
