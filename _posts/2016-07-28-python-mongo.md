@@ -7,8 +7,8 @@ share: y
 Didn't get chance to use Python and MongoDB in my work, so today try them both together.
 The goal is to use python to control the MongoDB, do the basic database operations.
 
-My environment...
-
+My environment
+...
 + Windows 7
 + python-3.6.0a3
 + mongodb-win32-x86_64-2008plus-ssl-3.2.8-signed
@@ -18,10 +18,10 @@ My environment...
 Download MongoDB Community Edition: [MongoDB Download Link](http://www.mongodb.org/downloads?_ga=1.90577299.887290330.1469727369)
 Follow the official guide to install: [MongoDB Official Guide Link](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
 
-Here, I install in `C:\MongoDB` folder
+Here, I install in ***C:\MongoDB*** folder
 
 After installed, setup your system environment:
-for example, add `C:\MongoDB\Server\3.2\bin` to your Environment Variables.
+for example, add ***C:\MongoDB\Server\3.2\bin*** to your Environment Variables.
 
 Then you able to start Mongo Sever with the storage:
 
@@ -66,7 +66,7 @@ Download Python windows version:
 
 For easily call, also set Environment Variables
 [Python Setting Link](https://docs.python.org/2/using/windows.html)
-for example, add "C:\Python36" to your PATH.
+for example, add ***C:\Python36*** to your PATH.
 
 **C:\> py**
 
@@ -139,6 +139,6 @@ for color in colors:
 db.colors.drop()
 ```
 
-***C:\> test.py***
+**C:\> test.py**
 
 > Everything is simple and easy to use. Thanks for Python and Mango
