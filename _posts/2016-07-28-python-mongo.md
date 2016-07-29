@@ -6,9 +6,8 @@ share: y
 ---
 Didn't get chance to use Python and MongoDB in my work, so today try them both together.
 The goal is to use python to control the MongoDB, do the basic database operations.
----
-My environment:
 
+My environment:
 + Windows 7
 + python-3.6.0a3
 + mongodb-win32-x86_64-2008plus-ssl-3.2.8-signed
