@@ -1,0 +1,5 @@
+Key,Assignee,Summary,Link,Status
+IN-2021,VChunduri,Insight Calcs,https://jira.equilar.com/rest/api/latest/issue/39675,In Progress
+IN-2042,llu,PRONTO_EXEC_LTI_COMP_SELECT in ProntoQueries is using right join when it should be using left join,https://jira.equilar.com/rest/api/latest/issue/39805,In Code Review
+IN-2043,llu,UPDATE_OR_INSERT_PRPCC_ORIG_CURNC's upsert query is using PRPCC_SOURCE_ORIG instead of PRPCC_ORIG_CURNC,https://jira.equilar.com/rest/api/latest/issue/39807,In Code Review
+IN-2045,null,Test case Authoring for Pay for Performance module,https://jira.equilar.com/rest/api/latest/issue/39837,In Progress
