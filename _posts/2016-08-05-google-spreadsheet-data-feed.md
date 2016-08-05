@@ -71,6 +71,7 @@ Use Java code, the library I use [Jira](https://github.com/rcarz/jira-client)
 
 + Push the scrum.csv to public file server:
 The generated source file is was in internal network, need to push to public network, thus google can import it. The storage requirement would be:
+
 1) Can upload the file by script or api
 2) Can edit or reload the file
 3) It has permanent link for update
