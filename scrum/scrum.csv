@@ -1,12 +1,10 @@
 Key,Assignee,Summary,Link,Status
-IN-2047,llu,Update the SEC Realizable Pay Disclaimer Message,https://jira.equilar.com/rest/api/latest/issue/39844,In Code Review
+IN-2047,llu,Update the SEC Realizable Pay Disclaimer Message,https://jira.equilar.com/rest/api/latest/issue/39844,In QA
+IN-1748,vgarg,[O2P] Migrate Products - Shareholder Engagement - Total Shareholder Return - QA,https://jira.equilar.com/rest/api/latest/issue/37885,Resolved
+IN-2030,ikho,script - tsr_fy,https://jira.equilar.com/rest/api/latest/issue/39685,Closed
 IN-1794,llu,SocketException is logged while loading ISS Simulator in Company Profile.,https://jira.equilar.com/rest/api/latest/issue/38404,In Code Review
-IN-1955,llu,The automated_dataruns table is not updated when the data_runs script is run ,https://jira.equilar.com/rest/api/latest/issue/39388,In QA
-IN-2031,ikho,Remove GMI Code,https://jira.equilar.com/rest/api/latest/issue/39686,Resolved
-IN-2029,ikho,scripts - survey_blending,https://jira.equilar.com/rest/api/latest/issue/39684,In Progress
-IN-2030,ikho,script - tsr_fy,https://jira.equilar.com/rest/api/latest/issue/39685,In Progress
+IN-2050,schau,Tech Support,https://jira.equilar.com/rest/api/latest/issue/39881,In Progress
+IN-2003,llu,Many queries were removed in P4PISSQuerries,https://jira.equilar.com/rest/api/latest/issue/39645,In QA
+IN-2002,llu,Missing GET_GL_PROXY_PAPER_DATA from P4PGLProxyPaperDAOImpl.java,https://jira.equilar.com/rest/api/latest/issue/39643,In QA
 IN-2041,llu,[O2P] deloitte_data_feed.sh script is taking long time to run when compared with oracle,https://jira.equilar.com/rest/api/latest/issue/39730,In QA
 IN-2049,llu,News section keeps on loading  unable to save the changes. Throwing an Exception,https://jira.equilar.com/rest/api/latest/issue/39873,In Code Review
-IN-2048,tkasina,Test case authoring for the story IN - 2020,https://jira.equilar.com/rest/api/latest/issue/39872,In Progress
-IN-2042,llu,PRONTO_EXEC_LTI_COMP_SELECT in ProntoQueries is using right join when it should be using left join,https://jira.equilar.com/rest/api/latest/issue/39805,In QA
-IN-2043,llu,UPDATE_OR_INSERT_PRPCC_ORIG_CURNC's upsert query is using PRPCC_SOURCE_ORIG instead of PRPCC_ORIG_CURNC,https://jira.equilar.com/rest/api/latest/issue/39807,In QA
