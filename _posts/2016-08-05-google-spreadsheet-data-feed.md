@@ -31,7 +31,7 @@ Jira Status Feed
 This is the same idea as News Feed, get the data update in Jira, generate the csv or other google script support format, import into google spreadsheet. However, the Jira is using internal network, google docs is public network, it means we have to find a public file server as well.  
 
 + Get Jira data and generate CSV:  
-Use Java code, the library I use [Jira](https://github.com/rcarz/jira-client)  
+Use Java code, the library I use [Jira-Client Lib](https://github.com/rcarz/jira-client)
 ```java
 		BasicCredentials creds = new BasicCredentials("username", "password");
 		JiraClient jira = new JiraClient("https://xxx.equilar.com", creds);
