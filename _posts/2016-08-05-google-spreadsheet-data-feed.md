@@ -35,7 +35,6 @@ Use Java code, the library I use [Jira-Client Lib](https://github.com/rcarz/jira
 ```java
 		BasicCredentials creds = new BasicCredentials("username", "password");
 		JiraClient jira = new JiraClient("https://xxx.equilar.com", creds);
-
 		try {
 			SearchResult sr = jira
 					.searchIssues("project = project AND sprint in openSprints() AND status changed during (-24h, now()) ORDER BY priority DESC, updated DESC");
