@@ -16,6 +16,6 @@ Here is the QuickStart about initial the Blog in website
 3. When Settings - Github Pages display " Your site is published at https://xxxx.github.io/", means success published your blog
 4. Now you can navigate to https://xxxx.github.io, simple and easy
 
-Suggestion
-----------
+Tip
+---
 The https://youraccount.github.io is the Github blog defautl page, it has exact permission, thus it can display the JavaScript or CSS from external source. It is unlimited space, so it means we can use blog as a online file server(not recommand, the purpose is for blog). What need to do is set the Repository name to youraccount.github.io.
