@@ -78,7 +78,7 @@ The generated source file is was in internal network, need to push to public net
 
 I has seek and tried lots of online storage, such as Google driver, Dropbox, Box, FTP, none of them works as I want. Finially I use the github as file server(I only has 1 file need to update), use SSH and windows schedular for submit scripts.
 
-+ Import scrum.csv to Google Spreadsheet
++ Import scrum.csv to Google Spreadsheet:
 Similar to Importfeed, we use `=importdata("https://xxxx/scrum.csv")` to import data. 
 
 + Format data:
