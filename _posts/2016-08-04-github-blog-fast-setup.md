@@ -18,4 +18,4 @@ Here is the QuickStart about initial the Blog in website
 
 Suggestion
 ----------
-The https://{%your github account name%}.github.io is the Github blog defautl page, it has exact permission, thus it can display the JavaScript or CSS from external source. It is unlimited space, so it means we can use blog as a online file server(not recommand, the purpose is for blog). What need to do is set the Repository name to {%your github account name%}.github.io.
+The https://youraccount.github.io is the Github blog defautl page, it has exact permission, thus it can display the JavaScript or CSS from external source. It is unlimited space, so it means we can use blog as a online file server(not recommand, the purpose is for blog). What need to do is set the Repository name to {%your github account name%}.github.io.
