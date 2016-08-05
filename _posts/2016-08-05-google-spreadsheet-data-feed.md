@@ -33,18 +33,17 @@ This is the same idea as News Feed, get the data update in Jira, generate the cs
 + Get Jira data and generate CSV:  
 Use Java code, the library I use [Jira-Client Lib](https://github.com/rcarz/jira-client)
 
-```java
+```
 	BasicCredentials creds = new BasicCredentials("username", "password");
 	JiraClient jira = new JiraClient("https://xxx.equilar.com", creds);
-```
-```java
+
 	try {
 		SearchResult sr = jira
 				.searchIssues("project = project AND sprint in openSprints() AND status changed during (-24h, now()) ORDER BY priority DESC, updated DESC");
 		
 		String csvFile = "./scrum.csv";
-        FileWriter writer = new FileWriter(csvFile);
-        CSVUtils.writeLine(writer, Arrays.asList("Key", "Assignee", "Summary", "Link", "Status"));
+        	FileWriter writer = new FileWriter(csvFile);
+        	CSVUtils.writeLine(writer, Arrays.asList("Key", "Assignee", "Summary", "Link", "Status"));
 		
 		for (Issue item : sr.issues) {
 			List<String> list = new ArrayList<String>();
