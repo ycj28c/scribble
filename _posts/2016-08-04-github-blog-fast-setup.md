@@ -11,10 +11,10 @@ QuickStart
 ----------
 Here is the QuickStart about initial the Blog in website
 
-1. Folk a Jekyll site project to your Github repo, such as [Scribbe Link](https://github.com/muan/scribble)
-2. Go into your folk project - Settings - raname Repository name
-3. When Settings - Github Pages display " Your site is published at https://xxxx.github.io/", means success published your blog
-4. Now you can navigate to https://xxxx.github.io, simple and easy
+1. Folk a Jekyll site project to your Github repo, such as [Scribbe Link](https://github.com/muan/scribble)  
+2. Go into your folk project - Settings - raname Repository name  
+3. When Settings - Github Pages display " Your site is published at https://xxxx.github.io/", means success published your blog  
+4. Now you can navigate to https://xxxx.github.io, simple and easy  
 
 Tip
 ---
