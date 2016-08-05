@@ -8,7 +8,7 @@ share: y
 Recently, I want to display the news update and our Jira status update in our google scrum docs.  
 
 News Feed
-=========
+---------
 Google Spreadsheet already has the script function which support the RSS feed, what I need to be is to find the News feed I interest, import into one sheet, and format it.  
 
 + Import feed: Get CBS news  
@@ -27,7 +27,7 @@ Google Spreadsheet already has the script function which support the RSS feed, w
 Here is the google docs example: [Google Docs Feed](https://docs.google.com/spreadsheets/d/1eLLajya485g7gG7GvBjqaPXtmTcqXEiRWX0jEp-27bg/edit?usp=sharing)
 
 Jira Status Feed
-================
+----------------
 This is the same idea as News Feed, get the data update in Jira, generate the csv or other google script support format, import into google spreadsheet. However, the Jira is using internal network, google docs is public network, it means we have to find a public file server as well.  
 
 + Get Jira data and generate CSV:  
