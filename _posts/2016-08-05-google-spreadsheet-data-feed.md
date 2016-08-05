@@ -34,40 +34,40 @@ This is the same idea as News Feed, get the data update in Jira, generate the cs
 Use Java code, the library I use [Jira-Client Lib](https://github.com/rcarz/jira-client)
 
 ```
-	BasicCredentials creds = new BasicCredentials("username", "password");
-	JiraClient jira = new JiraClient("https://xxx.equilar.com", creds);
+BasicCredentials creds = new BasicCredentials("username", "password");
+JiraClient jira = new JiraClient("https://xxx.equilar.com", creds);
 
-	try {
-		SearchResult sr = jira
-				.searchIssues("project = project AND sprint in openSprints() AND status changed during (-24h, now()) ORDER BY priority DESC, updated DESC");
+try {
+	SearchResult sr = jira
+			.searchIssues("project = project AND sprint in openSprints() AND status changed during (-24h, now()) ORDER BY priority DESC, updated DESC");
+	
+	String csvFile = "./scrum.csv";
+	FileWriter writer = new FileWriter(csvFile);
+	CSVUtils.writeLine(writer, Arrays.asList("Key", "Assignee", "Summary", "Link", "Status"));
+	
+	for (Issue item : sr.issues) {
+		List<String> list = new ArrayList<String>();
+		System.out.println(item.getKey());
+		System.out.println(item.getAssignee());
+		System.out.println(item.getSummary());
+		System.out.println(item.getSelf());
+		System.out.println(item.getStatus());
 		
-		String csvFile = "./scrum.csv";
-        	FileWriter writer = new FileWriter(csvFile);
-        	CSVUtils.writeLine(writer, Arrays.asList("Key", "Assignee", "Summary", "Link", "Status"));
+		list.add(item.getKey());
+		list.add(item.getAssignee()==null?"null":item.getAssignee().getName());
+		list.add(item.getSummary());
+		list.add(item.getSelf());
+		list.add(item.getStatus().getName());
 		
-		for (Issue item : sr.issues) {
-			List<String> list = new ArrayList<String>();
-			System.out.println(item.getKey());
-			System.out.println(item.getAssignee());
-			System.out.println(item.getSummary());
-			System.out.println(item.getSelf());
-			System.out.println(item.getStatus());
-			
-			list.add(item.getKey());
-			list.add(item.getAssignee()==null?"null":item.getAssignee().getName());
-			list.add(item.getSummary());
-			list.add(item.getSelf());
-			list.add(item.getStatus().getName());
-			
-			CSVUtils.writeLine(writer, list);
-		}
-        writer.flush();
-        writer.close();
-	} catch (JiraException e) {
-		e.printStackTrace();
-	} catch (IOException ex){
-		ex.printStackTrace();
+		CSVUtils.writeLine(writer, list);
 	}
+writer.flush();
+writer.close();
+} catch (JiraException e) {
+	e.printStackTrace();
+} catch (IOException ex){
+	ex.printStackTrace();
+}
 ```
 
 + Push the scrum.csv to public file server:  
