@@ -24,7 +24,8 @@ Include web service and database and mobile fresh scheduler.
 Web service: provide API for client, client can update the alert status.
 Database: use Postgres. It persist the user and alert information.
 Mobile fresh scheduler (or a module at beginning): it similar to windows scheduler, period check the database, based on the scheduler setting, send notification to client Mobile.
-+ Popular HTTP client, no matter how you complete it, just call the server API.
++ Client: 
+Popular HTTP client, no matter how you complete it, just call the server API.
 Plan to use OATH2 for login, can create job, upload the status, whatever you do.
 Example API:
 Server/user
@@ -39,15 +40,16 @@ Not sure how notification push works? Need to research on it.
 
 JSON format:
 ------------
-{
-	userId: 123456
-	jobId: 123456
-	ip: 172.16.1.111
-	name: Insight Check Job
-	status: ok
-	comment: the connection code is 403
-}
-
+```json	
+	{
+		userId: 123456
+		jobId: 123456
+		ip: 172.16.1.111
+		name: Insight Check Job
+		status: ok
+		comment: the connection code is 403
+	}
+```
 Similar product:
 ----------------
 Server density: https://developer.serverdensity.com
