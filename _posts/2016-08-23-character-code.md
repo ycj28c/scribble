@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Character code
+title: 字符编码
 disqus: y
 share: y
 ---
