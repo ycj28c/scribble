@@ -16,8 +16,8 @@ How to try
 * Choose the data set
 * Run a Query Table
 
-I did a run for github, query is from 
-
+I did a run for github, query example: https://gist.github.com/arfon/49ca314a5b0a00b1ebf91167db3ff02c#most-commonly-used-go-packages
+![big query screenshot](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/bigquerygithub.png)
 It only took 7.6 seconds for 23.6GB, is fast enough to meet my expectation.
 
 Thinks
