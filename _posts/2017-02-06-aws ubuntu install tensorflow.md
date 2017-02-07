@@ -8,13 +8,13 @@ share: y
 Steps to install TensorFlow to AWS ubuntu node, some tips
 
 AWS Part
-==========================================
+---------------------
 1. Go to AWS https://aws.amazon.com
 2. Create the free Ubuntu node, I use "Ubuntu Server 16.04 LTS (HVM), SSD Volume Type"
 3. Security setting, open 8888, 80, 22, ICMP ports
 
 Python Part
-==========================================
+---------------------
 1. Must run source update in Ubuntu
 ```
 $ sudo apt-get update
@@ -29,7 +29,7 @@ $ sudo apt-get install python-pip python-dev python-virtualenv
 ```
 
 TensorFlow Part
-==========================================
+---------------------
 1. Get TensorFlow package by virtualenv
 ```
 $ virtualenv --system-site-packages ~/tensorflow
@@ -44,7 +44,7 @@ $ sudo docker run -p 8888:8888 --name tensorflow-udacity -it gcr.io/tensorflow/u
 ```
 
 Visit Your TensorFlow
-==========================================
+---------------------
 1. visit http://{your AWS IP}:8888
 
 Setup environment always annoying, Enjoy! 
