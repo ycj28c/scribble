@@ -17,22 +17,22 @@ Python Part
 ==========================================
 1. Must run source update in Ubuntu
 ```
-sudo apt-get update
+$ sudo apt-get update
 ```
 2. AWS Ubuntu defaul install python3 and python-minimal which is 2.7, we can manually install python2.7
 ```
-sudo apt-get install python2.7
+$ sudo apt-get install python2.7
 ```
 3. Install pip + Virtualenv(virtual machine include docker)
 ```
-sudo apt-get install python-pip python-dev python-virtualenv
+$ sudo apt-get install python-pip python-dev python-virtualenv
 ```
 
 TensorFlow Part
 ==========================================
 1. Get TensorFlow package by virtualenv
 ```
-virtualenv --system-site-packages ~/tensorflow
+$ virtualenv --system-site-packages ~/tensorflow
 ```
 2. Active TensorFlow
 ```
@@ -40,7 +40,7 @@ $ source ~/tensorflow/bin/activate  # If using bash
 ```
 3. Startup TensorFlow docker
 ```
-docker run -p 8888:8888 --name tensorflow-udacity -it gcr.io/tensorflow/udacity-assignments:0.6.0
+$ sudo docker run -p 8888:8888 --name tensorflow-udacity -it gcr.io/tensorflow/udacity-assignments:0.6.0
 ```
 
 Visit Your TensorFlow
