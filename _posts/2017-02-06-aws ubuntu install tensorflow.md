@@ -27,6 +27,10 @@ $ sudo apt-get install python2.7
 ```
 $ sudo apt-get install python-pip python-dev python-virtualenv
 ```
+4. Install all the python Lib(very big)
+```
+$ sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-sklearn
+```
 
 TensorFlow Part
 ---------------------
@@ -41,6 +45,10 @@ $ source ~/tensorflow/bin/activate  # If using bash
 3. Startup TensorFlow docker
 ```
 $ sudo docker run -p 8888:8888 --name tensorflow-udacity -it gcr.io/tensorflow/udacity-assignments:0.6.0
+```
+if exist
+```
+$ sudo docker start -ai tensorflow-udacity
 ```
 
 Visit Your TensorFlow
