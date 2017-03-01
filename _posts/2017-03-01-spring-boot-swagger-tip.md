@@ -96,7 +96,7 @@ public Boolean clearXXXX (@PathVariable Long companyId) throws Exception {
 }
 ```
 
-How To Run Insight-api With Swagger
+How To Run SpringBoot With Swagger
 ---------------------
 * Run project by spring-boot:
 ```
@@ -116,6 +116,7 @@ Type http://localhost:8080/insight-api/swagger-ui.html# in your browser and chec
 Troubleshot When Using Swagger
 ---------------------
 * DNS
+
 when use swagger "try it now", but display below error in Response Header:
 {
   "error": "no response from server"
@@ -124,6 +125,7 @@ You may need to add DNS into C:\Windows\System32\drivers\etc\hosts
 10.10.10.10 qa-tomcat.xxx.com #qa tomcat
 
 * CORS
+
 When use swagger "try it now", but display below error in browser console
 XMLHttpRequest cannot load http://qa-tomcat.xxx.com/clearXXXX
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
