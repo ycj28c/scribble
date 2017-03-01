@@ -118,9 +118,11 @@ Troubleshot When Using Swagger
 * DNS
 
 when use swagger "try it now", but display below error in Response Header:
+```
 {
   "error": "no response from server"
 }
+```
 You may need to add DNS into C:\Windows\System32\drivers\etc\hosts
 10.10.10.10 qa-tomcat.xxx.com #qa tomcat
 
@@ -128,8 +130,10 @@ You may need to add DNS into C:\Windows\System32\drivers\etc\hosts
 
 When use swagger "try it now", but display below error in browser console
 XMLHttpRequest cannot load http://qa-tomcat.xxx.com/clearXXXX
+```
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
 Origin 'http://10.10.10.10' is therefore not allowed access.
+```
 Means you're in CORS situation, If use chrome, install "Allow-Control-Allow-Origin: *" plugin will solve this problem
 http://stackoverflow.com/questions/20035101/no-access-control-allow-origin-header-is-present-on-the-requested-resource
 
