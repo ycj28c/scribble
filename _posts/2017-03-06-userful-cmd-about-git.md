@@ -9,9 +9,9 @@ Some useful commands about git, keep updating:
 
 
 There are 3 levels of git config; project, global and system.[Stackoverflow](http://stackoverflow.com/questions/8801729/is-it-possible-to-have-different-git-config-for-different-projects)
-project: Project configs are only available for the current project and stored in .git/config in the project's directory.
-global: Global configs are available for all projects for the current user and stored in ~/.gitconfig.
-system: System configs are available for all the users/projects and stored in /etc/gitconfig.
+- project: Project configs are only available for the current project and stored in .git/config in the project's directory.
+- global: Global configs are available for all projects for the current user and stored in ~/.gitconfig.
+- system: System configs are available for all the users/projects and stored in /etc/gitconfig.
 
 Create a project specific config, you have to execute this under the project's directory:
 ```
