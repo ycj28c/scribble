@@ -135,7 +135,7 @@ No 'Access-Control-Allow-Origin' header is present on the requested resource.
 Origin 'http://10.10.10.10' is therefore not allowed access.
 ```
 Means you're in CORS situation, If use chrome, install "Allow-Control-Allow-Origin: *" plugin will solve this problem
-http://stackoverflow.com/questions/20035101/no-access-control-allow-origin-header-is-present-on-the-requested-resource
+[Stackoverflow solution](http://stackoverflow.com/questions/20035101/no-access-control-allow-origin-header-is-present-on-the-requested-resource)
 
 
 
