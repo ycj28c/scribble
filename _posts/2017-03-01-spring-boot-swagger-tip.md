@@ -13,7 +13,7 @@ It is very easy to integrate swagger with spring-boot. There are resources every
 [GETTING STARTED WITH SWAGGER](http://swagger.io/getting-started/)
 
 In project pom.xml
-```
+```xml
 <properties>
     ...
     <springfox.version>2.6.0</springfox.version>
@@ -39,7 +39,7 @@ In project pom.xml
 ```
 
 Add SwaggerConfig.java in your sprint boot
-```
+```java
 package com.equilar.insightapi;
  
 @Configuration
@@ -80,7 +80,7 @@ Swagger is very smart to recognize the existing api and generate pretty document
 [Swagger-Core Annotations](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X)
 
 For example:
-```
+```java
 @ApiOperation(value="clearXXXX",notes="The REST API and script to clear the data in cache and DB for the given company id.")
 @ApiResponses({ //swagger - describe return status code
         @ApiResponse(code=200,message="Success. Request completed."),
@@ -99,7 +99,7 @@ public Boolean clearXXXX (@PathVariable Long companyId) throws Exception {
 How To Run SpringBoot With Swagger
 ---------------------
 * Run project by spring-boot:
-```
+```shell
 $ mvn spring-boot:run
 ```
 Type http://localhost:8080/swagger-ui.html# in your browser and check the swagger report.
@@ -118,7 +118,7 @@ Troubleshot When Using Swagger
 * DNS
 
 when use swagger "try it now", but display below error in Response Header:
-```
+```json
 {
   "error": "no response from server"
 }
