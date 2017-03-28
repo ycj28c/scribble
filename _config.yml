@@ -20,3 +20,5 @@ markdown:         kramdown
 redcarpet:
   extensions:
     - smart
+
+theme: jekyll-theme-architect
