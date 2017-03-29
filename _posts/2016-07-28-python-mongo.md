@@ -25,7 +25,7 @@ for example, add ***C:\MongoDB\Server\3.2\bin*** to your Environment Variables.
 
 Then you able to start Mongo Sever with the storage:
 
-```
+```shell
 C:\> mongod.exe --dbpath c:\MongoDB\data
 ```
 
@@ -33,7 +33,7 @@ C:\> mongod.exe --dbpath c:\MongoDB\data
 ----------------------------
 **C:\> mongo.exe**
 
-```mango
+```python
 >>> use test
 
 # insert
@@ -81,15 +81,15 @@ Follow the mannual to install: [pymongo Install Link](https://api.mongodb.com/py
 ------------------------
 Now we are able to use python operate MangoDB, the function is very similar as direct Mango command:
 
-```
+```python
 #Connect:
 :>py
 >>> from pymongo import MongoClient 
 >>> MongoClient('localhost', 27017) 
->>>db = client.test_database 
+>>> db = client.test_database 
 
 #Insert data:
->>>db.color.insert({"green":1}) 
+>>> db.color.insert({"green":1}) 
 >>> print(db.collection_names)
 >>> db.color.find_one()
 
@@ -103,7 +103,7 @@ Now we are able to use python operate MangoDB, the function is very similar as d
 >>> colors = db.colors
 >>> color_id = posts.insert_one(color).inserted_id
 >>> color_id
->>>db.colors.find_one({"author":"Mike"})
+>>> db.colors.find_one({"author":"Mike"})
 
 #Display all the tables:
 >>> db.collection_names(include_system_collections=False)

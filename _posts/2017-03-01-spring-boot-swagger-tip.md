@@ -106,7 +106,7 @@ Type http://localhost:8080/swagger-ui.html# in your browser and check the swagge
  
 * Run project by in tomcat:
 (please check 5 Deploy Service To Local Tomcat document)
-```
+```shell
 $ cd C:\git\springbootproject
 $ mvn clean package
 ```
@@ -130,7 +130,7 @@ You may need to add DNS into C:\Windows\System32\drivers\etc\hosts
 
 When use swagger "try it now", but display below error in browser console
 XMLHttpRequest cannot load http://qa-tomcat.xxx.com/clearXXXX
-```
+```html
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
 Origin 'http://10.10.10.10' is therefore not allowed access.
 ```

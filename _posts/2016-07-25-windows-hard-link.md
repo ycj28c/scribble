@@ -13,13 +13,13 @@ mklink [flag] link target
  
 Example:
 
-```
+```shell
 mklink /D xxx chromedriver_win32
 ```
 
 Current use chromedriver 2.18:
 
-```
+```shell
 mklink /D chromedriver chromedriver_win32\2.18
 ```
  

@@ -33,7 +33,7 @@ This is the same idea as News Feed, get the data update in Jira, generate the cs
 + Get Jira data and generate CSV:  
 Use Java code, the library I use [Jira-Client Lib](https://github.com/rcarz/jira-client)
 
-```
+```java
 BasicCredentials creds = new BasicCredentials("username", "password");
 JiraClient jira = new JiraClient("https://xxx.equilar.com", creds);
 

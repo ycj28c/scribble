@@ -17,7 +17,7 @@ How to try
 * Run a Query Table
 
 I did a run for github, query example: 
-```
+```html
 https://gist.github.com/arfon/49ca314a5b0a00b1ebf91167db3ff02c#most-commonly-used-go-packages
 ```
 ![big query screenshot](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/bigquerygithub.png)

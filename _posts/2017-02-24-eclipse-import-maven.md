@@ -19,7 +19,7 @@ check the project -> Properties -> Libraries, find only one line "JRE System Lib
 The maven dependency jar is not there.
 
 If tried Project -> Clean, refresh, not work. Do below:
-```
+```shell
 mvn dependency:tree
 mvn eclipse:clean
 mvn eclipse:eclipse
