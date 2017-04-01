@@ -42,12 +42,12 @@ JSON format:
 ------------
 ```json	
 	{
-		"userId": 123456
-		"jobId": 123456
-		"ip": "172.16.1.111"
-		"name": "Insight Check Job"
-		"status": "ok"
-		"comment": "the connection code is 403"
+		"userId":123456
+		"jobId":123456
+		"ip":"172.16.1.111"
+		"name":"Insight Check Job"
+		"status":"ok"
+		"comment":"the connection code is 403"
 	}
 ```
 Similar product:
