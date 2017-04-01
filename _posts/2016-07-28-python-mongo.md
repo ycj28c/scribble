@@ -41,13 +41,13 @@ C:\> mongod.exe --dbpath c:\MongoDB\data
 >>> db.color.insert({"pink":6 })
 >>> db.color.insert({"green":8,"blue":9})
 
->>> db.color.insert({“_id”:1},{"pink":6 }) //this just insert _id key
+>>> db.color.insert({"_id":1},{"pink":6 }) //this just insert _id key
 >>> db.color.insert({"_id":5,"pink":6})  //this record id is 5 
 >>> db.color.count()
 
 # search
 >>> db.color.find()
->>> db.color.find({“pink”:6})
+>>> db.color.find({"pink":6})
 
 # update
 >>> db.color.update({"_id" : ObjectId("579a6296512931366593462a")},{"pink":9})
