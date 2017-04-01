@@ -1,3 +1,5 @@
+chcp 437
+
 git pull
 git add .
 
