@@ -4,9 +4,14 @@ git pull
 
 git add .
 
-For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%a-%%b-%%c)
-For /f "tokens=1-1 delims=/:" %%a in ('time /t') do (set mytime=%%a:%%b)
+SET HOUR=%time:~0,2%
+SET dtStamp9=%date:~-4%%date:~4,2%%date:~7,2%_0%time:~1,1%%time:~3,2%%time:~6,2% 
+SET dtStamp24=%date:~-4%%date:~4,2%%date:~7,2%_%time:~0,2%%time:~3,2%%time:~6,2%
 
-git commit -m %mydate%-%mytime%
+if "%HOUR:~0,1%" == " " (SET dtStamp=%dtStamp9%) else (SET dtStamp=%dtStamp24%)
+
+ECHO %dtStamp%
+
+git commit -m %dtStamp%
 
 git push origin master:master
