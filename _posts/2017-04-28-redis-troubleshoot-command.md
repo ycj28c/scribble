@@ -31,15 +31,15 @@ Redis Network Check
 
 + Redis Connection
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> ping
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> ping
 # If Redis not connected, cache will not work
 # we have Jenkins job run ping command make sure redis works: https://build.equilar.com/production/view/Redis/
 ```
 
 + Redis Latency
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389 –latency
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 –latency
 # If network bad, cause long latency, will cause Redis response slow
 ```
 
@@ -48,8 +48,8 @@ Redis Info Overview
 
 + Redis Info
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> info
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> info
 # Check https://redis.io/commands/INFO for detail description for each Redis info.
 ```
 
@@ -58,16 +58,16 @@ Redis Cache Debug
 
 + Total Keys
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> DBSIZE
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> DBSIZE
 # (integer) 343585
 # The total count of keys are 342112
 ```
 
 + Hit Ratio
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> info
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> info
 # Find
 # keyspace_hits:12141853
 # keyspace_misses:36914043
@@ -76,22 +76,22 @@ $ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
 
 + Big Keys
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389 –bigkeys
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 –bigkeys
 # If the keys is too big, consume too much space, may need to redesign about it.
 ```
 
 + Show All the keys
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389 --scan --pattern '*'
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 --scan --pattern '*'
 # we can see all the keys detail
 ```
 
 + Check Key TTL(expire time)
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> TTL mykey
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> TTL mykey
 # If the key has the TTL set, will remove from the Redis cache when time up. Could cause the missing ache when search
-10.1.50.147:6389> info
+10.10.10.10:6389> info
 # Find
 # expired_keys:6856
 # means we have 6856 keys has expired since Redis start
@@ -99,8 +99,8 @@ $ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
 
 + Slow Log
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> SLOWLOG GET 10
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> SLOWLOG GET 10
 # Get 10 slow cache access, for example:
 # 1) (integer) 381  # Unique ID
 # 2) (integer) 1493366877 # Unix timestamp, convert to human time is about 07:50:19:285
@@ -113,8 +113,8 @@ $ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
 
 + Evicted Key
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> info
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> info
 # Find
 # evicted_keys:27764495
 # means we have 27764495 keys evicted due to the cache hit the memory limit, replace by Redis algorithm(LRU)
@@ -128,8 +128,8 @@ Redis Memory Check
 -------------------------
 + Evicted Key
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> info
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> info
 # Find
 # used_memory:3538196240 -> used memory in bytes
 # used_memory_human:3.30G -> same as used_memory
@@ -146,8 +146,8 @@ Redis Client Connection Check
 
 + Client List
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> client list
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> client list
 # For Example:
 # id=231876 addr=10.1.28.134:49916 fd=21 name= age=428055 idle=428034 flags=N db=0 sub=0 psub=0 multi=-1 qbuf=0 qbuf-free=0 obl=0 oll=0 omem=0 events=r cmd=get
 # id: unique client id, increase by 1 when has new connect. Reset to 1 when Redis reboot
@@ -171,8 +171,8 @@ $ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
 
 + Client List
 ```shell
-$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
-10.1.50.147:6389> info
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
+10.10.10.10:6389> info
 # Find
 # blocked_clients = 0
 # If any client was blocked(BLPOP, BRPOP, BRPOPLPUSH), that's not right
