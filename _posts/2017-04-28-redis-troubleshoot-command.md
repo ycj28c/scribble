@@ -181,8 +181,11 @@ $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
 Monitor Tools
 -------------------------
 All three are open source project, those Monitor tools are based on the redis info.
+
 1) REDIS-STAT: [redis-stat](https://github.com/junegunn/redis-stat)
+
 2) RedisLive: [RedisLive](https://github.com/nkrode/RedisLive)
+
 3) Opserver: [opserver](https://github.com/opserver/Opserver)
 
 Reference
