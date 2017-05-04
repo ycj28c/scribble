@@ -106,6 +106,28 @@ knife client list
 knife user list
 ```
 
+Chef-Node Install
+-------------------------
+When add the new nodes, need to set in both client and chef work station
+
+Inital the client environment
+```bash
+#here I install the chef-client
+curl -L https://www.opscode.com/chef/install.sh | sudo bash
+#stupid client permission issue(run in client node)
+sudo mkdir -p /etc/chef
+sudo chmod 777 /etc/chef	
+#or 
+#sudo chown -R ubuntu:ubuntu /etc
+```
+
+Register client by knife in chef workstation
+```bash
+#run in chef workstation
+scp -i secret.pem client1.pem ubuntu@ec2-node1.compute.amazonaws.com:/home/ubuntu/chef-repo/.chef
+sudo knife bootstrap {client1 ip 10.10.10.10 etc} -N {client1nodename} -x ubuntu -p 22 -i .chef/client1.pem
+```
+
 Now, the chef infrastructure has established.
 
 Reference
