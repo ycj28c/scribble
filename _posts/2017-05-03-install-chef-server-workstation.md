@@ -60,7 +60,9 @@ Add Orgnize And User
 Then, you need to add the orgnize and users, two ways, through chef-manage web ui or below commands:
 ```bash
 mkdir .chef
+#add admin user
 sudo chef-server-ctl user-create admin admin admin admin@xxx.com password -f ~/.chef/admin.pem
+#add organize xxx
 sudo chef-server-ctl org-create xxx "admin@xxx.com" --association_user admin -f ~/.chef/xxx.pem
 ```
 
@@ -106,10 +108,7 @@ Now, the chef infrastructure has established.
 
 Reference
 -------------------------
-http://blog.csdn.net/chancein007/article/category/6419332
-
-http://www.bogotobogo.com/DevOps/Chef/Chef_Server_install_on_EC2_ubuntu_14_04.php
-
-https://docs.chef.io/install_server.html
-
-http://chadwick.wikidot.com/chefinstallation
+[http://blog.csdn.net/chancein007/article/category/6419332](http://blog.csdn.net/chancein007/article/category/6419332)
+[http://www.bogotobogo.com/DevOps/Chef/Chef_Server_install_on_EC2_ubuntu_14_04.php](http://www.bogotobogo.com/DevOps/Chef/Chef_Server_install_on_EC2_ubuntu_14_04.php)
+[https://docs.chef.io/install_server.html](https://docs.chef.io/install_server.html)
+[http://chadwick.wikidot.com/chefinstallation](http://chadwick.wikidot.com/chefinstallation)
