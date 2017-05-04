@@ -25,10 +25,12 @@ Chef-Server Install
 There are opensource chef-server and hosted chef-server options, the hosted chef-server fees are below:
 
 Price Of Hosted Chef-Server:
-- Launch package: $120/month, 20 nodes, 10 users
-- Standard package: $300/month, 50 nodes, 20 users
-- Premium package: $700/month. 100 nodes, 50 users
-All these tiers are exceedingly expensive for most small and medium sized organizations. There is a small reprieve, however-- as mentioned earlier, one can get the full Enterprise Hosted Chef on free trial basis for up to 5 nodes, 2 users, with no support included.
+> Launch package: $120/month, 20 nodes, 10 users
+> Standard package: $300/month, 50 nodes, 20 users
+> Premium package: $700/month. 100 nodes, 50 users
+> All these tiers are exceedingly expensive for most small and medium sized organizations. 
+> There is a small reprieve, however, as mentioned earlier, one can get the full 
+> Enterprise Hosted Chef on free trial basis for up to 5 nodes, 2 users, with no support included.
 
 If you want to use the hosted chef-server, you can skip chef-server install, go directly to chef-workstation, elsewise, do as below(At least 4G physical memeory, 2 core cpu for chef-server):
 
@@ -109,6 +111,9 @@ Now, the chef infrastructure has established.
 Reference
 -------------------------
 [http://blog.csdn.net/chancein007/article/category/6419332](http://blog.csdn.net/chancein007/article/category/6419332)
+
 [http://www.bogotobogo.com/DevOps/Chef/Chef_Server_install_on_EC2_ubuntu_14_04.php](http://www.bogotobogo.com/DevOps/Chef/Chef_Server_install_on_EC2_ubuntu_14_04.php)
+
 [https://docs.chef.io/install_server.html](https://docs.chef.io/install_server.html)
+
 [http://chadwick.wikidot.com/chefinstallation](http://chadwick.wikidot.com/chefinstallation)
