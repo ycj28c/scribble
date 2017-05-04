@@ -123,8 +123,10 @@ sudo chmod 777 /etc/chef
 
 Register client by knife in chef workstation
 ```bash
-#run in chef workstation
+#copy client ssh key to chef work station
 scp -i secret.pem client1.pem ubuntu@ec2-node1.compute.amazonaws.com:/home/ubuntu/chef-repo/.chef
+
+#register client in chef-server
 sudo knife bootstrap {client1 ip 10.10.10.10 etc} -N {client1nodename} -x ubuntu -p 22 -i .chef/client1.pem
 ```
 
