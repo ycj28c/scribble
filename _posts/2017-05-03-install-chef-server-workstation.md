@@ -9,14 +9,14 @@ Purpose
 -------------------------
 Chef is the most popular devops tools currently, it help us quickly establish the environment. I will use it for my AWS nodes management. Install will contains below parts:
 
-1.Install the Chef-Server
-2.Install the Chef-Workstation
-3.Install the Client nodes
+* Install the Chef-Server
+* Install the Chef-Workstation
+* Install the Client nodes
 
 After infrastructure is setup, you will need to
-1.Write cookbook/environment/attribute.. in workstation.
-2.upload to chef-server, assign cookbook to nodes.
-3.run chef-client in nodes and everything will done.
+* Write cookbook/environment/attribute.. in workstation.
+* upload to chef-server, assign cookbook to nodes.
+* run chef-client in nodes and everything will done.
 
 Lot of resource on Internet are chef11, they are no longer works in chef12. I successfully setup up chef in AWS + Ubuntu14.04 + Chef 12.2.0. 
 
@@ -32,7 +32,7 @@ All these tiers are exceedingly expensive for most small and medium sized organi
 
 If you want to use the hosted chef-server, you can skip chef-server install, go directly to chef-workstation, elsewise, do as below(At least 4G physical memeory, 2 core cpu for chef-server):
 
-```shell
+```bash
 //ssh to your server
 ssh -i "secret.pem" ubuntu@ec2-xxxxxx.compute.amazonaws.com
 
@@ -58,7 +58,7 @@ sudo chef-server-ctl status
 Add Orgnize And User
 -------------------------
 Then, you need to add the orgnize and users, two ways, through chef-manage web ui or below commands:
-```shell
+```bash
 mkdir .chef
 sudo chef-server-ctl user-create admin admin admin admin@xxx.com password -f ~/.chef/admin.pem
 sudo chef-server-ctl org-create xxx "admin@xxx.com" --association_user admin -f ~/.chef/xxx.pem
@@ -68,7 +68,7 @@ Chef-Workstation Install
 -------------------------
 You can install the chef-workstation in one server as chef-server or install in different server.
 
-```shell
+```bash
 //ssh to your server
 ssh -i "secret2.pem" ubuntu@ec2-yyyyyy.compute.amazonaws.com
 //install the Chef client DK or Chef client(Chef Client Dk has all the functions chef client has), in addition, it provide some advance functions for developer developing cookbook and debug cookbook.
@@ -107,6 +107,9 @@ Now, the chef infrastructure has established.
 Reference
 -------------------------
 http://blog.csdn.net/chancein007/article/category/6419332
+
 http://www.bogotobogo.com/DevOps/Chef/Chef_Server_install_on_EC2_ubuntu_14_04.php
+
 https://docs.chef.io/install_server.html
+
 http://chadwick.wikidot.com/chefinstallation
