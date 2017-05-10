@@ -17,7 +17,7 @@ Find The Cookbook
 Lots of engineers have contributed to the chef, you can find most of them in chef supermarket.[Chef Supermartet](https://supermarket.chef.io)
 
 What we need to do is go to chef supermarket, search the "java", then you can find this java cookbook:
-![chef-supermarket](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef2/chef-supermarket.png)
+![chef-supermarket](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef3/chef-supermarket.png)
 
 They may have other java cookbook too, choose one you like.
 
@@ -51,7 +51,7 @@ Assign The Cookbook To Client
 Now the java cookbook is in chef-server now, we need to assgin the cookbook to client node to let client aware of it.
 
 In Nodes -> choose your client node -> Actions -> Edit Run List -> add java to run List
-![chef-noderunlist](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef2/chef-noderunlist.png)
+![chef-noderunlist](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef3/chef-noderunlist.png)
 
 Here we will use the oracle version java, save the changes.
 
@@ -107,9 +107,9 @@ Go to chef-server web UI,
   }
 }
 ```
-![chef-add-environment](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef2/chef-addenvironment.png)
+![chef-add-environment](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef3/chef-addenvironment.png)
 3. go to Nodes -> choose your node -> assign the "aws-tomcat-env" environment to client node
-![chef-assign-environment](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef2/chef-assignenvironment.png)
+![chef-assign-environment](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef3/chef-assignenvironment.png)
 
 4. Now login your client node, run sudo chef-client again
 ```bash
