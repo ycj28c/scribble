@@ -153,10 +153,15 @@ sudo chef-client
 ```
 
 Now can visit ruanyifeng react demos by
+
 http://54.219.129.91:8080/sample/react-demos/demo01/index.html
+
 http://54.219.129.91:8080/sample/react-demos/demo02/index.html
+
 http://54.219.129.91:8080/sample/react-demos/demo03/index.html
+
 http://54.219.129.91:8080/sample/react-demos/demo04/index.html
+
 etc
 
 Congraturation!
