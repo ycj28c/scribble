@@ -97,8 +97,8 @@ I use the environment way, which will not break the existing cookbook and don't 
 
 Go to chef-server web UI,
 
-+ go to Policy -> Environments, create "aws-tomcat-env" new environment
-+ Edit default Attributes, add below json
+1. go to Policy -> Environments, create "aws-tomcat-env" new environment
+2. Edit default Attributes, add below json
 ```
 {
   "java": {
@@ -110,10 +110,10 @@ Go to chef-server web UI,
 }
 ```
 ![chef-add-environment](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef2/chef-addenvironment.png)
-+ go to Nodes -> choose your node -> assign the "aws-tomcat-env" environment to client node
+3. go to Nodes -> choose your node -> assign the "aws-tomcat-env" environment to client node
 ![chef-assign-environment](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef2/chef-assignenvironment.png)
 
-Now login your client node, run sudo chef-client again
+4. Now login your client node, run sudo chef-client again
 ```bash
 root@xxxxxx# java -version
 # display the java version
