@@ -7,16 +7,14 @@ share: y
 
 Purpose
 -------------------------
-Now we have chef12 server/workstation/a client node setup, also we have the cookbook management, now is key point, how to use and write cookbook.
+Now we have **chef12 server/workstation/a client node** setup, also we have the cookbook management, now is key point, how to use and write cookbook.
 
-In this article I will use chef12 + knife to install java 8 in my aws client node.
+In this article I will use **chef12 + knife** to install java 8 in my aws client node.
 
 Find The Cookbook
 -------------------------
 
-Lots of engineer contribute to the chef, you can find most of them in chef supermarket.
-
-[Chef Supermartet](https://supermarket.chef.io)
+Lots of engineers have contributed to the chef, you can find most of them in chef supermarket.[Chef Supermartet](https://supermarket.chef.io)
 
 What we need to do is go to chef supermarket, search the "java", then you can find this java cookbook:
 ![chef-supermarket](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/chef2/chef-supermarket.png)
@@ -26,7 +24,7 @@ They may have other java cookbook too, choose one you like.
 Install The Cookbook
 -------------------------
 
-There are three tools for installation, Berkshelf/Policyfile/Knife. I will use knife here.
+There are three tools for installation, **Berkshelf/Policyfile/Knife**. I will use knife here.
 
 Login in your chef workstation, run below:
 ```bash
