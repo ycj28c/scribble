@@ -62,12 +62,14 @@ cd files/default
 git clone https://github.com/ruanyf/react-demos.git
 ```
 
-Then, we need to add some ruby code for our tomcat deployment, Add below code
+Then, we need to add some ruby code for our tomcat deployment
 
 ```bash
 cd aws_tomcat/recipes
 vi default.rb
 ```
+
+Add below code to default.rb
 
 ```ruby
 #
