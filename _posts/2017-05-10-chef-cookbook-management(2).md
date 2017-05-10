@@ -28,11 +28,11 @@ knife download *
 ```
 
 + sync chef workstation to chef server
+
 ```bash
 # sync aws_tomcat to chef server
 cd ~/chef-repo
 knife cookbook uplad aws_tomcat
-
 # sync all
 knife upload *
 ```
