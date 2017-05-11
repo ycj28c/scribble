@@ -77,6 +77,25 @@ Now try logging into the machine, with "ssh 'not-marco@127.0.0.1'", and check in
 to make sure we haven't added extra keys that you weren't expecting.
 ```
 
+AWS Pem
+-------------------------
+
+AWS pem introduce:
+
+[Amazon EC2 Key Pair]http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/ec2-key-pairs.html
+
+Actually Amazon *.pem is the also RSA key, we keep the private key, amazon maintain the public key. However, we can also generate our ssh key use the way above, copy the public key to EC2 node, then you can connect with key you create:
+
+```bash
+# generate local key
+ssh-keygen -t rsa -f awsnode
+# append the public key to aws ec2 node
+vi ~/.ssh/authorized_keys
+# now in authorized_keys will have two public key, one from Amazon, one from your
+# you're able to connect by your own key
+ssh -i ~/.ssh/awsnode username@ec2host
+```
+
 Reference
 -------------------------
 
