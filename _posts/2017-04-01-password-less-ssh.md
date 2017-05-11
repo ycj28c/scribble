@@ -13,21 +13,24 @@ Backgroup About RSA
 -------------------------
 
 We are going to use RSA algorithm create ssh key, here are some backgroup knowledge about RSA algorithm:
+
 [RSA Theory 1 - ruan yifeng](http://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html)
+
 [RSA Theory 2 - ruan yifeng](http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html)
 
 Steps For Password Less SSH
 -------------------------
 
 ```bash
+# generate the private and public rsa key
 ssh-keygen -t rsa -f test
 # it will generate test(private key) and test.pub(public key) in ~/.ssh folder
 # if folder not there, you may need to create it, assign 700 permission
 # for windows, it will be in C:\Users\username\.ssh folder
 
+# copy the public key to target server, you will ask for password first time
 ssh-copy-id -i test.pub username@host
 # replace username, host, pem name with your situation
-# this will copy the public key to target server, you will ask for password first time
 # alternative way1: cat ~/.ssh/test.pub | ssh username@host 'cat >> .ssh/authorized_keys'
 # alternative way2: manully create authorized_key and paste the test.pub content
 
