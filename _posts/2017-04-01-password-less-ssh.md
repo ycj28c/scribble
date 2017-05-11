@@ -43,7 +43,7 @@ ssh-copy-id -i test.pub username@host
 ssh username@host
 ```
 
-[Example][1]
+[Example From Reference][1]
 
 ```bash
 not-marco@rinzwind-desktop:~$ ssh-keygen 
@@ -79,7 +79,10 @@ to make sure we haven't added extra keys that you weren't expecting.
 
 Reference
 -------------------------
-[1]: http://honglu.me/2014/11/09/RSA%E5%8A%A0%E5%AF%86%E6%B5%85%E6%9E%90/
+
+[RSA encryption explain](http://honglu.me/2014/11/09/RSA%E5%8A%A0%E5%AF%86%E6%B5%85%E6%9E%90/)
+
 [How can I set up password-less SSH login?](https://askubuntu.com/questions/46930/how-can-i-set-up-password-less-ssh-login)
-[ssh prompts for password despite ssh-copy-id](https://unix.stackexchange.com/questions/4484/ssh-prompts-for-password-despite-ssh-copy-id)
+
+[1]https://unix.stackexchange.com/questions/4484/ssh-prompts-for-password-despite-ssh-copy-id
 
