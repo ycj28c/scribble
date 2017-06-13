@@ -20,7 +20,7 @@ Use contextual escaping on all untrusted data before using it to construct any p
 
 所以一個簡單的input，我們需要檢查它不能被sql injection，不能被javascript injection，不能被css injection啊，html injection等等，具體的測試用例可以參考這個cheet sheet： https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
 
-```javascript
+```html
 sql injection： 比如 1 = 1
 html injection： 比如 <A HREF="//www.google.com/">XSS</A>
 javascript injection： 比如</script><script>alert('XSS');</script>
