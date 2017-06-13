@@ -10,21 +10,19 @@ share: y
 吐槽這麽多，我們這主要用veracode做自動掃描和個別手動測試，下面一個簡單例子：
 
 一個簡單的<input>, 也就是輸入文本框，掃描出以下問題
-```
+
 Description 
 It is possible to execute Javascript code by injecting ><script>pholcidCallback(9646897897)</script> into the value vcode of URI query parameter ticker at position 8 parameter on https://xxxxx/xxxxx.jsp?ticker=vcode&ticker=vcode by breaking out of an HTML element's attribute on https://xxxxx/xxxxx.jsp?ticker=vcode&ticker=%3e%3cscript%3epholcidCallback%289646897897%29%3c%2fscript%3e After breaking out of the attribute, it is possible to create additional events that when the event is triggered, such as moving the mouse over the element, will cause the injected code to execute. XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis.
 Additional Resources: CWE OWASP  
 Recommendations
 Use contextual escaping on all untrusted data before using it to construct any portion of an HTTP response. The escaping method should be chosen based on the specific use case of the untrusted data, otherwise it may not protect fully against the attack. For example, if the data is being written to the body of an HTML page, use HTML entity escaping; if the data is being written to an attribute, use attribute escaping; etc. Both the OWASP Java Encoder library and the Microsoft AntiXSS library provide contextual escaping methods. For more details on contextual escaping, see https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet. When displaying user input in the context of an HTML element's attributes, be sure to encode and escape quote characters. If the value vcode of URI query parameter ticker at position 8 output is used directly in an HTML element's DOM event attribute, you must be sure to escape any quote characters even if you encode them to their HTML entity value.
-```
+
 
 所以一個簡單的input，我們需要檢查它不能被sql injection，不能被javascript injection，不能被css injection啊，html injection等等，具體的測試用例可以參考這個cheet sheet： https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
 
-```
 sql injection： 比如 1 = 1
 html injection： 比如 <A HREF="//www.google.com/">XSS</A>
 javascript injection： 比如</script><script>alert('XSS');</script>
-```
 
 基本通用的處理方法：
 1. 用regex嚴格限制parameter的格式，比如只能a->b之類
