@@ -41,6 +41,15 @@ $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389
 ```shell
 $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 –latency
 # If network bad, cause long latency, will cause Redis response slow
+#
+# For example:
+# So when we ran the command redis-cli --latency -h 127.0.0.1 -p 6379 Redis enters into a special mode in which it continuously samples latency (by running PING).
+# Now let's breakdown that data it returns: min: 0, max: 15, avg: 0.12 (2839 samples)
+# What's (2839 samples)? This is the amount of times the redis-cli recorded issuing the PING command and receiving a response. In other words, this is your sample data. In our example we recorded 2839 # requests and responses.
+# What's min: 0? The min value represents the minimum delay between the time the CLI issued PING and the time the reply was received. In other words, this was the absolute best response time from our sampled data.
+# What's max: 15? The max value is the opposite of min. It represents the maximum delay between the time the CLI issued PING and the time the reply to the command was received. This is the longest response time from our sampled data. In our example of 2839 samples, the longest transaction took 15ms.
+# What's avg: 0.12? The avg value is the average response time in milliseconds for all our sampled data. So on average, from our 2839 samples the response time took 0.12ms.
+# Basically, higher numbers for min, max, and avg is a bad thing.
 ```
 
 Redis Info Overview
