@@ -57,7 +57,7 @@ default redis configuration directory: /etc/redis/redis-insight.conf
     save 300 10
     save 60 10000
 # set this to no, means when error occurs, don't persistant, redis can still work
-	stop-writes-on-bgsave-error no
+    stop-writes-on-bgsave-error no
 ```
 
 There also other redis persistant machanism AOF, didn't research on that yet.  
