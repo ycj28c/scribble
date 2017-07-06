@@ -13,7 +13,7 @@ Issue Trouble
 -------------------------
 Increased the redis memory to 15G about 1 month ago, every 3 week will do a flushall and warmup cache (warmup cache means manually insert lots of redis key value by spring cache). Yesterday suddenly the redis is getting slow, a lot of connection exception. 
 
-The redis latency is very bad, maximum lik 7000, avg 25
+The redis latency is very bad, maximum is 7000, avg 25
 ```bash
 /usr/local/bin/redis-cli -h localhost -p 6389 --latency
 ```
@@ -22,18 +22,20 @@ Check the redis server, find there are two redis server running, each take half 
 ```bash
 top
 ```
+![top](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/redisbgsavetroubleshoot/1.png)
 
 check the pid of redis, the one runs at Jul04 called redis-rdb-bgsave
 ```bash
 ps -ef|grep redis
 ```
+![ps-ef](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/redisbgsavetroubleshoot/2.png)
 
 After research, the bgsave is "Save the DB in background. The OK code is immediately returned. Redis forks, the parent continues to serve the clients, the child saves the DB on disk then exits. A client may be able to check if the operation succeeded using the LASTSAVE command."
 
 Issue Reason
 -------------------------
 Because we use large redis memory for product(15G), but not too much server memory(total 19G?), the redis snapshot bgsave don't have lot of resource to run, it will took long time to dump data into disk.
-Check the dump file(which define in redis.conf, default in /var/lib/redis)
+Check the dump file (which define in redis.conf, default in /var/lib/redis)
 ```
 -rw-r--r--. 1 redis redis 8846152329 Jul  4 20:49 dump-redis-product.rdb
 -rw-r--r--. 1 redis redis  210476057 Jul  5 12:08 redis-product.log
@@ -45,10 +47,11 @@ The bgsave is mainly for redis restart recover, since our product flushall the r
 
 Solution
 -------------------------
-1. add more physical memory for server(unfortunally we can't)
+1. add more physical memory for server (unfortunally we can't)
 2. change the properties, disable the bgsave feature
+
 default redis configuration directory: /etc/redis/redis-insight.conf
-```json
+```
 # comment below setting, disable the bgsave feature
     save 900 1
     save 300 10
