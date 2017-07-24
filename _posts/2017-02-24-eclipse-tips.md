@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Eclipse Import Maven
+title: Eclipse Tips
 disqus: y
 share: y
 ---
@@ -24,6 +24,11 @@ mvn dependency:tree
 mvn eclipse:clean
 mvn eclipse:eclipse
 ```
+
+Eclipse Chines Character Display
+---------------------
+右键项目->Properties->Text File Encoding中没有GBK这个选项。*后来查阅资料才知道那个选项栏目中可以自己手填编码方式的*，我输入GBK，然后点确定，编码格式就成为GBK了，解决了中文乱码问题。
+
 
 Refenrence:
 ---------------------
