@@ -35,11 +35,11 @@ Start up the selenium grid host and node
 
 host windows bat script(startHub.bat):
 ```bash
-	start /B java -jar selenium-server-standalone-3.4.0.jar -role hub
+start /B java -jar selenium-server-standalone-3.4.0.jar -role hub
 ```
 node windows bat script(startNode.bat):
 ```bash 
-	java -jar selenium-server-standalone-3.4.0.jar -role node -hub http://1.1.1.45:4444/grid/register -port 5556 -host 1.1.1.45 -nodeStatusCheckTimeout 60000
+java -jar selenium-server-standalone-3.4.0.jar -role node -hub http://1.1.1.45:4444/grid/register -port 5556 -host 1.1.1.45 -nodeStatusCheckTimeout 60000
 ```
 
 add the new testng.xml in test_project to support selenium grid ie running, for example:
