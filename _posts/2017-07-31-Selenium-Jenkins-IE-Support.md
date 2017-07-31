@@ -9,10 +9,10 @@ We want to use Jenkins run selenium IE test, because the limit resource and lots
 
 Environment
 -----------
-Test Server: windows7(1.1.1.45)
-Selenium version: 3.2
-Selenium Grid (standalone version 3.4)
-IE driver: IEDriverServer.exe 3.4
++ Test Server: windows7(1.1.1.45)
++ Selenium version: 3.2
++ Selenium Grid (standalone version 3.4)
++ IE driver: IEDriverServer.exe 3.4
 
 Environment Configuration
 -------------------------
@@ -35,8 +35,9 @@ node windows bat script(startNode.bat):
 ```bash 
 	java -jar selenium-server-standalone-3.4.0.jar -role node -hub http://1.1.1.45:4444/grid/register -port 5556 -host 1.1.1.45 -nodeStatusCheckTimeout 60000
 ```
+
 add the new testng.xml in test_project to support selenium grid ie running, for example:
-```xml
+```
 <suite name="All Suite" parallel="tests" thread-count="1">
 	<test name="xxx">
 		<parameter name="browser" value="ie" />
