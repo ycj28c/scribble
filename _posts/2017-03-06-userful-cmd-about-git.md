@@ -42,6 +42,10 @@ git config user.email "your_email@example.com"
 git config user.email
 ```
 
+IF you computer change password will effect the git password cache, reset it
+```shell
+git config –global credential.helper unset
+```
 
 
 
