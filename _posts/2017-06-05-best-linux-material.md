@@ -30,3 +30,12 @@ du -Sh | sort -rh | head -5
 #Find Out Top File Sizes Only
 find -type f -exec du -Sh {} + | sort -rh | head -n 5
 ```
+
+Delete the old log files:
+```bash
+# Find the log longer than 5 days from today
+find /opt/jboss-insight/server/default/log/* -mtime +5
+
+# Delete those log files
+find /opt/jboss-insight/server/default/log/* -mtime +5 -delete
+```
