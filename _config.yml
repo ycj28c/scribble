@@ -11,8 +11,10 @@ links:
     url:          /about
   - name:         Home
     url:          /
+  - name:         LifeStyle
+    url:          https://ycj28c.github.io/lifeblog
   - name:         GitHub
-    url:          https://github.com/ycj28c
+    url:          https://github.com/ycj28c/ycj28c.github.io
     external:     true
 highlighter:      rouge
 permalink:        pretty
