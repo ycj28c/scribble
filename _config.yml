@@ -9,7 +9,7 @@ google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
 links:
   - name:         About
     url:          /about
-  - name:         Home
+  - name:         Tech&IT
     url:          /
   - name:         LifeStyle
     url:          /lifeblog
