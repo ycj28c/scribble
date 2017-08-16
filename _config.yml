@@ -12,7 +12,7 @@ links:
   - name:         Home
     url:          /
   - name:         LifeStyle
-    url:          https://ycj28c.github.io/lifeblog
+    url:          /lifeblog
   - name:         GitHub
     url:          https://github.com/ycj28c/ycj28c.github.io
     external:     true
