@@ -15,6 +15,22 @@ env
 whoami
 ```
 
+```bash
+#!/bin/bash +x
+
+mkdir -p "${WORKSPACE}"/logs/
+cd "${WORKSPACE}"
+cmd="./etl.sh -ip ${IP} -u ${USER} -port ${PORT} -db ${DATABASE} -etl ${ETL} -batch ${BATCHSIZE} -cl ${COPYLIST_LOCATION} -ids ${USER_INPUT_IDS}"
+
+export PGPASSWORD=${PASSWORD}
+$cmd 2>&1 | while IFS= read -r line; do printf '[%s] %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$line"; done | tee -a "${WORKSPACE}/logs/${ETL}.`date +%m-%d-%Y`.log"
+
+exit  ${PIPESTATUS[0]}
+```
+
+export password: https://stackoverflow.com/questions/38690710/jenkins-passing-variable-password-to-external-shell
+PIPESTATUS: https://neeohw.wordpress.com/2013/11/28/bash-pipestatus-get-return-code-from-process-with-pipes/
+
 Windows:
 ```bash
 @echo on

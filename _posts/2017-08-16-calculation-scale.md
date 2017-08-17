@@ -5,7 +5,7 @@ disqus: y
 share: y
 ---
 
-It is a thought of the Calculation Scalable. In the now world, big data and cloud are still popular word, people are still consider about the scalable of the software/service. The big data techonology let scalable become feasiable, the cloud provide the infrastructure and flexiable for the computing. The powerful GPU mining is also well known for people.
+It is a thought of the Calculation Scalable. In the now world, big data and cloud are still popular words, people are still struggled with the scalable of the software/service. The big data techonology let scalable become feasible, the cloud provide the infrastructure and flexiable for the computing. The powerful GPU mining is also well known for people.
 
 Never got chance really consider about computing scale, first because the most calculation are fast, instead of using things like hadoop, we'll try to use better algorithm to solve the issue first. The database scalable is handled by the database company, the web performance is handled by web techonology such as load balance, web container etc. The smart guys always step in front of us, figure out the problem because we concern it. We are lucky boys, we just need to understand and implement those techonology.
 
