@@ -8,6 +8,7 @@ share: y
 Some selenium magic or tips (Java or Javascript)
 
 * when you not able to use getText(), try below.
+
 ```
 tickerList.add(tickerElements.get(i).getText().trim());
 
@@ -18,6 +19,7 @@ tickerList.add(tickerElements.get(i).getAttribute("textContent").trim());  -- wo
 ```
 
 * nth-child
+
 ```
 td tr
 tr:nth-child(3n+1) td:nth-child(-n+1)
@@ -36,6 +38,7 @@ match become with the second row
 ```
 
 * three way of using selector
+
 ```
 1.
 Select archiveList = new Select(driver.findElement(By.cssSelector("#peerSelect")));
@@ -51,12 +54,14 @@ driver.findElement(By.xpath("//*[@id='peerSelect']/option[2]")).click();
 ```
 
 * textarea
+
 ```
 WebElement ticker = driver.findElement(tickerLocator);
 return ticker.getAttribute("value");
 ```
 
 * check box
+
 ```
 checkbox
 if ( !driver.findElement(By.id("idOfTheElement")).isSelected() )
@@ -66,17 +71,20 @@ if ( !driver.findElement(By.id("idOfTheElement")).isSelected() )
 ```
 
 * radio
+
 ```
 List oRadioButton = driver.findElements(By.name("toolsqa"));
 bValue = oRadioButton.get(0).isSelected();
 ```
 
 * get text from input
+
 ```
 driver.findElement(endStockPricAvgDateLocator).getAttribute("value").trim();
 ```
 
 * if trouble getText() from span, consider use javascript way
+
 ```
 String spanID = "searchHeading";
 String script = "return document.getElementById('"+ spanID +"').innerHTML;";
@@ -85,6 +93,7 @@ return spanText;
 ```
 
 * how to perform mouse over action
+
 ```
 Actions action = new Actions(webdriver);
 WebElement we = webdriver.findElement(By.xpath("html/body/div[13]/ul/li[4]/a"));
@@ -99,6 +108,7 @@ action.moveToElement(reportList.get(0))
 ```
 
 * a element can't use clickable: try this
+
 ```
 String isDisabled = textlink.getAttribute("disabled");
 if (isDisabled==null || !isDisabled.equals("disabled")){
@@ -110,6 +120,7 @@ some attribute is ture so, also "isDisabled.equals("true")"
 ```
 
 * compare css
+
 ```
 driver.findElement(By.id("xxx")).getCssValue("font-size");
 
@@ -120,11 +131,13 @@ cssValue1.contains(disableCSS);
 ```
 
 * xpath example
+
 ```
 By locators = By.xpath("//*[@id='disClosedCalculationTSR']/div[not (contains(@class, 'bgcolor_target'))]"); //not include target company
 ```
 
 * iframe
+
 ```
 driver.switchTo().frame(driver.findElement(By.id("IFrameTop")));
 driver.switchTo().defaultContent(); //switch back
