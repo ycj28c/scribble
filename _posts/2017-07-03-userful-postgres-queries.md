@@ -31,3 +31,13 @@ FROM (
        GROUP BY company_id
      ) t order by company_id;
 ```
+
+* check current user connection
+```sql
+SELECT * FROM pg_stat_activity where state = 'active';
+```
+
+* check max connection setting
+```sql
+show max_connections;
+```
