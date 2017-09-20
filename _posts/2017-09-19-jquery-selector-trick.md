@@ -45,17 +45,20 @@ $(".0O\\\'SHAUGHNESSYk7aw") -> this works
 Now in our code we want to normalize the special character name.
 
 According to the console, we need three \\\, thus write below function, but doesn't work
-```
+```javascript
 function normalizeSelector(str){
 	return str.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g,'\\\\\\$1');
 } 
 ```
 Debug the output string is exactly what I want, but it doesn't work, after lots of try, find below code works
-```
+```javascripit
 function normalizeSelectorName(str){
 	return str.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g,'\\$1');
 }
 ```
-So in *.js file, the accept format is $('.0O\'SHAUGHNESSYk7aw')
+So in *.js file, the accept format is 
+```
+$('.0O\'SHAUGHNESSYk7aw')
+```
 
 AAAAAAAAAAAAAA, so disgusting, XXXOOOOO
