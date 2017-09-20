@@ -5,16 +5,16 @@ disqus: y
 share: y
 ---
 
-> ps: All the numbers and cases in this page are fake number, just for example
+> Notice: All the numbers and cases in this page are fake number, just for example
 
-# General Concept
+## General Concept
 Pressure test is based on performance test, which run a bunch of parallel requests targeting a function or a system work flow. The goals are:
 1. Break down the system, get the test data such as TPS, PV
 2. Find the system bottle neck
 3. Show the result and see if boss or user satisfy with the current system capability
 So it is best to run in production, but we has same mirror system stage, it is OK to test in stage.
 
-# Pressure Test Precondition
+## Pressure Test Precondition
 1. Are we pressure test particular function or test the whole system
 	* If test particular function, we only need to produce the pressure for that function
 	* If test whole system, we need to simulate the general user behavior
@@ -25,14 +25,14 @@ Sumologic: around 11 times of keywords "stormpath" per minute
 3. Discuss the goal we want to achieve
 for example: we want to handle max 30 users on time at same time, we want 50 users can visit this function  
 
-# Pressure Test Metrics
+## Pressure Test Metrics
 Throughput: Request per seconds
 TPR: Time Per Request, TPR = time cost of all request / concurrent user
 The number of concurrent connection
 PV: page view
 ...
 
-# Feasibility Pressure Test For Your System
+## Feasibility Pressure Test For Your System
 To answer this, we need to think about two parts of the pressure test: pressure producer and system monitor
 
 ### First, pressure producer
@@ -47,8 +47,8 @@ The tomcat is handling the API, use tools such as Jmeter or other test tools, we
 ### Secondly, system monitor:
 This is the pain part, when we produce the pressure outside, we also need to capture the system running metrics in the server side. It is hard to manually record the data during the pressure test. Here is the list of server we'll want to monitor:
 
-| Name        		   | Monitor                                               |
-| -------------------- |:-----------------------------------------------------:| 
+| *Name*        	   | *Monitor*                                           |
+| -------------------- |-----------------------------------------------------| 
 | jboss/tomcat/database/redis server | we can directly use top command get metrics such as cpu, memory, swap, io, etc, but we don't have the tool to continues tracking and record the data change. |
 | jboss      | need perfessional jboss monitor      | 
 | tomcat | need perfessional tomcat monitor      |
@@ -57,10 +57,10 @@ This is the pain part, when we produce the pressure outside, we also need to cap
 | front end | if you don't have large front end resource and fancy javascript, the only time consume is download the css, javascript lib stuff, and front end runs in client side, it is not a performance issue for you.  |
 
 
-# The Meaning Of Pressure Test For system
+## The Meaning Of Pressure Test For system
 Is it meaning for the do the pressure test for system? Yes and no. "Yes" because it is always good to know how is our system performance, how much user we can handle. "No" because we don't have a big amount of client access daily, we don't has a feature which facing sudden large requests.
 
-# Conclusion
+## Conclusion
 In this case,
 
 *Can we do the pressure test for system, the answer is yes.*
@@ -69,7 +69,7 @@ In this case,
 
 The main reason we can't is because we don't have a good monitor tool which able to capture the performance of the Jboss/Tomcat/Postgres/Redis in realtime and persistent it, thus it is hard to identify the bottle neck and generate report. In addition to this, we don't have enough test servers to produce pressure, unless more people participate into the pressure test.
 
-# Appendix(Chinese Version)
+## Appendix(Chinese Version)
 
 ```
 基本概念：
@@ -81,7 +81,7 @@ The main reason we can't is because we don't have a good monitor tool which able
 好，我们首先需要确认压测目标（输入和输出）：
 1.确定是针对某一功能进行压测还是对全系统的压测，区别是我们的压力制造会有不同
 2.根据各个工具确定目前的用户峰值
-user_session_log: 每分钟最多的login是7人，一小时最大login是234
+user_session table: 每分钟最多的login是7人，一小时最大login是234
 google analytics: 最多显示到hour的级别，一小时最多230多个用户，一分钟的话，而active user，只支持显示以天为单位级别的, 做个简单计算，大约16,837每30天，所以均值是842/8 = 105每小时，1.5每分钟
 sumologic，搜索关键字stormpath，可以看到每分钟最多也就出现11次左右
 所以我们的系统每分钟的在线人数绝对不超过20
@@ -91,10 +91,10 @@ sumologic，搜索关键字stormpath，可以看到每分钟最多也就出现11
 TPS, Throughput, pv，硬件指标等等
 
 压力测试可行性：
-能否对Insight进行压测，答案是肯定的。
+能否对系统进行压测，答案是肯定的。
 那现有resource下能不能做，结论是不行，使用金字塔模型回答你：
 1.压力制造端不够
-1.1 insight方面的制造压力，有难度
+1.1 system方面的制造压力，有难度
 1.1.1 一种是人力来压，比如30个人来一起点鼠标啊，互相伤害啊，这样需要很多人来测试，而且30个人未必能测出我们系统的临界点
 1.1.2 使用工具来测，使用现有的UI测试制造压力，唯一问题是压测服务器性能不足，一台机器跑6-7个selenium测试已经是极限，我们总共就2台，显然是不够的。而且每个测试需要login，那么需要至少30个帐号呗
 1.2 tomcat方面的制造压力，可以
