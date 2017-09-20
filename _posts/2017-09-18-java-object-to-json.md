@@ -71,7 +71,7 @@ Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unr
 	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:51)
 ```
 
-Because we have a method isActive not belong to the standard model, jackson think it is a attribute call "active", but not able to match this attribute to the target class.
+Because we have a method "isActive()" which is not belong to the standard model class, jackson think there is a attribute call "active", thus it not able to match this attribute to the target class.
 
 Two solution:	
 https://stackoverflow.com/questions/14708386/want-to-hide-some-fields-of-an-object-that-are-being-mapped-to-json-by-jackson
@@ -83,7 +83,7 @@ public abstract class AbstractLookup implements ILookup {
 ...
 }
 ```
-We go the result json
+We got the result json
 ```
 {
   "PeerCode" : {
@@ -104,7 +104,8 @@ public Boolean isActive() {
 	return getIsActive() == null ? false : getIsActive().booleanValue();
 }
 ```
-We go the result json
+We got the result json
+```
 {
   "PeerCode" : {
     "lookupId" : null,
