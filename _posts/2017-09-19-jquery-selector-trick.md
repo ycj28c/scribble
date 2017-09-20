@@ -52,7 +52,7 @@ function normalizeSelector(str){
 ```
 But doesn't work, debug the output string is exactly what I want, but it doesn't work, after lots of try, find below code works
 
-```javascripit
+```javascript
 function normalizeSelectorName(str){
 	return str.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g,'\\$1');
 }
