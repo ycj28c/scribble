@@ -17,6 +17,7 @@ We know jquery can select class by $('.xxxxx'), very clear and simple, but how t
 To select them in different place you will need completely different selector path, I use chrome as example, F12 open chrome develop tool.
 
 1. select in Elements tag
+
 ```
 .0O'SHAUGHNESSYk7aw -> not work
 .0O\'SHAUGHNESSYk7aw -> not work
@@ -25,6 +26,7 @@ To select them in different place you will need completely different selector pa
 Start with number, must use \3 to specify, single quote need add \ expression
 
 2. select in Console
+
 Use console to debug is a very common way to troubleshoot front end issue
 ```
 $('.0O'SHAUGHNESSYk7aw') -> not work
@@ -39,7 +41,9 @@ $(".0O\\\'SHAUGHNESSYk7aw") -> this works
 ```
 
 3. select in *.js file
+
 Now in our code we want to normalize the special character name.
+
 According to the console, we need three \\\, thus write below function, but doesn't work
 ```
 function normalizeSelector(str){
