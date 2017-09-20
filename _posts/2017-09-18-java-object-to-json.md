@@ -140,3 +140,48 @@ Finally it display correct:
 }
 ```
 
+Final abstract class AbstractLookup
+```java
+public abstract class AbstractLookup implements ILookup {
+
+	private Integer lookupId;
+	private String description;
+	private Integer sortOrder;
+	private Boolean isActive;
+
+	public AbstractLookup() {
+	}
+	public AbstractLookup(Integer lookupId) {
+		setLookupId(lookupId);
+	}
+	public Integer getLookupId() {
+		return lookupId;
+	}
+	public void setLookupId(Integer lookupId) {
+		this.lookupId = lookupId;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Integer getSortOrder() {
+		return sortOrder;
+	}
+	public void setSortOrder(Integer sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+	@JsonGetter("isActive")
+	private Boolean getIsActive() {
+		return isActive;
+	}
+	@JsonIgnore
+	public Boolean isActive() {
+		return getIsActive() == null ? false : getIsActive().booleanValue();
+	}
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+}
+```
