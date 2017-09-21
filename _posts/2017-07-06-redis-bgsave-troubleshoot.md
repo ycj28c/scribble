@@ -4,6 +4,7 @@ title: Redis Bgsave Troubleshoot
 disqus: y
 share: y
 categories: [Database]
+tags: [Redis]
 ---
 
 Issue Introduce

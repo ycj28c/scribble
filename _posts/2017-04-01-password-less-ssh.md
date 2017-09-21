@@ -4,6 +4,7 @@ title: Password Less SSH
 disqus: y
 share: y
 categories: [OS]
+tags: [Ssh]
 ---
 
 Purpose

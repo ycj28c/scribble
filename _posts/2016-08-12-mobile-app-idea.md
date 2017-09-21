@@ -4,6 +4,7 @@ title: Mobile Alert App Idea
 disqus: y
 share: y
 categories: [Mobile Dev]
+tags: [Thought]
 ---
 
 Alert App

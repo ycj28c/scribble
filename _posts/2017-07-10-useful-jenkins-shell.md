@@ -4,6 +4,7 @@ title: Useful Jenkins Shell Command
 disqus: y
 share: y
 categories: [Devops]
+tags: [Jenkins, Shell]
 ---
 
 Jenkins is very popular, but most of plugins are developered by someone no one knows, lack of document (lot of tricks) and has security risk. What ever, here is some useful command for jenkins job linux shell and windows shell command.

@@ -4,6 +4,7 @@ title: AWS Ubuntu Install TensorFlow
 disqus: y
 share: y
 categories: [AI]
+tags: [Aws, Tensorflow, Ubuntu]
 ---
 
 Steps to install TensorFlow to AWS ubuntu node, some tips

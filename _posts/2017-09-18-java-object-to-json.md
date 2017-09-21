@@ -4,6 +4,7 @@ title: Java Object To Json
 disqus: y
 share: y
 categories: [Java]
+tags: [Jackson]
 ---
 
 Here is the example of using Java jackson to convert object to json trick.

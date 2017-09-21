@@ -4,6 +4,7 @@ title: Spring Boot Swagger Tip
 disqus: y
 share: y
 categories: [Java]
+tags: [Springboot, Swagger]
 ---
 
 Here is how I integrate a existing spring boot with swagger and some problem encounter

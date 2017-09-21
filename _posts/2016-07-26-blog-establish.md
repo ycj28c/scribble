@@ -4,6 +4,7 @@ title: My Blog Establish
 disqus: y
 share: y
 categories: [Blog]
+tags: [Jekyll]
 ---
 
 Two days ago use the Jekyll template/theme from https://github.com/muan/scribble.

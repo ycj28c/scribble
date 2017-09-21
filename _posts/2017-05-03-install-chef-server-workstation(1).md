@@ -4,6 +4,7 @@ title: Install Chef Server And Workstation(1)
 disqus: y
 share: y
 categories: [Devops]
+tags: [Chef, Chef Server, Chef Workstation]
 ---
 
 Purpose

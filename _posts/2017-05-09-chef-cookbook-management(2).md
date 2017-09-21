@@ -4,6 +4,7 @@ title: Chef Cookbook Management(2)
 disqus: y
 share: y
 categories: [Devops]
+tags: [Chef, Cookbook]
 ---
 
 Purpose

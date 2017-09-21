@@ -4,6 +4,7 @@ title: Research On Tagmanager
 disqus: y
 share: y
 categories: [Analytics]
+tags: [Tagmanager, Google Analytics]
 ---
 
 Progress

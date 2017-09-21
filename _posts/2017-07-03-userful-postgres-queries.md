@@ -4,6 +4,7 @@ title: Useful Postgres Queries
 disqus: y
 share: y
 categories: [Database]
+tags: [Postgres]
 ---
 
 * convert table to json

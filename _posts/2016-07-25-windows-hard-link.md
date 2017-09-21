@@ -4,6 +4,7 @@ title: Windows Hard Link
 disqus: y
 share: y
 categories: [OS]
+tags: [Hard Link]
 ---
  
 Hard Link

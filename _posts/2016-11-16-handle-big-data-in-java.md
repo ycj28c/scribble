@@ -4,6 +4,7 @@ title: Handle big data OOM in java
 disqus: y
 share: y
 categories: [Java]
+tags: [OOM]
 ---
 
 Handle OOM

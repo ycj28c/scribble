@@ -4,6 +4,7 @@ title: Github Blog Fast Setup
 disqus: y
 share: y
 categories: [Blog]
+tags: [Github]
 ---
 
 After I setup this Github blog, I tried establish another blog in Gihub for other purpose, I found create a blog is much easier than I did before. All the operation you can do online in Github.

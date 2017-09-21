@@ -4,6 +4,7 @@ title: Research On Sumologic
 disqus: y
 share: y
 categories: [Analytics]
+tags: [Sumologic]
 ---
 
 Purpose

@@ -4,6 +4,7 @@ title: Redis Troubleshoot Command
 disqus: y
 share: y
 categories: [Database]
+tags: [Redis]
 ---
 
 Purpose

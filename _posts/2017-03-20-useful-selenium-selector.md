@@ -4,6 +4,7 @@ title: Useful Selenium Selector
 disqus: y
 share: y
 categories: [Test]
+tags: [Selenium, CssSelector]
 ---
 
 Some selenium magic or tips (Java or Javascript)

@@ -4,7 +4,7 @@ title: Chef Learn
 disqus: y
 share: y
 categories: [Devops]
-tags: [Chef]
+tags: [Chef, Thought]
 ---
 
 7/21/2016
