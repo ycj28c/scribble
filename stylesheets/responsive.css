@@ -16,3 +16,16 @@
           padding: 0 15px; }
         body #container .links section.post > ul, body #container .links section.post > ol, body #container .content section.post > ul, body #container .content section.post > ol {
           padding: 0 30px; } }
+		  
+@media (min-width: 30rem)
+.masthead {
+    position: fixed;
+    width: 100%;
+}
+.masthead {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+    background-color: rgba(255,255,255,0.75);
+}
