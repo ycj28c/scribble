@@ -105,6 +105,14 @@ footer {
     display: table; }
   #container:after {
     clear: both; }
+  #container .block2 {
+	text-align: center;
+    padding-bottom: 10;
+    padding-top: 10;
+    border-bottom: 1px solid #efefef;
+	letter-spacing: 5;}
+  #container .block2 a{
+	margin-right: 50px;}
   #container .block {
     border-top: 1px solid #efefef;
     border-bottom: 1px solid #efefef;
