@@ -3,6 +3,9 @@ layout: post
 title: Jquery Selector Trick
 disqus: y
 share: y
+category: 
+	- Jquery
+	- Trick
 ---
 
 Front end stuff always disgusting, even the most common css selector is painful.
