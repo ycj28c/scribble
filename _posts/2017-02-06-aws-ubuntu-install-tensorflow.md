@@ -3,7 +3,7 @@ layout: post
 title: AWS Ubuntu Install TensorFlow
 disqus: y
 share: y
-categories: [AI]
+categories: [Ai]
 tags: [Aws, Tensorflow, Ubuntu]
 ---
 

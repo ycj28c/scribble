@@ -3,8 +3,8 @@ layout: post
 title: Handle big data OOM in java
 disqus: y
 share: y
-categories: [Java]
-tags: [OOM]
+categories: [Language]
+tags: [OOM, Java]
 ---
 
 Handle OOM

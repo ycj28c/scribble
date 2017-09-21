@@ -3,8 +3,8 @@ layout: post
 title: Jquery Selector Trick
 disqus: y
 share: y
-categories: [Javascript]
-tags: [Jquery, CssSelector]
+categories: [Language]
+tags: [Jquery, Cssselector]
 ---
 
 Front end stuff always disgusting, even the most common css selector is painful.

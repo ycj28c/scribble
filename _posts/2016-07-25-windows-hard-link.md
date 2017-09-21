@@ -3,7 +3,7 @@ layout: post
 title: Windows Hard Link
 disqus: y
 share: y
-categories: [OS]
+categories: [Os]
 tags: [Hard Link]
 ---
  
