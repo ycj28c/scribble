@@ -3,6 +3,7 @@ layout: post
 title: Can We Do Pressure Test
 disqus: y
 share: y
+category: jekyll
 ---
 
 > Notice: All the numbers and cases in this page are fake number, just for example
