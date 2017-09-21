@@ -1,31 +1,39 @@
 @media (max-width: 480px) {
-  body {
-    padding: 0 10px; }
-    body #container ul.posts .datetime {
-      float: none;
-      display: block;
-      width: auto;
-      text-align: left; }
-    body #container #ind-instagram, body #container #ind-linkedin {
-      display: none; }
-    body #container .links, body #container .content {
-      padding: 15px; }
-      body #container .links section.post, body #container .content section.post {
-        margin: 0 -15px; }
-        body #container .links section.post > p, body #container .links section.post h1, body #container .links section.post h2, body #container .links section.post h3, body #container .links section.post h4, body #container .links section.post .signoff, body #container .links section.post blockquote, body #container .links section.post .highlight, body #container .content section.post > p, body #container .content section.post h1, body #container .content section.post h2, body #container .content section.post h3, body #container .content section.post h4, body #container .content section.post .signoff, body #container .content section.post blockquote, body #container .content section.post .highlight {
-          padding: 0 15px; }
-        body #container .links section.post > ul, body #container .links section.post > ol, body #container .content section.post > ul, body #container .content section.post > ol {
-          padding: 0 30px; } }
+	body {
+		padding: 0 10px; 
+	}
+	body #container ul.posts .datetime {
+		float: none;
+		display: block;
+		width: auto;
+		text-align: left; 
+	}
+	body #container #ind-instagram, body #container #ind-linkedin {
+		display: none; 
+	}
+	body #container .links, body #container .content {
+		padding: 15px; 
+	}
+	body #container .links section.post, body #container .content section.post {
+		margin: 0 -15px; 
+	}
+	body #container .links section.post > p, body #container .links section.post h1, body #container .links section.post h2, body #container .links section.post h3, body #container .links section.post h4, body #container .links section.post .signoff, body #container .links section.post blockquote, body #container .links section.post .highlight, body #container .content section.post > p, body #container .content section.post h1, body #container .content section.post h2, body #container .content section.post h3, body #container .content section.post h4, body #container .content section.post .signoff, body #container .content section.post blockquote, body #container .content section.post .highlight {
+		padding: 0 15px; 
+	}
+	body #container .links section.post > ul, body #container .links section.post > ol, body #container .content section.post > ul, body #container .content section.post > ol {
+			  padding: 0 30px;
+	} 
+}
 		  
-@media (min-width: 30rem)
 .masthead {
     position: fixed;
-    width: 100%;
+    z-index: 10;
+	width: 100%;
 }
 .masthead {
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin-bottom: 3rem;
     border-bottom: 1px solid #eee;
-    background-color: rgba(255,255,255,0.75);
+    background-color: rgba(240,240,240,0.75);
 }
