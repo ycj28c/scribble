@@ -45,3 +45,29 @@
     padding: 0;
     margin: 0;
 }
+.masthead .masthead-title small {
+	font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    font-size: 75%;
+    font-weight: 400;
+    color: silver;
+    letter-spacing: 0;
+}
+.masthead-title small {
+	font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    font-size: 75%;
+    font-weight: 400;
+    color: #c0c0c0;
+    letter-spacing: 0;
+}
+.masthead .masthead-title {
+	font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #6a9fb5;
+}
+.masthead-title {
+	font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #505050;
+}
