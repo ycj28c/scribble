@@ -3,6 +3,7 @@ layout: post
 title: Google Spreadsheet Data Feed
 disqus: y
 share: y
+categories: [Java]
 ---
 
 Recently, I want to display the news update and our Jira status update in our google scrum docs.  

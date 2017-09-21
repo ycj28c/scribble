@@ -3,6 +3,7 @@ layout: post
 title: Password Less SSH
 disqus: y
 share: y
+categories: [OS]
 ---
 
 Purpose

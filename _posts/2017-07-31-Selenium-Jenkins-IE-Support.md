@@ -3,6 +3,7 @@ layout: post
 title: Selenium Jenkins IE support
 disqus: y
 share: y
+categories: [Test]
 ---
 
 We want to use Jenkins run selenium IE test, because the limit resource and lots of tricks on integrate, list the only available solution so far here.

@@ -3,6 +3,7 @@ layout: post
 title: Useful Postgres Queries
 disqus: y
 share: y
+categories: [Database]
 ---
 
 * convert table to json

@@ -3,6 +3,7 @@ layout: post
 title: Spring Boot Swagger Tip
 disqus: y
 share: y
+categories: [Java]
 ---
 
 Here is how I integrate a existing spring boot with swagger and some problem encounter

@@ -3,7 +3,7 @@ layout: post
 title: Java Object To Json
 disqus: y
 share: y
-categories: [jekyll, test]
+categories: [Java]
 ---
 
 Here is the example of using Java jackson to convert object to json trick.

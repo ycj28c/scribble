@@ -3,6 +3,7 @@ layout: post
 title: Research On Sumologic
 disqus: y
 share: y
+categories: [Analytics]
 ---
 
 Purpose

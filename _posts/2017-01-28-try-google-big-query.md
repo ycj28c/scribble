@@ -3,6 +3,7 @@ layout: post
 title: Try Google Big Query
 disqus: y
 share: y
+categories: [Database]
 ---
 
 Try BigQuery

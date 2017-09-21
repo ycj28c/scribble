@@ -3,6 +3,7 @@ layout: post
 title: Redis Bgsave Troubleshoot
 disqus: y
 share: y
+categories: [Database]
 ---
 
 Issue Introduce

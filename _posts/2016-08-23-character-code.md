@@ -3,6 +3,7 @@ layout: post
 title: Character code
 disqus: y
 share: y
+categories: [Cryptography]
 ---
 今天在学习python过程中，提到了关于字符编码的问题。比如python可以使用比如ord()来编码，chr()来把编码换成字符。才发现我对编码不甚了解，玩了不少汉化游戏，却从来没想过怎么做的。
 

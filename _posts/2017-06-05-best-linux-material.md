@@ -3,6 +3,7 @@ layout: post
 title: Best Linux Material
 disqus: y
 share: y
+categories: [OS]
 ---
 
 Purpose

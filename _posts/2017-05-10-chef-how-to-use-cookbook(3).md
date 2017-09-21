@@ -3,6 +3,7 @@ layout: post
 title: Chef How To Use Cookbook(3)
 disqus: y
 share: y
+categories: [Devops]
 ---
 
 Purpose

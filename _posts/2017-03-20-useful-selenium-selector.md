@@ -3,6 +3,7 @@ layout: post
 title: Useful Selenium Selector
 disqus: y
 share: y
+categories: [Test]
 ---
 
 Some selenium magic or tips (Java or Javascript)

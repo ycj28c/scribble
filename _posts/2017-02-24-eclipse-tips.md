@@ -3,6 +3,7 @@ layout: post
 title: Eclipse Tips
 disqus: y
 share: y
+categories: [Java]
 ---
 
 Eclipse is my favorite IDE, Maven is also my favorite, sometimes there are issue when import maven project to Eclipse, which may waste lots of time to find out.

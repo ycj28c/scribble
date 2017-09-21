@@ -3,6 +3,7 @@ layout: post
 title: Chef Learn 
 disqus: y
 share: y
+categories: [Devops]
 ---
 
 7/21/2016

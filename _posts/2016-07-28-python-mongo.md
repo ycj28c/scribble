@@ -3,6 +3,7 @@ layout: post
 title: Python And MongoDB
 disqus: y
 share: y
+categories: [Python, Database]
 ---
 Didn't get chance to use Python and MongoDB in my work, so today try them both together.
 The goal is to use python to control the MongoDB, do the basic database operations.

@@ -3,6 +3,7 @@ layout: post
 title: Chef Write Your Own Cookbook(4)
 disqus: y
 share: y
+categories: [Devops]
 ---
 
 Purpose

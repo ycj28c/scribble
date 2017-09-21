@@ -3,6 +3,7 @@ layout: post
 title: Calculation Scale
 disqus: y
 share: y
+categories: [Architecture]
 ---
 
 It is a thought of the Calculation Scalable. In the now world, big data and cloud are still popular words, people are still struggled with the scalable of the software/service. The big data techonology let scalable become feasible, the cloud provide the infrastructure and flexiable for the computing. The powerful GPU mining is also well known for people.

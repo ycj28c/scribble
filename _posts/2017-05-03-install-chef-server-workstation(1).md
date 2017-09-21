@@ -3,6 +3,7 @@ layout: post
 title: Install Chef Server And Workstation(1)
 disqus: y
 share: y
+categories: [Devops]
 ---
 
 Purpose

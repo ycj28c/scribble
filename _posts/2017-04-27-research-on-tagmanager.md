@@ -3,6 +3,7 @@ layout: post
 title: Research On Tagmanager
 disqus: y
 share: y
+categories: [Analytics]
 ---
 
 Progress

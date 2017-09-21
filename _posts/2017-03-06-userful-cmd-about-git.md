@@ -3,6 +3,7 @@ layout: post
 title: Userful Cmd About Git
 disqus: y
 share: y
+categories: [Devops]
 ---
 
 Some useful commands about git, keep updating:
