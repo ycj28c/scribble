@@ -71,3 +71,11 @@
     margin-bottom: 0;
     color: #505050;
 }
+
+.nav-up {
+    top: -40px;
+}
+
+.nav-down{
+    top: 0px;
+}
