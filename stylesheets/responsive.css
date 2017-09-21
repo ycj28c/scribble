@@ -24,7 +24,8 @@
 			  padding: 0 30px;
 	} 
 }
-		  
+
+//top fly bar css		  
 .masthead {
     position: fixed;
     z-index: 10;
@@ -72,8 +73,9 @@
     color: #505050;
 }
 
+//top fly bar scroll up scroll down js effect
 .nav-up {
-    top: -40px;
+    top: -100px;
 }
 
 .nav-down{
