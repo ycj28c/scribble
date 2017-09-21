@@ -4,6 +4,7 @@ title: My First Post
 disqus: y
 share: y
 categories: [Blog]
+tags: [Jekyll]
 ---
 
 Try post first blog
