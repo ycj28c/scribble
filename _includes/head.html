@@ -32,3 +32,19 @@
   js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId={{ site.facebook_appid }}";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<script>(function(document) {
+var toggle = document.querySelector('.sidebar-toggle');
+var sidebar = document.querySelector('#sidebar');
+var checkbox = document.querySelector('#sidebar-checkbox');
+document.addEventListener('click', function(e) {
+  var target = e.target;
+  if (target === toggle) {
+	checkbox.checked = !checkbox.checked;
+	e.preventDefault();
+  } else if (checkbox.checked && !sidebar.contains(target)) {
+	/* click outside the sidebar when sidebar is open */
+	checkbox.checked = false;
+  }
+}, false);
+})(document);</script>
