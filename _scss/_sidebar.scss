@@ -24,7 +24,6 @@
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-size: .875rem; /* 15px */
   color: rgba(255,255,255,.6);
-  background: #6a9fb5;
   @include transition(all .3s ease-in-out);
 
   @if $reverse-layout {
@@ -114,8 +113,8 @@ a.sidebar-nav-item:focus {
   }
   display: block;
   padding: .25rem .75rem;
-  color: $theme-color;
-  background-color: $white;
+  color: #6a9fb5;
+  background-color: #fff;
   border-radius: .25rem;
   cursor: pointer;
 }
