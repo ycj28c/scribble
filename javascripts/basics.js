@@ -28,7 +28,7 @@ function adjustFlyBar(){
 	console.log("3333"+ document.querySelector(".masthead").scrollHeight );
 	var flybarHeight = document.querySelector(".masthead").clientHeight;
 	var scrollOffSet = window.pageYOffset;
-	document.querySelector(".masthead").style.marginTop = flybarHeight - scrollOffSet;
+	document.querySelector(".masthead").style.marginTop = scrollOffSet - flybarHeight;
 }
 
 function hasScrolled() {
