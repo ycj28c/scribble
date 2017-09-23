@@ -360,10 +360,10 @@ img {
   opacity: 0.7;
   background: none; }
 .paging .left, .paging .right {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  /*top: 50%;*/
   left: 50%;
-  font-size: 60px; }
+  font-size: 100px; }
 .paging .left {
   margin-left: -440px; }
 .paging .right {

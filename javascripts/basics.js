@@ -13,6 +13,7 @@ var navbarHeight = $('.masthead').outerHeight();
 $(window).scroll(function(event){
     didScroll = true;
 	adjustFlyBar();
+	adjustLeftRightPaging();
 });
 
 setInterval(function() {
@@ -28,6 +29,15 @@ function adjustFlyBar(){
 	document.querySelector(".masthead").style.marginTop = scrollOffSet - flybarHeight;*/
 	var scrollOffSet = window.pageYOffset;
 	document.querySelector(".masthead").style.marginTop = scrollOffSet;
+}
+
+function adjustLeftRightPaging(){
+	var windowOffset = window.innerHeight;
+	var scrollOffSet = window.pageYOffset;
+	var basicOffset = -200;
+	var finalOffset = windowOffset/2 - basicOffset + scrollOffset;
+	document.querySelector(".paging .left").style.marginTop = finalOffset;
+	document.querySelector(".paging .right").style.marginTop = finalOffset;
 }
 
 function hasScrolled() {
