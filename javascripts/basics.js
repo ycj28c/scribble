@@ -35,7 +35,7 @@ function adjustLeftRightPaging(){
 	var pagingWindowOffset = window.innerHeight;
 	var pagingScrollOffSet = window.pageYOffset;
 	var pagingBasicOffset = -200;
-	var pagingFinalOffset = pagingWindowOffset/2 - pagingBasicOffset + pagingScrollOffSet;
+	var pagingFinalOffset = pagingWindowOffset/2 + pagingBasicOffset + pagingScrollOffSet;
 	document.querySelector(".paging .left").style.marginTop = pagingFinalOffset;
 	document.querySelector(".paging .right").style.marginTop = pagingFinalOffset;
 }
