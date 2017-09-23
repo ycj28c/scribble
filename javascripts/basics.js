@@ -20,15 +20,14 @@ setInterval(function() {
         didScroll = false;
 		adjustFlyBar();
     }
-}, 250);
+}, 50);
 
 function adjustFlyBar(){
-	console.log("1111"+ document.querySelector(".masthead").offsetHeight );
-	console.log("2222"+ document.querySelector(".masthead").clientHeight );
-	console.log("3333"+ document.querySelector(".masthead").scrollHeight );
-	var flybarHeight = document.querySelector(".masthead").clientHeight;
+	/*var flybarHeight = document.querySelector(".masthead").offsetHeight;
 	var scrollOffSet = window.pageYOffset;
-	document.querySelector(".masthead").style.marginTop = scrollOffSet - flybarHeight;
+	document.querySelector(".masthead").style.marginTop = scrollOffSet - flybarHeight;*/
+	var scrollOffSet = window.pageYOffset;
+	document.querySelector(".masthead").style.marginTop = scrollOffSet;
 }
 
 function hasScrolled() {
