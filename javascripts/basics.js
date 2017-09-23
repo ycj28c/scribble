@@ -23,7 +23,10 @@ setInterval(function() {
 }, 250);
 
 function adjustFlyBar(){
-	var flybarHeight = document.querySelector(".masthead").offsetHeight;
+	console.log("1111"+ document.querySelector(".masthead").offsetHeight );
+	console.log("2222"+ document.querySelector(".masthead").clientHeight );
+	console.log("3333"+ document.querySelector(".masthead").scrollHeight );
+	var flybarHeight = document.querySelector(".masthead").clientHeight;
 	var scrollOffSet = window.pageYOffset;
 	document.querySelector(".masthead").style.marginTop = flybarHeight - scrollOffSet;
 }
