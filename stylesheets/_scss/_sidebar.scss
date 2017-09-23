@@ -83,7 +83,7 @@ a.sidebar-nav-item:focus {
   border-color: transparent;
 }
 
-/*@media (min-width: 48em) {
+@media (min-width: 48em) {
   .sidebar-item {
     padding: 1.5rem;
   }
@@ -91,7 +91,7 @@ a.sidebar-nav-item:focus {
     padding-left:  1.5rem;
     padding-right: 1.5rem;
   }
-}*/
+}
 
 /* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
 .sidebar-checkbox {
@@ -181,8 +181,8 @@ a.sidebar-nav-item:focus {
 }
 
 #sidebar-checkbox:checked ~ .wrap {
-  /*@include transform(translateX(if($overlay-sidebar,0,if($reverse-layout, -14rem, 14rem)))); */
-  margin-left: -225px;
+  @include transform(translateX(if($overlay-sidebar,0,if($reverse-layout, -14rem, 14rem))));
+  /*margin-left: -225px;*/
 }
 
 #sidebar-checkbox:checked ~ .sidebar {
