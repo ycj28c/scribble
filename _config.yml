@@ -27,7 +27,7 @@ nav: # side bar navigation
   About:          
     - '/about/'
   Github Project: 
-    - 'http://ycj28c.github.io/'
+    - 'https://ycj28c.github.io/'
 	
 # Where are tags and categories displayed
 tag_page: '/categories/tag/'
