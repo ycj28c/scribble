@@ -6,7 +6,7 @@ disqus_shortname: ycj28cgithubio # disqus comment thread for post header options
 facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
 google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
 
-links:
+links: # mid navigation bar
   - name:         About
     url:          /about
   - name:         Tech&IT
@@ -16,6 +16,7 @@ links:
   - name:         GitHub
     url:          https://github.com/ycj28c
     external:     true
+	
 nav: # side bar navigation
   Home:           
     - '/'
@@ -27,12 +28,20 @@ nav: # side bar navigation
     - '/about/'
   Github Project: 
     - 'http://ycj28c.github.io/'
+	
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
 highlighter:      rouge
 permalink:        pretty
+
 version: 1.0.0
+
 sass:
   style: compressed
   sass_dir: stylesheets/_scss
+  
 # About/contact
 author:
   name: Ralph Yang
