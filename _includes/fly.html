@@ -30,8 +30,8 @@
 	setTimeout(moveFlyBar(), 20);}
 	
 	function moveFlyBar(){
-		var flybarHeight = document.querySelector(".masthead.nav-down").offsetHeight;
+		var flybarHeight = document.querySelector(".masthead").offsetHeight;
 		var scrollOffSet = window.pageYOffset;
-		document.querySelector(".masthead.nav-down").style.marginTop = flybarHeight - scrollOffSet;
+		document.querySelector(".masthead").style.marginTop = flybarHeight - scrollOffSet;
 	}
 </div>
