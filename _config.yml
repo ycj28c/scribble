@@ -27,19 +27,15 @@ nav: # side bar navigation
     - '/about/'
   Github Project: 
     - 'https://github.io/ycj28c'
-	
 # Where are tags and categories displayed
 tag_page: '/categories/tag/'
 category_page: '/categories/category/'
-
 highlighter:      rouge
 permalink:        pretty
 version: 1.0.0
-
 sass:
   style: compressed
   sass_dir: stylesheets/_scss
-  
 # About/contact
 author:
   name: Ralph Yang
