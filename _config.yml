@@ -20,7 +20,7 @@ links: # mid navigation bar
 nav: # side bar navigation
   Home:           
     - '/'
-  Blog:           
+  Tech&IT:           
     - '/'
     - { Categories: '/categories/category/' }
     - { Tags: '/categories/tag/' }
