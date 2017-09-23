@@ -20,7 +20,7 @@ setInterval(function() {
         didScroll = false;
 		adjustFlyBar();
     }
-}, 50);
+}, 20);
 
 function adjustFlyBar(){
 	/*var flybarHeight = document.querySelector(".masthead").offsetHeight;
