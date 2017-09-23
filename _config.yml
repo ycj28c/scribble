@@ -30,8 +30,8 @@ nav: # side bar navigation
     - 'http://ycj28c.github.io/'
 	
 # Where are tags and categories displayed
-tag_page: '/blog/tags/'
-category_page: '/blog/categories/'
+tag_page: '/categories/tag/'
+category_page: '/categories/category/'
 
 highlighter:      rouge
 permalink:        pretty
