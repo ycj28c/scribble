@@ -20,7 +20,7 @@ highlighter:      rouge
 permalink:        pretty
 sass:
   style: compressed
-  sass_dir: _scss
+  sass_dir: stylesheets/_scss
 # About/contact
 author:
   name: Ralph Yang
