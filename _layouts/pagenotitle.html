@@ -6,18 +6,21 @@
     {% include head.html %}
   </head>
   <body>
-	<div id='flyhead'>
-		{% include fly.html %}
+  	<div class="wrap">
+		{% include sidebar.html %}
+		<div id='flyhead'>
+			{% include fly.html %}
+		</div>
+		{% include header.html %}
+		<div id='container'>
+		  {% include links.html %}
+		  <div class="content">
+			  <section class='post'>
+				{{ content }}
+			  </section>
+			</div>
+		</div>
+		{% include footer.html %}
 	</div>
-    {% include header.html %}
-    <div id='container'>
-      {% include links.html %}
-      <div class="content">
-          <section class='post'>
-            {{ content }}
-          </section>
-        </div>
-    </div>
-    {% include footer.html %}
   </body>
 </html>
