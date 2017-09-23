@@ -39,13 +39,13 @@ function hasScrolled() {
     // This is necessary so you never see what is "behind" the navbar.
     if (st > lastScrollTop && st > navbarHeight){
         // Scroll Down
-        $('.masthead').removeClass('nav-down').addClass('nav-up');
+		if(!document.querySelector('#sidebar-checkbox').checked){
+			$('.masthead').removeClass('nav-down').addClass('nav-up');
+		}
     } else {
         // Scroll Up
-		if(!document.querySelector('#sidebar-checkbox').checked){
-			if(st + $(window).height() < $(document).height()) {
-				$('.masthead').removeClass('nav-up').addClass('nav-down');
-			}
+		if(st + $(window).height() < $(document).height()) {
+			$('.masthead').removeClass('nav-up').addClass('nav-down');
 		}
     }
     
