@@ -12,15 +12,15 @@ var navbarHeight = $('.masthead').outerHeight();
 
 $(window).scroll(function(event){
     didScroll = true;
+	adjustFlyBar();
 });
 
 setInterval(function() {
     if (didScroll) {
         hasScrolled();
         didScroll = false;
-		adjustFlyBar();
     }
-}, 20);
+}, 250);
 
 function adjustFlyBar(){
 	/*var flybarHeight = document.querySelector(".masthead").offsetHeight;
