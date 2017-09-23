@@ -16,6 +16,10 @@ $(window).scroll(function(event){
 	adjustLeftRightPaging();
 });
 
+$(window).resize(function(event){
+	adjustLeftRightPaging();
+});
+
 setInterval(function() {
     if (didScroll) {
         hasScrolled();
@@ -36,8 +40,12 @@ function adjustLeftRightPaging(){
 	var pagingScrollOffSet = window.pageYOffset;
 	var pagingBasicOffset = -200;
 	var pagingFinalOffset = pagingWindowOffset/2 + pagingBasicOffset + pagingScrollOffSet;
-	document.querySelector(".paging .left").style.marginTop = pagingFinalOffset;
-	document.querySelector(".paging .right").style.marginTop = pagingFinalOffset;
+	if(document.querySelector(".paging .left")!=null){
+		document.querySelector(".paging .left").style.marginTop = pagingFinalOffset;
+	}
+	if(document.querySelector(".paging .right")!=null){
+		document.querySelector(".paging .right").style.marginTop = pagingFinalOffset;
+	}
 }
 
 function hasScrolled() {
