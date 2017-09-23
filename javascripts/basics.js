@@ -18,8 +18,15 @@ setInterval(function() {
     if (didScroll) {
         hasScrolled();
         didScroll = false;
+		adjustFlyBar();
     }
 }, 250);
+
+function adjustFlyBar(){
+	var flybarHeight = document.querySelector(".masthead").offsetHeight;
+	var scrollOffSet = window.pageYOffset;
+	document.querySelector(".masthead").style.marginTop = flybarHeight - scrollOffSet;
+}
 
 function hasScrolled() {
     var st = $(this).scrollTop();
@@ -35,9 +42,11 @@ function hasScrolled() {
         $('.masthead').removeClass('nav-down').addClass('nav-up');
     } else {
         // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
-            $('.masthead').removeClass('nav-up').addClass('nav-down');
-        }
+		if(!document.querySelector('#sidebar-checkbox').checked){
+			if(st + $(window).height() < $(document).height()) {
+				$('.masthead').removeClass('nav-up').addClass('nav-down');
+			}
+		}
     }
     
     lastScrollTop = st;
