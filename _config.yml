@@ -18,6 +18,9 @@ links:
     external:     true
 highlighter:      rouge
 permalink:        pretty
+sass:
+  style: compressed
+  sass_dir: _scss
 # About/contact
 author:
   name: Ralph Yang
