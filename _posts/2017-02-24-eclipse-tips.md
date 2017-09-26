@@ -11,6 +11,7 @@ Eclipse is my favorite IDE, Maven is also my favorite, sometimes there are issue
 
 Import Maven To Eclipse
 ---------------------
+http://stackoverflow.com/questions/4262186/missing-maven-dependencies-in-eclipse-project
 1. install the maven eclipse plugin m2m, can find in Help -> Eclipse Marketplace
 2. in your project space, right click, choose import
 3. choose Maven -> Existing Maven Projects -> Next
@@ -33,8 +34,8 @@ Eclipse Chines Character Display
 
 The resource is not on the build path of a Java project
 ---------------------
-```
 https://stackoverflow.com/questions/9464998/eclipse-the-resource-is-not-on-the-build-path-of-a-java-project
+```
 In my case, I had a java project containing many subfolders, each containing its own src folder.
 
 project
@@ -49,7 +50,3 @@ I had to go to Project -> Properties -> Project Facets and click convert to face
 Then I got all the src folders added to the build path.
 ```
 
-
-Refenrence:
----------------------
-http://stackoverflow.com/questions/4262186/missing-maven-dependencies-in-eclipse-project
