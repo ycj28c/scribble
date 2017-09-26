@@ -31,6 +31,24 @@ Eclipse Chines Character Display
 ---------------------
 右键项目->Properties->Text File Encoding中没有GBK这个选项。*后来查阅资料才知道那个选项栏目中可以自己手填编码方式的*，我输入GBK，然后点确定，编码格式就成为GBK了，解决了中文乱码问题。
 
+The resource is not on the build path of a Java project
+---------------------
+```
+https://stackoverflow.com/questions/9464998/eclipse-the-resource-is-not-on-the-build-path-of-a-java-project
+In my case, I had a java project containing many subfolders, each containing its own src folder.
+
+project
+-subfolder
+--src/main/java
+-subfolder2
+--src/main/java
+There was no options available when I used the Build Path -> right click option, as outlined by other responses.
+
+I had to go to Project -> Properties -> Project Facets and click convert to faceted project.
+
+Then I got all the src folders added to the build path.
+```
+
 
 Refenrence:
 ---------------------
