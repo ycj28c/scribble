@@ -49,7 +49,10 @@ IF you computer change password will effect the git password cache, reset it
 git config –global credential.helper unset
 ```
 
-
+Some trick when you revert a branch and want to merge again
+```
+you need to revert the revert commit, then merge the branch, otherwise you loss the commit that reverted;
+```
 
 
 

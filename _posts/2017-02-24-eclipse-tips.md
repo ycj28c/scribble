@@ -28,6 +28,17 @@ mvn eclipse:clean
 mvn eclipse:eclipse
 ```
 
+mvn dependency:tree with "Error injecting:"
+---------------------
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=807437, incompatibility between the dependency plugin 2.7 and Maven 3.3.
+```
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-dependency-plugin</artifactId>
+	<version>2.8</version>
+	...
+```
+
 Eclipse Chines Character Display
 ---------------------
 右键项目->Properties->Text File Encoding中没有GBK这个选项。*后来查阅资料才知道那个选项栏目中可以自己手填编码方式的*，我输入GBK，然后点确定，编码格式就成为GBK了，解决了中文乱码问题。
