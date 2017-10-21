@@ -82,8 +82,9 @@ such as replace the fatal with error(fatal no support in logback), replace and g
 
 Replace the log4j.xml by logback.xml. Use this online tool, convert your existing Log4j configuration to Logback. In Maven projects the file logback.xml must be placed into $PROJECT_HOME/src/main/resources. The file logback-test.xml must be placed into $PROJECT_HOME/src/test/resources. A simple configuration looks like this: 
 
-```
 If you do not have a custom configuration, Logback will continue with its default configuration. If you prefer to have a custom configuration, add logback.xml to the classpath with a similar configuration.
+
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
 
