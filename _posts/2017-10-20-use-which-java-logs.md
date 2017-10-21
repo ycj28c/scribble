@@ -21,6 +21,7 @@ Here is the list and simple description of difference:
 Log4j is common use in old system and many old libraries, since logback has good performance and it good compatible with log4j, so we decide use logback + slf4j to upgrade. Here are the steps:
 
 1. exclude the log4j
+
 ```
 <dependency>
 <groupId>${project.groupId}</groupId>
@@ -37,6 +38,7 @@ Log4j is common use in old system and many old libraries, since logback has good
 2. make sure has logback classic and slf4j api dependency 
 
 they are already include in springboot, check your dependency hierarchy, if don't include add below into pom.xml
+
 ```
 <dependency>
     <groupId>org.slf4j</groupId>
@@ -58,6 +60,7 @@ they are already include in springboot, check your dependency hierarchy, if don'
 ```
  
 3. change the log4j format to logback format in code
+
 ```
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -78,6 +81,7 @@ such as replace the fatal with error(fatal no support in logback), replace and g
 5. deployment
 
 Replace the log4j.xml by logback.xml. Use this online tool, convert your existing Log4j configuration to Logback. In Maven projects the file logback.xml must be placed into $PROJECT_HOME/src/main/resources. The file logback-test.xml must be placed into $PROJECT_HOME/src/test/resources. A simple configuration looks like this: 
+
 ```
 If you do not have a custom configuration, Logback will continue with its default configuration. If you prefer to have a custom configuration, add logback.xml to the classpath with a similar configuration.
 <?xml version="1.0" encoding="UTF-8"?>
