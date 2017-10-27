@@ -187,3 +187,10 @@ public abstract class AbstractLookup implements ILookup {
 	}
 }
 ```
+
+Tips:
+-----
+* org.codehaus.jackson is an older version of Jackson. Jackson has moved from Codehaus to Github when releasing Jackson 2.
+* com.fasterxml.jackson represents the new project and package.
+
+recommend removing org.codehaus.jackson references from your POM, re-building and looking for errors.
