@@ -9,7 +9,7 @@ tags: [Java, Log]
 
 The Java log library is very commonly used such as log4j, slf4j, logback. There are multiple ways to declare your log in Class, but which is the best, and why? Here are the examples:
 
-```Java
+```java
 /*
  * which is better?
  * log1 private is better, because so that no other class can hijack your logger
@@ -18,7 +18,7 @@ private Logger log1 = LoggerFactory.getLogger(getClass());
 public Logger log2 = LoggerFactory.getLogger(getClass());
 ```
 
-```Java
+```java
 /*
  * which is better?
  * log4 static is better, because it means we create one Logger per class, not one logger per instance of your class.  
@@ -28,7 +28,7 @@ private Logger log3 = LoggerFactory.getLogger(getClass());
 private static Logger LOG4 = LoggerFactory.getLogger(HowToLog.class); //usually final use uppercase
 ```
 
-```Java
+```java
 /*
  * which is better?
  * log6 final make more sense, final means that you're not going to change the value of the logger variable.
@@ -38,7 +38,7 @@ private static Logger LOG5 = LoggerFactory.getLogger(HowToLog.class);
 private final static Logger LOG6 = LoggerFactory.getLogger(HowToLog.class);
 ```
 
-```Java
+```java
 /*
  * which is better?
  * dependents on how you want your extends class log print:
@@ -49,7 +49,7 @@ protected final Logger log7 = LoggerFactory.getLogger(getClass());
 private static final Logger LOG8 = LoggerFactory.getLogger(HowToLog.class);
 ```
 
-```Java
+```java
 /*
  * which is better?
  * I don't know
@@ -60,7 +60,7 @@ private static final Logger LOG9 = LoggerFactory.getLogger(HowToLog.class);
 Logger log10 = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 ```
 
-```Java
+```java
 /* you can't really use this.getClass() because this doesn't actually exists (you're running in a static context */
 //	private static final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 ```
