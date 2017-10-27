@@ -57,4 +57,4 @@ Logger log10 = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
 Reference
 ---------
-https://stackoverflow.com/questions/6653520/why-do-we-declare-loggers-static-final
+[Why do we declare Loggers static final](https://stackoverflow.com/questions/6653520/why-do-we-declare-loggers-static-final)
