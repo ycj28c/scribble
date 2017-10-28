@@ -10,11 +10,11 @@ tags: [Solr, Search]
 All the people know Elastic Search, which is super popular, it can use not only search keywords, also can use as a fast key/document database to response json file. It based on Lucence, which has combined with Solr. Compare to Elastic Search, Solr is not fast enough, but we have an old system still using Solr, recently got a loading issue.
 
 Issue
-=====
+-----
 When we do some solr search such as name is Lili, age is 50 etc, Solr is not able to response, our application looks frozen(probably don't have timeout setting). However, when try some other criteria, it is working.
 
 Troubleshoot
-============
+------------
 Solr actually use the HTTP request, same as Elastic Search, we can debug by Solr admin page
 ```
 http://11.11.11.11/solr
@@ -58,7 +58,7 @@ When we search, it take a long time load and return a long text/xml list, we fin
 This is a pdf file, and maybe Solr don't know PDF format, so it compiled with a long long content with lots of special characters.
 
 Romove The Index
-================
+----------------
 Let's try remove this id and check how is everything going. There are 2 ways to remove the data.
 
 * url delete it by id(not work):
@@ -74,10 +74,11 @@ curl -H 'Content-Type: text/xml' http://11.11.11.11/solr/update --data-binary '<
 After delete this pdf, Solr is able to load very fast, our application is loading fast as well, the issue solved.
 
 Conclusion
-==========
+----------
 The Solr has its own mechanism search the content, but when the content is unformal with lots of special character, Solr is not good at parsing those characters. Which cause the slow response. However, those content are bad data, we need to fix them before insert into Solr.
 
 Reference
 ---------
 [Example Of Using Solr Query](http://yonik.com/solr/query-syntax/)
+
 [Solr Delete Statement Error](https://stackoverflow.com/questions/11716535/solr-delete-statement-error)
