@@ -38,6 +38,9 @@ private final static Logger LOG6 = LoggerFactory.getLogger(HowToLog.class);
  * dependents on how you want your extends class log print:
  * log7 way allows you to use the same logger name (name of the actual class) in all classes 
  * throughout the inheritance hierarchy. So if Bar extends Foo, both will log to Bar logger. Some find it more intuitive.
+ *
+ * also, want to mentioned is protected not work for the extends class when using the static methods,
+ * in that situation, we need to create construct another logger in the child class.
  */
 protected final Logger log7 = LoggerFactory.getLogger(getClass());
 private static final Logger LOG8 = LoggerFactory.getLogger(HowToLog.class);
@@ -53,6 +56,7 @@ Logger log10 = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
 /* you can't really use this.getClass() because this doesn't actually exists (you're running in a static context */
 //	private static final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+
 ```
 
 Reference
