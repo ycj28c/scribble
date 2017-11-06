@@ -48,3 +48,9 @@ echo $yest
 targetfilepath=$(locate -r "/opt/tomcat-insightws/logs/insight_script_restapp"|grep $yest)
 echo $targetfilepath
 ```
+
+Easiest way find file
+```
+cd /
+locate yourfilename
+```
