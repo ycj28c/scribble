@@ -43,3 +43,13 @@ SELECT * FROM pg_stat_activity where state = 'active';
 ```sql
 show max_connections;
 ```
+
+* find the lock the pid and kill it
+```
+-- for example, you know the 'market_index' table is frozen
+select * from pg_locks where granted and relation = 'market_index'::regclass;
+
+select * from pg_stat_activity where pid = '28769';
+
+select pg_terminate_backend(28769);
+```
