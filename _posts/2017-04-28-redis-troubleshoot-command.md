@@ -199,8 +199,16 @@ All three are open source project, those Monitor tools are based on the redis in
 
 3) Opserver: [opserver](https://github.com/opserver/Opserver)
 
+Post-Credit Scene 
+-------------------------
+Find a magic command can remote check redis health:
+```
+exec 3<>/dev/tcp/127.0.0.1/6379 && echo -e "PING\r\n" >&3 && head -c 7 <&3
+```
+
 Reference
 -------------------------
 https://zhuoroger.github.io/2016/08/14/redis-data-loss/
 https://zhuoroger.github.io/2016/08/20/redis-monitor-and-alarm/
 https://blog.yowko.com/2017/03/redis-monitoring.html
+https://stackoverflow.com/questions/33243121/abuse-curl-to-communicate-with-redis
