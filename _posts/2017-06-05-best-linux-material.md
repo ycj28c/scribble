@@ -54,3 +54,18 @@ Easiest way find file
 cd /
 locate yourfilename
 ```
+
+How to edit the file in ear/war
+```
+# unzip the file
+cp /opt/jboss/server/default/deploy/Ear.ear /tmp/jsfix
+unzip Ear.ear
+unzip Web.war
+
+# make the change for bug
+vi js/popup.js
+
+# replace the change inside jar
+jar uvf Web.war js/popup.js
+jar uvf /opt/jboss/server/default/deploy/Ejb.jar Web.war
+```
