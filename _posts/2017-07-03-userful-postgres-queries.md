@@ -45,6 +45,7 @@ show max_connections;
 ```
 
 * find the lock the pid and kill it
+
 ```sql
 (for example, you know the 'market_index' table is frozen)
 select * from pg_locks where granted and relation = 'market_index'::regclass;
