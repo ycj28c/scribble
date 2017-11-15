@@ -8,11 +8,13 @@ tags: [Postgres]
 ---
 
 * convert table to json
+
 ```sql
 select to_json(pc) from proxy_company pc;
 ```
 
 * converting a whole row to json; one row for each json
+
 ```sql
 SELECT
   pc.company_id,
@@ -21,6 +23,7 @@ FROM proxy_company pc;
 ```
 
 * aggregate the result and to json; building {company_id: [{row}, {row}]}
+
 ```sql
 SELECT
   t.company_id,
@@ -35,11 +38,13 @@ FROM (
 ```
 
 * check current user connection
+
 ```sql
 SELECT * FROM pg_stat_activity where state = 'active';
 ```
 
 * check max connection setting
+
 ```sql
 show max_connections;
 ```
@@ -47,7 +52,7 @@ show max_connections;
 * find the lock the pid and kill it
 
 ```sql
-(for example, you know the 'market_index' table is frozen)
+--for example, you know the 'market_index' table is frozen
 select * from pg_locks where granted and relation = 'market_index'::regclass;
 
 select * from pg_stat_activity where pid = '28769';
