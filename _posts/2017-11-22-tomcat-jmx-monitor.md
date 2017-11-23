@@ -23,9 +23,10 @@ Java 8
 Install JMX
 -----------------
 Here are the steps open JMX monitor for Insight QA(10.10.10.10):
+
 1) add setenv.sh under your tomcat bin directory (/opt/tomcat/bin etc.)
 
-2) add below content into setenv.sh, (please use the same parameters as below, don't use the stuff find on internet, a lot of traps waste your time)
+2) add below content into setenv.sh, (please use the same parameters as below, a lot of traps waste your time if you miss one of them)
 
 ```
 JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8050 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=10.10.10.10 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.rmi.port=8050"
