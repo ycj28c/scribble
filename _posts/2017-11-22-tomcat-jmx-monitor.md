@@ -48,6 +48,6 @@ here use jconsole as example, the java visual vm configuration is very similar.
 
 Reference
 ---------
-1.[How to Debug / Log Tomcat JDBC Connection Pool's connections?](https://stackoverflow.com/questions/36587023/how-to-debug-log-tomcat-jdbc-connection-pools-connections)
+1. [How to Debug / Log Tomcat JDBC Connection Pool's connections?](https://stackoverflow.com/questions/36587023/how-to-debug-log-tomcat-jdbc-connection-pools-connections)
 
-2.[jConsole – JMX remote access on Tomcat](https://www.mkyong.com/tomcat/jconsole-jmx-remote-access-on-tomcat/)
+2. [jConsole – JMX remote access on Tomcat](https://www.mkyong.com/tomcat/jconsole-jmx-remote-access-on-tomcat/)
