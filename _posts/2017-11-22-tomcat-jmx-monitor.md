@@ -7,6 +7,10 @@ categories: [Devops]
 tags: [Java, JMX, Monitor]
 ---
 
+Backgroud
+-----------------
+Recently we have Tomcat issue, finally we solve it, this document is about the JMX tool we use to help troubleshoot issue and how to setup.
+
 Server Environment
 ------------------
 Tomcat 7,8 
@@ -15,10 +19,6 @@ Linux Centos 7
 Local Environment
 -----------------
 Java 8
-
-Backgroud
------------------
-Recently we have Tomcat issue, finally we solve it, this document is about the JMX tool we use to help troubleshoot issue and how to setup.
 
 Install JMX
 -----------------
