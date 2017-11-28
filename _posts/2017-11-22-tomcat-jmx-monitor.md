@@ -7,7 +7,7 @@ categories: [Devops]
 tags: [Java, JMX, Monitor]
 ---
 
-Backgroud
+Background
 -----------------
 Recently we have Tomcat issue, finally we solve it, this document is about the JMX tool we use to help troubleshoot issue and how to setup.
 
@@ -45,6 +45,13 @@ here use jconsole as example, the java visual vm configuration is very similar.
 6) When the tool ask for secure connection, just choose Insecure since we use none SSL
 
 7) now you sucessfully connected to tomcat JMX, it provide lot of useful information help you locate issue
+
+Easter Egg
+---------
+```
+## A script to restart tomcat when it hanging
+curl -v http://10.10.10.10/api/health --max-time 30 || (echo "tomcat is hanging" && curl -X POST --data-urlencode "payload={\"channel\": \"#slackchannel\", \"username\": \"I'm Broken\", \"text\": \"*Restarting 10.10.10.10 Tomcat Because API Hanging*\", \"icon_emoji\": \":scream:\"}" https://hooks.slack.com/services/TTTTTTTTT/BBBBBBBBBBBBBBBBBBBBBBBBBBBBB)
+```
 
 Reference
 ---------
