@@ -82,6 +82,12 @@ The issue is BasicDataSource, based on https://commons.apache.org/proper/commons
 	}
 ```
 
+Easter Egg
+---------
+```
+## A script to restart tomcat when it hanging
+curl -v http://10.10.10.10/api/health --max-time 30 || (echo "tomcat is hanging" && curl -X POST --data-urlencode "payload={\"channel\": \"#slackchannel\", \"username\": \"I'm Broken\", \"text\": \"*Restarting 10.10.10.10 Tomcat Because API Hanging*\", \"icon_emoji\": \":scream:\"}" https://hooks.slack.com/services/TTTTTTTTT/BBBBBBBBBBBBBBBBBBBBBBBBBBBBB)
+```
 
 Reference
 ---------

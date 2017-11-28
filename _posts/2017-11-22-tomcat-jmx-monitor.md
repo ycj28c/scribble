@@ -46,13 +46,6 @@ here use jconsole as example, the java visual vm configuration is very similar.
 
 7) now you sucessfully connected to tomcat JMX, it provide lot of useful information help you locate issue
 
-Easter Egg
----------
-```
-## A script to restart tomcat when it hanging
-curl -v http://10.10.10.10/api/health --max-time 30 || (echo "tomcat is hanging" && curl -X POST --data-urlencode "payload={\"channel\": \"#slackchannel\", \"username\": \"I'm Broken\", \"text\": \"*Restarting 10.10.10.10 Tomcat Because API Hanging*\", \"icon_emoji\": \":scream:\"}" https://hooks.slack.com/services/TTTTTTTTT/BBBBBBBBBBBBBBBBBBBBBBBBBBBBB)
-```
-
 Reference
 ---------
 1. [How to Debug / Log Tomcat JDBC Connection Pool's connections?](https://stackoverflow.com/questions/36587023/how-to-debug-log-tomcat-jdbc-connection-pools-connections)
