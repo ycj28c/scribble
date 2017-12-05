@@ -55,8 +55,11 @@ show max_connections;
 --for example, you know the 'market_index' table is frozen
 select * from pg_locks where granted and relation = 'market_index'::regclass;
 
+select * from pg_stat_activity where pid in (select distinct(pid) from pg_locks);
+
 select * from pg_stat_activity where pid = '28769';
 
 select pg_terminate_backend(28769);
 ```
+
 
