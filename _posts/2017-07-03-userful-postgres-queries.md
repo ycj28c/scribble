@@ -62,4 +62,8 @@ select * from pg_stat_activity where pid = '28769';
 select pg_terminate_backend(28769);
 ```
 
+*  pg_dump the mview and its index
+```shell
+pg_dump -sOx -t cdna_search -h 10.1.50.35 -U insight insight_qa > cdna_search.sql
+```
 
