@@ -10,7 +10,7 @@ tags: [Sonar, OOM]
 Issue
 -----
 Use Eclipse run single Junit test and run whole Junit test are ok, but when run in jenkins, the Junit test is not able to complete only, the console alert the below error
-```
+```bash
 Exception in thread "ThreadedStreamConsumer" java.lang.OutOfMemoryError: Java heap space
 	at java.lang.AbstractStringBuilder.<init>(AbstractStringBuilder.java:68)
 	at java.lang.StringBuffer.<init>(StringBuffer.java:128)
@@ -28,7 +28,7 @@ Exception in thread "ThreadedStreamConsumer" java.lang.OutOfMemoryError: Java he
 	at java.lang.Thread.run(Thread.java:745)
 ```
 ps: how it run in local
-```
+```bash
 # may need mvn build dependency first
 mvn eclipse:eclipse
 # run test
@@ -40,7 +40,7 @@ Troubleshot
 The Heap space usually because the JVM exhausted the memory, tried did below configuration:
 1.config memory in /module/pom.xml
 
-```
+```bash
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-surefire-plugin</artifactId>
@@ -59,14 +59,14 @@ The Heap space usually because the JVM exhausted the memory, tried did below con
 ```
 2.set maven jvm memory
 
-```
+```bash
 jenkins -> API Sonar -> Build -> Advance -> MAVEN_OPTS 
 add "-Xmx2048m"
 ```
 
 3.others attempts
 
-```
+```bash
 # add maven debug mode (but no useful information print out)
 mvn  -e
 # output heapdump, (but it is in jenkins slave)

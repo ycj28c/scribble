@@ -15,7 +15,7 @@ tags: [Sonar, SonarQube]
 > Local Sonar link: http://localhost:9000
 
 ## How to run sonar
-```
+```bash
 # below command can use to run in local
 # Attention, the command must in order, and exactly the same
 mvn clean findbugs:findbugs cobertura:cobertura sonar:sonar -Dsonar.host.url=http://localhost:9000 -Ddeployment.environment=jenkins -DskipTests=false -Dlogback.level=ERROR -fn
@@ -25,7 +25,7 @@ mvn clean findbugs:findbugs cobertura:cobertura sonar:sonar -Dsonar.host.url=htt
 mvn clean findbugs:findbugs cobertura:cobertura sonar:sonar -Dsonar.host.url=http://localhost:9000 -Ddeployment.environment=jenkins -DskipTests=false -Dlogback.level=ERROR -fn -Dtest=AAA#BBB
 ```
 Explain
-```
+```bash
 mvn clean -> regular MAVEN command
 findbugs:findbugs -> findbug plugin help find all kinds of java issue
 cobertura:cobertura -> run for coverage (some may use Jacoco, but insight so far only work for Cobertura)
@@ -38,17 +38,17 @@ sonar:sonar -> run sonar test
 
 ## How to configure sonar
 ### Maven Configuration
-1. skip current module
+1.skip current module
 
-```
+```bash
 <properties>
 	sonar.skip>true</sonar.skip>
 </properties>
 ```
 
-2. exclude the test result(use sub-module/pom.xml as example)
+2.exclude the test result(use sub-module/pom.xml as example)
 
-```
+```bash
 <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<start-class>com.xxx.Application</start-class>
@@ -64,9 +64,9 @@ sonar:sonar -> run sonar test
 </properties>
 ```
 
-3. exclude from coverage(still run tests, use parent/pom.xml for example)
+3.exclude from coverage(still run tests, use parent/pom.xml for example)
 
-```
+```bash
 <plugin>
 	<groupId>org.codehaus.mojo</groupId>
 	<artifactId>cobertura-maven-plugin</artifactId>
