@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Sonar Test
+title: Jenkins Maven Surefire OOM
 disqus: y
 share: y
 categories: [Test]
 tags: [Sonar, SonarQube]
 ---
 
-# Environment
-SonarQube 6.0
-MAVEN 3.0+
-JAVA 1.8+
+## Environment
+> SonarQube 6.0
+> MAVEN 3.0+
+> JAVA 1.8+
+>
+> Local Sonar link: http://localhost:9000
 
-Local Sonar link: http://localhost:9000
-
-# How to run sonar
+## How to run sonar
 ```
 # below command can use to run in local
 # Attention, the command must in order, and exactly the same
@@ -36,9 +36,10 @@ sonar:sonar -> run sonar test
 -Dlogback.level=ERROR -> the parameters dependent on module's logback.xml setting, can change different log level
 ```
 
-# How to configure sonar
-## Maven Configuration
+## How to configure sonar
+### Maven Configuration
 1. skip current module
+
 ```
 <properties>
 	sonar.skip>true</sonar.skip>
@@ -46,6 +47,7 @@ sonar:sonar -> run sonar test
 ```
 
 2. exclude the test result(use sub-module/pom.xml as example)
+
 ```
 <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,6 +65,7 @@ sonar:sonar -> run sonar test
 ```
 
 3. exclude from coverage(still run tests, use parent/pom.xml for example)
+
 ```
 <plugin>
 	<groupId>org.codehaus.mojo</groupId>
@@ -101,13 +104,17 @@ sonar:sonar -> run sonar test
 </plugin>
 ```
 
-## Jenkins Configuration
+### Jenkins Configuration
 Plug-in: Publish Cobertura Coverage Report
 Since Insight is multi-level project, when publish files please add the correct folder, such as "sub-module/target/site/cobertura/coverage.xml"
 
-## SonarQube Configuration
+### SonarQube Configuration
 Tip: If the project has a big code refract, sonar may fail to recognize the new upload, need manually remove the old sonar result. 
 (Administration -> Project -> remove the old project, need SonarQube admin account)
 
+## Reference
+[Installing and Configuring Maven](http://docs.sonarqube.org/display/SONARQUBE51/Installing+and+Configuring+Maven)
 
+[Code Coverage by Unit Tests for Java Project](http://docs.sonarqube.org/display/PLUG/Code+Coverage+by+Unit+Tests+for+Java+Project)
 
+[Maven cobertura plugin - one report for multimodule project](http://stackoverflow.com/questions/3768517/maven-cobertura-plugin-one-report-for-multimodule-project)
