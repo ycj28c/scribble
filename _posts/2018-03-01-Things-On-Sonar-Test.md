@@ -27,12 +27,19 @@ mvn clean findbugs:findbugs cobertura:cobertura sonar:sonar -Dsonar.host.url=htt
 Explain
 ```bash
 mvn clean -> regular MAVEN command
+
 findbugs:findbugs -> findbug plugin help find all kinds of java issue
+
 cobertura:cobertura -> run for coverage (some may use Jacoco, but insight so far only work for Cobertura)
+
 sonar:sonar -> run sonar test
+
 -Dsonar.host.url=http://localhost:9000-> customize the sonarQube, default sonar:sonar will go to http://localhost:9000/
+
 -Ddeployment.environment=jenkins -> used for some customize setting when run in jenkins
+
 -DskipTests=false -> must add this, means don't skip the tests
+
 -Dlogback.level=ERROR -> the parameters dependent on module's logback.xml setting, can change different log level
 ```
 
