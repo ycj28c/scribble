@@ -49,7 +49,7 @@ sonar:sonar -> run sonar test
 
 ```bash
 <properties>
-	sonar.skip>true</sonar.skip>
+	<sonar.skip>true</sonar.skip>
 </properties>
 ```
 
