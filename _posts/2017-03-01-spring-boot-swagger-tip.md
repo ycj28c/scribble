@@ -136,6 +136,26 @@ XMLHttpRequest cannot load http://qa-tomcat.xxx.com/clearXXXX
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
 Origin 'http://10.10.10.10' is therefore not allowed access.
 ```
+
+Updates
+---------------------
+update in 3/12/2018
+```
+The way to override the host – yes
+http://springfox.github.io/springfox/docs/current/#java-config-2
+
+The way to redirect path  – yes
+http://tutorial.mobven.com/how-to-use-swagger-2-api-documentation-tool-with-spring-boot/
+https://javabeat.net/spring-mvc-redirect/
+
+CORS setting, In sprintboot 1.1.9 don't have @CrossOrigin and {{CorsRegistry, can not set the CORS}} – not in old sprintboot version
+https://spring.io/guides/gs/rest-service-cors/
+
+customize the example value in swagger? – no
+https://github.com/swagger-api/swagger-core/issues/1107
+```
+
+
 Means you're in CORS situation, If use chrome, install "Allow-Control-Allow-Origin: *" plugin will solve this problem
 [Stackoverflow solution](http://stackoverflow.com/questions/20035101/no-access-control-allow-origin-header-is-present-on-the-requested-resource)
 
