@@ -43,6 +43,8 @@ $ cpan Text::CSV
 $ ./pgbadger pglog03162018.csv
 ~~~
 
+Then it generated very beautiful html report, from the slowest query and lock page, helped we find the bottleneck.
+
 Reference
 ---------
 [A fast PostgreSQL Log Analyzer](https://github.com/dalibo/pgbadger)
