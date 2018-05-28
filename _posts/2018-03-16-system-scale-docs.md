@@ -11,7 +11,7 @@ After Reading
 -----------
 文章比较老了，属于扩展化的鼻祖文章，不过可以借鉴下思想，查漏补缺。
 
-1. [Scalability for Dummies - Part 1: Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+1.[Scalability for Dummies - Part 1: Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
 
 关键点：
 * 中央化用户关联数据
@@ -24,7 +24,7 @@ After Reading
 
 当然我们现在有更多的devops工具，比如chef和docker等，通过Maven打包和规范的版本控制，比如[Gitflow](https://blog.axosoft.com/gitflow/)，我们可以保证code的一致行。[Do We Need Both Capistrano and Chef?](http://codefol.io/posts/why-do-we-need-both-capistrano-and-chef)提到了几个工具的区别。
 
-2. [Scalability for Dummies - Part 2: Database](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
+2.[Scalability for Dummies - Part 2: Database](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
 
 关键点：
 * 当数据库不堪重负，比较直接的就是增加硬件配置。
@@ -37,7 +37,7 @@ After Reading
 
 关键是应用场景，推荐系统，分析系统等都很适合NoSQL，因为NoSQL总会返回一个最接近搜索条件的值。通常适合非实时非复杂业务关联的场景，其实Elastic Search之类也可以当做一个NoSQL，比如返回一个人的profile就可以使用ES，可以比数据库快的多的返回数据。
 
-3. [Scalability for Dummies - Part 3: Cache](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
+3.[Scalability for Dummies - Part 3: Cache](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
 
 关键点：
 * 过多的数据库query造成严重的性能瓶颈，应采用cache辅助
@@ -51,7 +51,7 @@ After Reading
 
 cache也是不应该滥用的，因为虽然理论上我们可以无限的增加内存，而且Redis之类的cache本身也是支持集群的。但是都是投入，而且是需要定时进行数据更新的。在每次清理下cache后，再次加载的数据会很慢，而如果pre cache数据，则大量的cache数据也同样需要大量的处理时间。所以需要合理的设计
 
-4. [Scalability for Dummies - Part 4: Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+4.[Scalability for Dummies - Part 4: Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
 关键点：
 * 预先准备好结果，直接展示跳过大量处理时间
