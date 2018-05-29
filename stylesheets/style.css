@@ -80,7 +80,7 @@ header {
 
 footer {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   line-height: 2em;
   margin: auto;
   padding-bottom: 30px;
@@ -94,7 +94,7 @@ footer {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   background: #fff;
   margin: 40px auto 20px;
   border-radius: 7px;
@@ -105,6 +105,14 @@ footer {
     display: table; }
   #container:after {
     clear: both; }
+  #container .block2 {
+	text-align: center;
+    padding-bottom: 10;
+    padding-top: 10;
+    border-bottom: 1px solid #efefef;
+	letter-spacing: 5;}
+  #container .block2 a{
+	margin-right: 50px;}
   #container .block {
     border-top: 1px solid #efefef;
     border-bottom: 1px solid #efefef;
@@ -149,7 +157,7 @@ a, .as-link {
   text-decoration: none;
   color: #269;
   line-height: 1.4em;
-  display: inline-block;
+  /*display: inline-block;*/
   vertical-align: baseline;
   zoom: 1;
   *display: inline;
@@ -238,12 +246,12 @@ ul.posts .datetime {
   text-align: right; }
 
 section.post {
-  margin: 0 -60px;
+  /*margin: 0 -60px;*/
   text-align: left;
   border-top: 0;
   padding: 0; }
   section.post > * {
-    padding: 0 60px; }
+    padding: 0 10px; }
   section.post ul ul, section.post ul ol, section.post ol ul, section.post ol ol {
     margin-left: 20px;
     padding: 0; }
@@ -325,8 +333,8 @@ pre {
 
 code {
   font-size: 13px;
-  color: #eee;
-  background: #39382e;
+  /*color: #eee;
+  background: #39382e;*/
   padding: 2px 4px 3px;
   border-radius: 2px;
   line-height: 1.3em;
@@ -352,11 +360,11 @@ img {
   opacity: 0.7;
   background: none; }
 .paging .left, .paging .right {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  /*top: 50%;*/
   left: 50%;
-  font-size: 60px; }
+  font-size: 100px; }
 .paging .left {
-  margin-left: -340px; }
+  margin-left: -440px; }
 .paging .right {
-  margin-left: 320px; }
+  margin-left: 420px; }

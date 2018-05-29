@@ -1,18 +1,88 @@
 @media (max-width: 480px) {
-  body {
-    padding: 0 10px; }
-    body #container ul.posts .datetime {
-      float: none;
-      display: block;
-      width: auto;
-      text-align: left; }
-    body #container #ind-instagram, body #container #ind-linkedin {
-      display: none; }
-    body #container .links, body #container .content {
-      padding: 15px; }
-      body #container .links section.post, body #container .content section.post {
-        margin: 0 -15px; }
-        body #container .links section.post > p, body #container .links section.post h1, body #container .links section.post h2, body #container .links section.post h3, body #container .links section.post h4, body #container .links section.post .signoff, body #container .links section.post blockquote, body #container .links section.post .highlight, body #container .content section.post > p, body #container .content section.post h1, body #container .content section.post h2, body #container .content section.post h3, body #container .content section.post h4, body #container .content section.post .signoff, body #container .content section.post blockquote, body #container .content section.post .highlight {
-          padding: 0 15px; }
-        body #container .links section.post > ul, body #container .links section.post > ol, body #container .content section.post > ul, body #container .content section.post > ol {
-          padding: 0 30px; } }
+	body {
+		padding: 0 10px; 
+	}
+	body #container ul.posts .datetime {
+		float: none;
+		display: block;
+		width: auto;
+		text-align: left; 
+	}
+	body #container #ind-instagram, body #container #ind-linkedin {
+		display: none; 
+	}
+	body #container .links, body #container .content {
+		padding: 15px; 
+	}
+	body #container .links section.post, body #container .content section.post {
+		margin: 0 -15px; 
+	}
+	body #container .links section.post > p, body #container .links section.post h1, body #container .links section.post h2, body #container .links section.post h3, body #container .links section.post h4, body #container .links section.post .signoff, body #container .links section.post blockquote, body #container .links section.post .highlight, body #container .content section.post > p, body #container .content section.post h1, body #container .content section.post h2, body #container .content section.post h3, body #container .content section.post h4, body #container .content section.post .signoff, body #container .content section.post blockquote, body #container .content section.post .highlight {
+		padding: 0 15px; 
+	}
+	body #container .links section.post > ul, body #container .links section.post > ol, body #container .content section.post > ul, body #container .content section.post > ol {
+			  padding: 0 30px;
+	} 
+}
+
+/*top fly.html bar css*/		  
+.masthead {
+    position: absolute;
+    z-index: 10;
+	width: 100%;
+}
+.masthead {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+    background-color: rgba(240,240,240,0.75);
+}
+.masthead .masthead-logo {
+    height: 30px;
+    width: auto;
+    vertical-align: text-bottom;
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+.masthead .masthead-title small {
+	font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    font-size: 150%;
+    font-weight: 400;
+    color: silver;
+    letter-spacing: 0;
+}
+.masthead-title small {
+	font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    font-size: 150%;
+    font-weight: 400;
+    color: #c0c0c0;
+    letter-spacing: 0;
+}
+.masthead .masthead-title {
+	font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #6a9fb5;
+}
+.masthead-title {
+	font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #505050;
+}
+.masthead-container{
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*top fly.html bar scroll up scroll down js effect*/
+.nav-up {
+    top: -100px;
+}
+
+.nav-down{
+    top: 0px;
+}

@@ -1,0 +1,37 @@
+<div class="masthead">
+	<div class="masthead-container">
+		<h3 class="masthead-title">
+            <a href="/" title="Home" title="ralphYY">
+              <img class="masthead-logo" src="{{ site.url }}/images/logo.png"/>
+            </a>
+            <small>The World</small>
+		</h3>
+	</div>
+	
+	<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+	
+	<script>(function(document) {
+	var toggle = document.querySelector('.sidebar-toggle');
+	var sidebar = document.querySelector('#sidebar');
+	var checkbox = document.querySelector('#sidebar-checkbox');
+	document.addEventListener('click', function(e) {
+	  var target = e.target;
+	  if (target === toggle) {
+		checkbox.checked = !checkbox.checked;
+		e.preventDefault();
+	  } else if (checkbox.checked && !sidebar.contains(target)) {
+		/* click outside the sidebar when sidebar is open */
+		checkbox.checked = false;
+	  }
+	}, false);
+	})(document);</script>
+	
+
+	<script>/*(function(document) {
+	setInterval(function() {
+        var flybarHeight = document.querySelector(".masthead").offsetHeight;
+		var scrollOffSet = window.pageYOffset;
+		document.querySelector(".masthead").style.marginTop = flybarHeight - scrollOffSet;
+    }, 200);
+	});*/</script>
+</div>
