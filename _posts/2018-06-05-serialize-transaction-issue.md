@@ -49,7 +49,7 @@ Spring Transaction Level
 In the reference, has very good material describe the Spring database transaction difference, the major information shows in below table.
 
 |Isolation Level|Dirty Read|Nonrepeatable Read|Phantom Read|
-|---------------|----------|------------------|------------|
+|:---------------:|:----------:|:------------------:|:------------:|
 |Read uncommitted|Possible|Possible|Possible|
 |Read committed|Not possible|Possible|Possible|
 |Repeatable read|Not possible|Not possible|Possible|
