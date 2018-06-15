@@ -4,7 +4,7 @@ title: About
 ---
 
 
-Email: [cyangjob@gmail.com](cyangjob@gmail.com)
+Email: [cyangjob@gmail.com]<cyangjob@gmail.com>
 
 Hi, it is me. How do you do? Fine, thank you, and you?
 
