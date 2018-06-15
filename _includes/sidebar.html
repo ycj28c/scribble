@@ -17,6 +17,9 @@
       {% if site.author.contact %}
       {% assign len = site.author.contact | size %}
       {% assign current_index = 0 %}
+	  <div class="sidebar-personal-info-section">
+        Email: <a href="mailto:cyang@gmail.com">cyang@gmail.com</a>
+      </div>
       <div class="sidebar-personal-info-section">
         <p> Follow me: 
         {% for contact in site.author.contact %}
