@@ -16,7 +16,7 @@ Smart Assign
 The purpose of program is to make things easier, for this case, we can easily use greedy algorithm to write a code which help assignment. Below is a example of Java version smart assignment:
 
 Full code:
-~~~Java
+~~~
 class Story{
 	String id;
 	int points;
@@ -89,6 +89,8 @@ public class PointEsitmateAssign {
 	
 	public static void main(String[] args) {
 		PointEsitmateAssign pea = new PointEsitmateAssign();
+		
+		//Test data 1
 		List<Story> stories1 = new ArrayList<Story>(Arrays.asList(
 				new Story("1", 2), new Story("2", 2), new Story("3", 3),
 				new Story("4", 1), new Story("5", 4), new Story("6", 6),
@@ -100,6 +102,7 @@ public class PointEsitmateAssign {
 		HashMap<Person, List<Story>> res1 = pea.pointEstimate(stories1, persons1);
 		pea.debug(res1);
 		
+		//Test data 2
 		List<Story> stories2 = new ArrayList<Story>(Arrays.asList(
 				new Story("1", 3), new Story("2", 3), new Story("3", 3),new Story("4", 3)
 		));
