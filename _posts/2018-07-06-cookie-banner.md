@@ -9,9 +9,9 @@ tags: [Javascript, Cookie]
 
 Background
 ----------
-Recently every company sent Email regarding GDPR(General Data Protection Regulation), it is about some security of data policy online. You can image if you view some website, it pop out some notice: are you above 18, yes or no? Everyone know it is useless but still will need to click yes. 
+Recently every company sent Email regarding GDPR(General Data Protection Regulation), it is about some security of data policy online. You can image if you view some website, it pop out some notice: are you above 18, yes or no? Everyone know it is useless but still have to click yes. 
 
-We are implementing it for cookie banner (if use want to login automatically, cookie is necessary), here is the situations:
+We are implementing it for cookie banner (If user want to login automatically, cookie is necessary), here is the situations:
 1. We have a super domain, let's assume it is www.food.com
 2. We have other sub domains such as burger.food.com, sandwich.food.com etc.
 3. We want to pop out a notice which let client know they are using cookie
@@ -99,7 +99,7 @@ CookieToolkit.prototype = {
 	}
 };
 ~~~
-When want to trigger it just simply call function:
+When we want to trigger it just simply call function:
 ~~~
 new CookieToolkit('<%=cookieName%>', '<%=bannerText%>', '<%=buttonText%>');
 ~~~
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Compatible Issue
 ----------
-Since it is implement in client side, it has risk of compatible issue. For example, Chrome and Firefox can block all the cookie, however, IE only allow block cookie for particular domain. And IE navigator.cookieEnabled function will always return true, here is our solution:
+Since it is implement in client side, it has compatible risk of running in different browsers. For example, Chrome and Firefox have feature to block all the cookies, however, IE only allow block cookie for particular domain. And in IE the navigator.cookieEnabled function will always return true, which require lots of debugging. Here is a solution:
 ~~~
 function checkCookie() {
 	if (!navigator.cookieEnabled) { 
