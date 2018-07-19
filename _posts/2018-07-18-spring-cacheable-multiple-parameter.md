@@ -53,6 +53,8 @@ $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
 
 5.check the Redis cache again, old record still there, and a new record was added
 ~~~
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
+# find cache
 "PerfData:\xac\xed\x00\x05sr\x00/org.springframework.cache.interceptor.SimpleKeyL\nW\x03km\x93\xd8\x02\x00\x02I\x00\bhashCode[\x00\x06paramst\x00\x13[Ljava/lang/Object;xp\x00\x12z\xe1ur\x00\x13[Ljava.lang.Object;\x90\xceX\x9f\x10s)l\x02\x00\x00xp\x00\x00\x00\x02sr\x00\x0ejava.lang.Long;\x8b\xe4\x90\xcc\x8f#\xdf\x02\x00\x01J\x00\x05valuexr\x00\x10java.lang.Number\x86\xac\x95\x1d\x0b\x94\xe0\x8b\x02\x00\x00xp\x00\x00\x00\x00\x00\x00\x93\xb9sq\x00~\x00\x05\x00\x00\x00\x00\x00\x00\x93\xb9"
 ~~~
 6.the application still got the old value
@@ -118,6 +120,8 @@ public void clearCachePerfDataForUserId(Long peerUserId, Long targetUserId) {
 ~~~
 After this change, the cache read and evict will work fine, it will use only one unique key for the case (peerUserId: 111L, targetUserId: 111L)
 ~~~
+$ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
+# find cache
 "PerfData:\xac\xed\x00\x05sr\x00\x13java.util.ArrayListx\x81\xd2\x1d\x99\xc7a\x9d\x03\x00\x01I\x00\x04sizexp\x00\x00\x00\x01w\x04\x00\x00\x00\x01t\x00\n111_111x"
 ~~~
 
