@@ -38,8 +38,11 @@ The issue is if we passed the parameter which are different value such as (peerU
 Troubleshot
 ----------
 After lots of time spent, I identified it was a cache issue because of the Spring @Cacheable annotation. Here is the step to reproduce:
+
 1.flush all the Redis cache
+
 2.read data from application for (peerUserId: 111L, targetUserId: 111L)
+
 3.check the Redis cache, the new record has added
 ~~~
 $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
@@ -47,6 +50,7 @@ $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
 "PerfData:\xac\xed\x00\x05sr\x00/org.springframework.cache.interceptor.SimpleKeyL\nW\x03km\x93\xd8\x02\x00\x02I\x00\bhashCode[\x00\x06paramst\x00\x13[Ljava/lang/Object;xp\x00\x12z\xe1ur\x00\x13[Ljava.lang.Object;\x90\xceX\x9f\x10s)l\x02\x00\x00xp\x00\x00\x00\x02sr\x00\x0ejava.lang.Long;\x8b\xe4\x90\xcc\x8f#\xdf\x02\x00\x01J\x00\x05valuexr\x00\x10java.lang.Number\x86\xac\x95\x1d\x0b\x94\xe0\x8b\x02\x00\x00xp\x00\x00\x00\x00\x00\x00\x93\xb9q\x00~\x00\a"
 ~~~
 4.call the clearAndWarm cache API which evict then cache the keys again for (peerUserId: 111L, targetUserId: 111L)
+
 5.check the Redis cache again, old record still there, and a new record was added
 ~~~
 "PerfData:\xac\xed\x00\x05sr\x00/org.springframework.cache.interceptor.SimpleKeyL\nW\x03km\x93\xd8\x02\x00\x02I\x00\bhashCode[\x00\x06paramst\x00\x13[Ljava/lang/Object;xp\x00\x12z\xe1ur\x00\x13[Ljava.lang.Object;\x90\xceX\x9f\x10s)l\x02\x00\x00xp\x00\x00\x00\x02sr\x00\x0ejava.lang.Long;\x8b\xe4\x90\xcc\x8f#\xdf\x02\x00\x01J\x00\x05valuexr\x00\x10java.lang.Number\x86\xac\x95\x1d\x0b\x94\xe0\x8b\x02\x00\x00xp\x00\x00\x00\x00\x00\x00\x93\xb9sq\x00~\x00\x05\x00\x00\x00\x00\x00\x00\x93\xb9"
