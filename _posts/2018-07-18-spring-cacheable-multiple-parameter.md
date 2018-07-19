@@ -16,7 +16,7 @@ The environment is SpringBoot 1.1.9 (which use spring-core 4.1.3) and Redis, we 
 Issue
 -------
 We have a simple cache like below:
-~~~
+~~~java
 @Override
 @Cacheable(value = "PerfData")
 public List<User> getPerfDataForUserId(Long peerUserId, Long targetUserId) throws Exception {
@@ -44,7 +44,7 @@ After lots of time spent, I identified it was a cache issue because of the Sprin
 2.read data from application for (peerUserId: 111L, targetUserId: 111L)
 
 3.check the Redis cache, the new record has added
-~~~
+~~~bash
 $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
 # find cache
 "PerfData:\xac\xed\x00\x05sr\x00/org.springframework.cache.interceptor.SimpleKeyL\nW\x03km\x93\xd8\x02\x00\x02I\x00\bhashCode[\x00\x06paramst\x00\x13[Ljava/lang/Object;xp\x00\x12z\xe1ur\x00\x13[Ljava.lang.Object;\x90\xceX\x9f\x10s)l\x02\x00\x00xp\x00\x00\x00\x02sr\x00\x0ejava.lang.Long;\x8b\xe4\x90\xcc\x8f#\xdf\x02\x00\x01J\x00\x05valuexr\x00\x10java.lang.Number\x86\xac\x95\x1d\x0b\x94\xe0\x8b\x02\x00\x00xp\x00\x00\x00\x00\x00\x00\x93\xb9q\x00~\x00\a"
@@ -52,7 +52,7 @@ $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
 4.call the clearAndWarm cache API which evict then cache the keys again for (peerUserId: 111L, targetUserId: 111L)
 
 5.check the Redis cache again, old record still there, and a new record was added
-~~~
+~~~bash
 $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
 # find cache
 "PerfData:\xac\xed\x00\x05sr\x00/org.springframework.cache.interceptor.SimpleKeyL\nW\x03km\x93\xd8\x02\x00\x02I\x00\bhashCode[\x00\x06paramst\x00\x13[Ljava/lang/Object;xp\x00\x12z\xe1ur\x00\x13[Ljava.lang.Object;\x90\xceX\x9f\x10s)l\x02\x00\x00xp\x00\x00\x00\x02sr\x00\x0ejava.lang.Long;\x8b\xe4\x90\xcc\x8f#\xdf\x02\x00\x01J\x00\x05valuexr\x00\x10java.lang.Number\x86\xac\x95\x1d\x0b\x94\xe0\x8b\x02\x00\x00xp\x00\x00\x00\x00\x00\x00\x93\xb9sq\x00~\x00\x05\x00\x00\x00\x00\x00\x00\x93\xb9"
@@ -64,7 +64,7 @@ Thus, the issue is because we have two cache value, the getPerfDataForUserId(111
 Test
 ---------
 I realize there was issue regarding @Cacheable before Spring 4.0, it has collapse, however, we are using Spring-core 4.1.3, should be find. To verify, tried below test cases:
-~~~
+~~~java
 public static void main(String[] args) {
 	SimpleKeyGenerator skg = new SimpleKeyGenerator();
 	
@@ -101,7 +101,7 @@ Tried the default Key Generate "SimpleKeyGenerator" if didn't specify the Key ge
 Solution
 --------
 Didn't find the cause why it create the wrong cache key, but It came out with the solution, we can customize the key to match the Redis, did below change:
-~~~
+~~~java
 @Override
 @Cacheable(value = "PerfData", key = "{#peerUserId.longValue() + '_'+ #targetUserId.longValue()}")
 public List<User> getPerfDataForUserId(Long peerUserId, Long targetUserId) throws Exception {
@@ -119,7 +119,7 @@ public void clearCachePerfDataForUserId(Long peerUserId, Long targetUserId) {
 }
 ~~~
 After this change, the cache read and evict will work fine, it will use only one unique key for the case (peerUserId: 111L, targetUserId: 111L)
-~~~
+~~~bash
 $ /usr/local/bin/redis-cli -h 10.10.10.10 -p 6389 keys *PerfData*
 # find cache
 "PerfData:\xac\xed\x00\x05sr\x00\x13java.util.ArrayListx\x81\xd2\x1d\x99\xc7a\x9d\x03\x00\x01I\x00\x04sizexp\x00\x00\x00\x01w\x04\x00\x00\x00\x01t\x00\n111_111x"
