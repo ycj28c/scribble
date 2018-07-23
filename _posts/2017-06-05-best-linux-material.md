@@ -43,7 +43,8 @@ find /opt/jboss-insight/server/default/log/* -mtime +5 -delete
 ```
 
 Get the file path you want in linux shell:
-```yest=$(date --date="yesterday" +"%Y-%m-%d")
+```
+yest=$(date --date="yesterday" +"%Y-%m-%d")
 echo $yest
 targetfilepath=$(locate -r "/opt/tomcat-insightws/logs/insight_script_restapp"|grep $yest)
 echo $targetfilepath
