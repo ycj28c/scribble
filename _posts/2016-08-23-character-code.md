@@ -27,3 +27,50 @@ EF BB BF － 我是UTF-8
 FF FE － 我是UTF-16LE
 FE FF － 我是UTF-16BE
 跨平台开发请使用UTF-8 without BOM
+
+2018-08-01更新
+--------------
+最近在應用中也出現了編碼相關的問題，在處理特殊字符DUEÑAS的時候，前端顯示的是DUE�AS。
+原因應該是我們的系統中某個環節的編碼問題，Jboss和tomcat甚至postgres都可能使用不同編碼，衹要一個編碼順序錯誤，那麽傳遞到前端的就可能有問題，可以使用下面的Java code模擬出現的問題
+~~~java
+String name=java.net.URLEncoder.encode("DUEÑAS", "ISO-8859-1"); //DUE%D1AS
+String name2= java.net.URLEncoder.encode("DUEÑAS", "UTF-8"); //DUE%C3%91AS
+
+System.out.println(name);
+System.out.println(name2);
+System.out.println(java.net.URLDecoder.decode(name, "ISO-8859-1"));// DUEÑAS
+System.out.println(java.net.URLDecoder.decode(name, "UTF-8")); //	DUE�AS
+System.out.println(java.net.URLDecoder.decode(name2, "ISO-8859-1"));// DUEÃAS
+System.out.println(
+	java.net.URLDecoder.decode(
+			java.net.URLEncoder.encode(
+					java.net.URLDecoder.decode(
+							java.net.URLEncoder.encode("DUEÑAS", "ISO-8859-1"), 
+					"UTF-8"), 
+			"UTF-8"),
+	"ISO-8859-1"));// DUEï¿½AS		
+~~~
+我們出現的問題就是默認的ISO-8859-1編碼，而卻使用了UTF解碼，那麽就產生了亂碼。最後定位到問題是使用Jersey請求Tomcat API時候出現，
+~~~
+WebResource webResource = client.resource(resource);
+ClientResponse response = null;
+// POST method
+if ("POST".equalsIgnoreCase(method)) {
+	String memTaskMapJsonStr = new Gson().toJson(object);
+	LOGGER.debug(methodName + methodInfo.toString()
+		+ "------Request Payload--------" + memTaskMapJsonStr);
+	response = webResource.accept("application/json")
+		.type("application/json")
+		.post(ClientResponse.class, memTaskMapJsonStr);
+~~~
+原因可能是Jersey太過buggy導致，根據網上搜索，Jersey本來應該默認使用UTF8的，但是顯然沒有，加上强制的UTF8文件頭，解決了亂碼問題。修改如下：
+~~~
+response = webResource.accept("application/json;charset=utf-8")
+		.type("application/json;charset=utf-8")
+		.post(ClientResponse.class, memTaskMapJsonStr);
+~~~
+
+引用
+-------
+* [jersey web service json utf-8 encoding](https://stackoverflow.com/questions/9359728/jersey-web-service-json-utf-8-encoding)
+* [developer.51cto.com/art/200906/132667.htm](developer.51cto.com/art/200906/132667.htm)
