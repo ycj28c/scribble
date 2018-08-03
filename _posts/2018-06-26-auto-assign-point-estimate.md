@@ -216,3 +216,5 @@ function sortArrayRange(array, col){
 Reference
 ---------
 [Extending Google Sheets](https://developers.google.com/apps-script/guides/sheets)
+[APPS SCRIPT BASICS (5) – ARRAYS, LOGGER, EXECUTION TRANSCRIPT](https://www.bazroberts.com/2017/04/20/apps-script-basics-arrays-logger-execution-transcript/)
+[Defining arrays in Google Scripts](https://stackoverflow.com/questions/18584081/defining-arrays-in-google-scripts)
