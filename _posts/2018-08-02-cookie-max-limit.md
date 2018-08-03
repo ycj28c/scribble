@@ -25,7 +25,7 @@ Solution
 ----------
 Same as local storage has space limit, all the browser limit for cookie as well, don't know why has hard code limit for the stuff save in the disk, but that's the implement of most of the browsers. For example, the IE6 only has maximum 20 cookies, safari 5 has 600 cookie limit. Different browser has different configurations, here is a very good website to diagnose your browser cookie: 
 
-[Browser Cookie Limits](http://browsercookielimits.squawky.net/)
+Website: [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
 
 Based on the test page above, my chrome has 180 maximum cookie limit per domain. I could reproduce the cookie issue by click different features in qa.bbb.com, stage.bbb.com and prod.bbb.com. Because each feature will generate some cookie (the session also count as cookie not sure why) When my total cookies approach 180, the cookie monitor will alert cookie consent was evict. Then the cookie banner displayed. Seems like the chrome prefer to delete the super domain cookie first, because our cookie target in *.bbb.com super domain, it looks like always got removed first when hit the cookie limit. 
 
