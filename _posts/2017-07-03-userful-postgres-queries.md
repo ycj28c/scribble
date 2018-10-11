@@ -63,12 +63,14 @@ select pg_terminate_backend(28769);
 ```
 
 *  pg_dump the mview and its index
+
 ```shell
 pg_dump -sOx -t cdna_search -h 10.1.50.35 -U insight insight_qa > cdna_search.sql
 ```
 
 *  postgres foreign link related
-```shell
+
+```sql
 select * from pg_foreign_server;
 select * from pg_user_mappings;
 alter server aserver options (set host 'a.com', set dbname 'a_server');
@@ -76,7 +78,8 @@ alter user mapping for bserver server aserver options (set user 'usera', set pas
 ```
 
 *  rollback changes
-```shell
+
+```sql
 begin;
 -- your query
 rollback;
