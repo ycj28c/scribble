@@ -75,4 +75,10 @@ alter server aserver options (set host 'a.com', set dbname 'a_server');
 alter user mapping for bserver server aserver options (set user 'usera', set password 'xxx');
 ```
 
+*  rollback changes
+```shell
+begin;
+-- your query
+rollback;
+```
 
