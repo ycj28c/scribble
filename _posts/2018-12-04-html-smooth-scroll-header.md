@@ -10,25 +10,25 @@ tags: [Jquery, Javascript]
 My Thought
 ----------
 
-This actually very common, when there is big list of html table, when user scroll the browser windows, they want table header on the top. This article will use JQuery to implement.
+This actually very common, when there is big list of HTML table, when user scroll the browser windows, they want table header freeze on the top. This article will use JQuery to implement.
 
 we have a table have below column:
 ~~~javascript
-<thead id='votResHeader'>;
- <tr style='height:50px'>;
-  <th class='header' style='width: 5%;' id='vrNumberTh'><p>#</p></th>;
-  <th class='header' style='' id='vrProposalTh'><p>PROPOSAL</p></th>;
-  <th class='header' style='width: 15%;' id='vrTypeTh'><p>TYPE</p></th>;
-  <th class='header' style='width: 15%;' id='vrProposedByTh'><p>PROPOSED BY</p></th>;
-  <th class='header' style='width: 8%;' id='vrStatusTh'><p>STATUS</p></th>;
-  <th class='header' style='width: 8%;' id='vrForTh'><p>FOR</p></th>;
-  <th class='header' style='width: 8%;' id='vrAgainstTh'><p>AGAINST</p></th>;
-  <th class='header' style='width: 8%;' id='vrAbstainTh'><p>ABSTAIN</p></th>;
- </tr>;
-</thead>;	
+<thead id='votResHeader'>
+ <tr style='height:50px'>
+  <th class='header' style='width: 5%;' id='vrNumberTh'><p>#</p></th>
+  <th class='header' style='' id='vrProposalTh'><p>PROPOSAL</p></th>
+  <th class='header' style='width: 15%;' id='vrTypeTh'><p>TYPE</p></th>
+  <th class='header' style='width: 15%;' id='vrProposedByTh'><p>PROPOSED BY</p></th>
+  <th class='header' style='width: 8%;' id='vrStatusTh'><p>STATUS</p></th>
+  <th class='header' style='width: 8%;' id='vrForTh'><p>FOR</p></th>
+  <th class='header' style='width: 8%;' id='vrAgainstTh'><p>AGAINST</p></th>
+  <th class='header' style='width: 8%;' id='vrAbstainTh'><p>ABSTAIN</p></th>
+ </tr>
+</thead>
 ~~~
 
-First, figure out the offset of the table, let's say table header id is 'votResHeader', when scroll > then the table body, fix the position, otherwise back to normal table
+First, let's figure out the offset top of the table, the table header id is 'votResHeader', when scroll > then the table body top offset, use fixed position, otherwise back to normal table
 ~~~javascript
 $(window).scroll(function(e) {
 	var fixmeTop = $('#votResBody').offset().top;
@@ -40,6 +40,7 @@ $(window).scroll(function(e) {
 			'margin-top': '0px',
 			'padding-top': '0px',
 		});
+		// sync the table body column width and head column width
 		syncVotingResultTableHeadAndBodyWidth();
 	} else {
 		$('#votResHeader').css({ //Static header
@@ -52,7 +53,7 @@ $(window).scroll(function(e) {
 });
 ~~~
 
-However, when table header become fixed, the width of table will mess up, to make table look same as before, we need to set width percentage at <td> in the <tbody>, to avoid the tBody change. In addition, need adjust the width of float header. We find syncVotingResultTableHeadAndBodyWidth() method in above function, It is the key part guarantee the thead hold the same width as tbody. In fact, it just force the head width as calculated body column width.
+However, when table header become fixed, the width of table could mess up because the content width change. To keep table look same as before, we need to set width percentage at <td> in the <tbody> to static the body column width. In addition to that, we need adjust the width of float header for better user experience. There is syncVotingResultTableHeadAndBodyWidth() method in above function, It is the major code to guarantee each table head column stay the same width as body. In fact, it just dynamically force the head width pixel as calculated body column pixel, jQuery is able to do this job.
 ~~~javascript
 syncVotingResultTableHeadAndBodyWidth = function() {
 	$('#vrNumberTh').css({
@@ -82,14 +83,14 @@ syncVotingResultTableHeadAndBodyWidth = function() {
 }
 ~~~
 
-Next, when we resize the table, will want to do the same thing
+Finally, when we resize the table, will want to do the same thing, add below piece of code:
 ~~~javascript
 $(window).resize(function(e) {
 	syncVotingResultTableHeadAndBodyWidth();
 });
 ~~~
 
-Full Example can found here, the example include the tablesort in head:
+Full Example can found [here](https://jsfiddle.net/ycj28c/4gxLdrom/2/), this example also include the tablesort in the freeze head:
 [https://jsfiddle.net/ycj28c/4gxLdrom/2/](https://jsfiddle.net/ycj28c/4gxLdrom/2/)
 
 Reference
