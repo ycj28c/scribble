@@ -85,3 +85,15 @@ begin;
 rollback;
 ```
 
+*  recursive query
+[Find Parent Recursively using Query](https://stackoverflow.com/questions/3699395/find-parent-recursively-using-query)
+```sql
+WITH RECURSIVE tree(child, root) AS (
+   select c.executive_id, c.merged_to_executive_id from executive c join executive p on c.merged_to_executive_id = p.executive_id WHERE p.merged_to_executive_id IS NULL
+   UNION
+   select executive_id, root from tree
+   inner join executive on tree.child = executive.merged_to_executive_id
+)
+SELECT * FROM tree where child = 135477;
+```
+
