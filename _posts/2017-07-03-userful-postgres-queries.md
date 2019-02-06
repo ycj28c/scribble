@@ -97,3 +97,18 @@ WITH RECURSIVE tree(child, root) AS (
 SELECT * FROM tree where child = 135477;
 ```
 
+*  compare two query data
+```
+create temporary table tmp1 as select * for user where id = 1;
+create temporary table tmp2 as select * for user where id = 2;
+
+-- is data missing in tmp1
+select * from tmp1
+except
+select * from tmp2;
+
+-- is data missing in tmp2
+select * from tmp2
+except
+select * from tmp1;
+```

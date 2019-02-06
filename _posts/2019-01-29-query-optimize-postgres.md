@@ -88,3 +88,18 @@ VOLATILE;
 
 SELECT * FROM calPrice(ARRAY [:item_ids]);
 ~~~
+
+Tips
+----------
+To get the cost of query
+~~~sql
+-- estimate cost, query not run
+EXPLAIN select name from user;
+-- run the actual query
+EXPLAIN analyze select name from user;
+~~~
+
+Reference
+----------
+[Chapter 14. Performance Tips](https://www.postgresql.org/docs/9.6/using-explain.html)
+
