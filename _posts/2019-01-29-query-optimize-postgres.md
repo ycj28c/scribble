@@ -16,6 +16,18 @@ As we all knows, there are some general ways to optimize the query:
 
 In Postgres it support multiple index, such as like index which will be different from equal index, also it provide some new feature such as array index.
 
+There are some magic index, for example:
+~~~
+--before
+LEFT JOIN document d ON cast(d.document_id AS TEXT) = substr(mmd.bio, 0, position(',' IN mmd.bio))
+~~~
+
+~~~
+--after
+LEFT JOIN document d ON d.document_id = coalesce(substr(mmd.bio, 0, position(',' IN mmd.bio)), null)::bigint
+~~~
+Index only take effect on the left side, actually, there is d.document_id index already in the document table, however, the join query try to compare the case TEXT value with the substr, which TEXT type. After change, the index works as expect, the query will be 100 times faster.
+
 *2.Change the order*
 
 Such as A join B Join C will be different from C join B join A.
