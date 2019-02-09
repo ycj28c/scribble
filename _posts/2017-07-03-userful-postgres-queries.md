@@ -63,16 +63,52 @@ select pg_terminate_backend(28769);
 ```
 
 *  pg_dump the mview and its index
+
 ```shell
 pg_dump -sOx -t cdna_search -h 10.1.50.35 -U insight insight_qa > cdna_search.sql
 ```
 
 *  postgres foreign link related
-```shell
+
+```sql
 select * from pg_foreign_server;
 select * from pg_user_mappings;
 alter server aserver options (set host 'a.com', set dbname 'a_server');
 alter user mapping for bserver server aserver options (set user 'usera', set password 'xxx');
 ```
 
+*  rollback changes
 
+```sql
+begin;
+-- your query
+rollback;
+```
+
+*  recursive query
+[Find Parent Recursively using Query](https://stackoverflow.com/questions/3699395/find-parent-recursively-using-query)
+```sql
+WITH RECURSIVE tree(child, root) AS (
+   select c.executive_id, c.merged_to_executive_id from executive c join executive p on c.merged_to_executive_id = p.executive_id WHERE p.merged_to_executive_id IS NULL
+   UNION
+   select executive_id, root from tree
+   inner join executive on tree.child = executive.merged_to_executive_id
+)
+SELECT * FROM tree where child = 135477;
+```
+
+*  compare two query data
+```
+create temporary table tmp1 as select * for user where id = 1;
+create temporary table tmp2 as select * for user where id = 2;
+
+-- is data missing in tmp1
+select * from tmp1
+except
+select * from tmp2;
+
+-- is data missing in tmp2
+select * from tmp2
+except
+select * from tmp1;
+```

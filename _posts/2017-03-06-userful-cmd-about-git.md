@@ -54,6 +54,10 @@ Some trick when you revert a branch and want to merge again
 you need to revert the revert commit, then merge the branch, otherwise you loss the commit that reverted;
 ```
 
+Delete the local branchs, in this case has key words "improvement"
+```
+git branch --merged | grep improvement | xargs git branch -D
+```
 
 
 

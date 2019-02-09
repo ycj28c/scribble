@@ -143,6 +143,79 @@ function autoAssignment() {
 }
 ~~~
 
+Update At 2018-08-03
+-----------
+Make assignment script more pretty and easy to use, make script more efficient and robust.
+[Point Estimate Auto Script V2](https://docs.google.com/spreadsheets/d/1czBh9U0iMkhPl7ifh1_lgYj1Vr43JxAnhW9Wn3pepcA/edit#gid=353191128)
+
+Example code, added Sample Reservoir random assign and array for person storage
+~~~
+/**
+ * auto assign the QEs according to their expect points v2
+ * will randomly assign the story to person whoever has enough left point.
+ * because random, so every time run the assign will be different, however, if story has already assigned, won't be assign again.
+ * now can run parallel with the other assign script.
+ */
+function autoAssignFunctionQEv2() {
+  var sheet = SpreadsheetApp.getActiveSheet(); 
+  var tickersRange = sheet.getRange("B4");
+  var totalqes = sheet.getRange("D4").getValue();
+  
+  for( var i = 0; i < tickersRange.getValue(); i++) {
+    var targetCell = sheet.getRange("E"+(i+13));
+    var pointCell = sheet.getRange("C"+(i+13));
+    
+    // skip if value is empty
+    if(targetCell.getValue() != "") continue;
+        
+    var array = sheet.getRange("J4:M"+(totalqes+3)).getValues(); // save person data in array, no longer need to sort in page
+    sortArrayRange(array, 3); // sort by the left point desc
+    
+    // var sourceValue = sheet.getRange("J4").getValue();
+    var pickIndex = sampleReservoir(array, 3, pointCell.getValue());
+    var sourceValue = array[pickIndex][0]; // first is user name
+    targetCell.setValue(sourceValue);
+  }
+}
+/*
+ * use sample reservoir algorithm pick the assignee index
+ */
+function sampleReservoir(array, col, targetValue){
+  var pickIndex = 0; // default use the person with largest point left 
+  var matchCnt = 0;
+  for(var row = 0;row<array.length;row++){
+    if(array[row][col] > targetValue){ // if person's left point larger then story's point, maybe pick for the assignee
+      matchCnt++;
+      var number = Math.floor(Math.random() * matchCnt); //Math.random() generate number between 0 and 1, this will generate random 0 -> row
+      if(number == 0) pickIndex = row; // if matches the condition, update the pickIndex
+    }
+  }
+  return pickIndex;
+}
+
+/*
+ * sort array by desc order at relative column
+ */
+function sortArrayRange(array, col){
+  Logger.log('Unsorted array = '+array);
+  array.sort(function(x,y){
+    // in this example I used the 4th column... 
+    var compareArgumentA = x[col];
+    var compareArgumentB = y[col];
+    // eventually do something with these 2 variables, for example Number(x[0]) and Number(y[0]) would do the comparison on numeric values of first column in the array (index0) 
+    // another example x[0].toLowerCase() and y[0].toLowerCase() would do the comparison without taking care of letterCase...
+    Logger.log('compareArgumentA = '+compareArgumentA+' and compareArgumentB = '+compareArgumentB);
+    var result = 0;// initialize return value and then do the comparison : 3 cases
+    if(compareArgumentA == compareArgumentB ){return result }; // if equal return 0
+    if(compareArgumentA < compareArgumentB ){result = 1 ; return result }; // if A<B return -1 (you can change this of course and invert the sort order)
+    if(compareArgumentA > compareArgumentB ){result = -1 ; return result }; // if a>B return 1
+  });
+  Logger.log('\n\n\nSorted array = '+array);
+}
+~~~
+
 Reference
 ---------
-[Extending Google Sheets](https://developers.google.com/apps-script/guides/sheets)
+* [Extending Google Sheets](https://developers.google.com/apps-script/guides/sheets)
+* [APPS SCRIPT BASICS (5) – ARRAYS, LOGGER, EXECUTION TRANSCRIPT](https://www.bazroberts.com/2017/04/20/apps-script-basics-arrays-logger-execution-transcript/)
+* [Defining arrays in Google Scripts](https://stackoverflow.com/questions/18584081/defining-arrays-in-google-scripts)
