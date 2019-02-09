@@ -70,7 +70,14 @@ response = webResource.accept("application/json;charset=utf-8")
 		.post(ClientResponse.class, memTaskMapJsonStr);
 ~~~
 
+2019-02-08更新
+--------------
+关于网页的编码，我们知道在html里头可以插入<meta chartset=UTF-8>，但是实际解析的时候却是根据文件保存的格式，比如在windows新建1个txt文件，写入html内容，另存为ANSI格式，那么网页用UTF-8解析就会乱码。所以编码一定要每一个步骤都是对应的编码才行，中间乱了一个就变为多重编码了。
+
 引用
 -------
 * [jersey web service json utf-8 encoding](https://stackoverflow.com/questions/9359728/jersey-web-service-json-utf-8-encoding)
 * [developer.51cto.com/art/200906/132667.htm](developer.51cto.com/art/200906/132667.htm)
+* [字符编码笔记：ASCII，Unicode 和 UTF-8](http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)
+* [解决浏览器抛出乱码，（HTML、PHP等的乱码问题）](https://blog.csdn.net/txl199106/article/details/38873665)
+* [浏览器打开HTML页面(UTF-8编码)是总是乱码](https://blog.csdn.net/westlake2015/article/details/49387219)
