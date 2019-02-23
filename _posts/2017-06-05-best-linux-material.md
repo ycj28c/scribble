@@ -70,3 +70,8 @@ vi js/popup.js
 jar uvf Web.war js/popup.js
 jar uvf /opt/jboss/server/default/deploy/Ejb.jar Web.war
 ```
+
+Tracking the log with the key words
+```
+tail -f target.log | grep --line-buffered 'Keyword'
+```
