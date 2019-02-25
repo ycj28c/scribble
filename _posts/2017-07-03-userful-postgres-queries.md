@@ -112,3 +112,13 @@ select * from tmp2
 except
 select * from tmp1;
 ```
+
+* could not read block 65802 in file "base/16387/180507": read only 0 of 8192 bytes issue fix
+[PostgreSQL 末尾块收缩(如pg_type pg_attribute)异常和patch](https://yq.aliyun.com/articles/72687)
+[Error: Could not read Block X of relation base/Y/Z](https://dba.stackexchange.com/questions/44508/error-could-not-read-block-x-of-relation-base-y-z)
+```
+# try reindex
+REINDEX INDEX master_management_idx;
+# vacuum db
+vacuum analyze;
+```
