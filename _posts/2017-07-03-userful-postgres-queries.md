@@ -87,6 +87,7 @@ rollback;
 
 *  recursive query
 [Find Parent Recursively using Query](https://stackoverflow.com/questions/3699395/find-parent-recursively-using-query)
+
 ```sql
 WITH RECURSIVE tree(child, root) AS (
    select c.executive_id, c.merged_to_executive_id from executive c join executive p on c.merged_to_executive_id = p.executive_id WHERE p.merged_to_executive_id IS NULL
@@ -98,7 +99,8 @@ SELECT * FROM tree where child = 135477;
 ```
 
 *  compare two query data
-~~~sql
+
+```sql
 create temporary table tmp1 as select * for user where id = 1;
 create temporary table tmp2 as select * for user where id = 2;
 
@@ -111,12 +113,15 @@ select * from tmp2;
 select * from tmp2
 except
 select * from tmp1;
-~~~
+```
 
 * could not read block 65802 in file "base/16387/180507": read only 0 of 8192 bytes issue fix
+
 [PostgreSQL 末尾块收缩如pg_type pg_attribute异常和patch](https://yq.aliyun.com/articles/72687)
+
 [Error: Could not read Block X of relation base/Y/Z](https://dba.stackexchange.com/questions/44508/error-could-not-read-block-x-of-relation-base-y-z)
-~~~sql
+
+```sql
 --find wrong path
 SELECT pg_filenode_relation(0, 180507);
 
@@ -129,4 +134,4 @@ vacuum full verbose table1;
 
 --full db vaccum if don't know which broken
 vacuum analyze
-~~~
+```
