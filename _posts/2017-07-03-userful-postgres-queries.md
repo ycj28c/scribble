@@ -117,16 +117,16 @@ select * from tmp1;
 [PostgreSQL 末尾块收缩如pg_type pg_attribute异常和patch](https://yq.aliyun.com/articles/72687)
 [Error: Could not read Block X of relation base/Y/Z](https://dba.stackexchange.com/questions/44508/error-could-not-read-block-x-of-relation-base-y-z)
 ```
-# find wrong path
+--find wrong path
 SELECT pg_filenode_relation(0, 180507);
 
-# try reindex
+--try reindex
 REINDEX INDEX table1_index;
 
-# vacuum db
+--vacuum db
 vacuum analyze table1;
 vacuum full verbose table1;  
 
-# full db vaccum if don't know which broken
+--full db vaccum if don't know which broken
 vacuum analyze
 ```
