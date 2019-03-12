@@ -74,6 +74,18 @@ response = webResource.accept("application/json;charset=utf-8")
 --------------
 关于网页的编码，我们知道在html里头可以插入<meta chartset=UTF-8>，但是实际解析的时候却是根据文件保存的格式，比如在windows新建1个txt文件，写入html内容，另存为ANSI格式，那么网页用UTF-8解析就会乱码。所以编码一定要每一个步骤都是对应的编码才行，中间乱了一个就变为多重编码了。
 
+2019-03-12更新
+--------------
+关于乱码的产生，有时候出现乱码，无论怎么切换字符集都回不去了，是怎么一回事？下面是例子：  
+汉字“严”，使用ANSI编码，使用16进制查看，编码d1 cf。使用utf-8编码，则16进制是e4 b8 a5 
+1.当ANSI的严encode为utf-8，显示为xd1xcf，切换回ANSI，仍然显示严  
+2.当utf-8的严encode为ANSI，显示为涓?，切换回utf-8，仍然显示严  
+如果只是切换encode，那么只要切换的encode字符集，都能恢复，但是如果在错误的encode状态下进行了convert就会发生错误。比如  
+1.ANSI的严，用utf-8的encode显示为xd1xcf，此时convert成ANSI，显示为?，使用16进制查看变为3f  
+2.utf-8的严，用ANSI的encode显示为涓?口，此时convert成utf-8，显示为涓?，使用16进制查看变为e6 b6 93 3f  
+
+关于emoji，也很有意思，emoji属于unicode的国际标准编码内容，比如🏹这个弓箭符号，就是一个unicode，用16进制查看是f0 9f 8f b9。utf-8是unicode的一种实现，可以正常显示这个符号，但是ANSI因为只占用2个字节，所以在ANSI编码情况下拷贝进来这个符号就无法正常显示。任何字符信息在计算机都是存储为二进制bit的形式，所以是可以从16进制看出来某个文本文件的编码的，日语软件汉化的过程实际上就是将日文的unicode替换为对应汉字的unicode，当然如果使用的不是unicode而是只包含日文的编码集的情况就会相当困难了。
+
 引用
 -------
 * [jersey web service json utf-8 encoding](https://stackoverflow.com/questions/9359728/jersey-web-service-json-utf-8-encoding)
