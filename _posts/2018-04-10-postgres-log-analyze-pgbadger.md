@@ -62,7 +62,7 @@ grep -c 'model name' /proc/cpuinfo
 ~~~  
 Check other hardware performance as well, make sure memory, io and network is not the bottleneck.  
 
-2.If load is too high, need to identify which cause it. Use the pgbadger is good way, but it require pg_log, sometimes the normal user don't have permission. below are other ways:  
+2. If load is too high, need to identify which cause it. Use the pgbadger is good way, but it require pg_log, sometimes the normal user don't have permission. below are other ways:  
 1) use pg_stat_statmenet plugin
 ~~~sql
 create extension pg_stat_statements;
@@ -90,9 +90,9 @@ select pg_cancel_backend(pid) from pg_stat_activity where  query like '%<query t
 select pg_terminate_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
 ~~~
 5) optimize the queries
-a.Use ANALYZEE<table> or VACUUM ANZLYZE<table> to update the table statistic. Try to avoid run it in peer time.  
-b.Execute explain(query text) or explain (buffers true, analyze true, verbose true) (query text) command to identify the query execution plan.  
-c.optimize the queries, remove useless join, modify UNION ALL, use JOIN CLAUSE to stable the order etc.
+a. Use ANALYZEE<table> or VACUUM ANZLYZE<table> to update the table statistic. Try to avoid run it in peer time.  
+b. Execute explain(query text) or explain (buffers true, analyze true, verbose true) (query text) command to identify the query execution plan.  
+c. optimize the queries, remove useless join, modify UNION ALL, use JOIN CLAUSE to stable the order etc.
 
 for more query optimize, check this [QUERY OPTIMIZE POSTGRES](https://ycj28c.github.io/database/2019/01/29/query-optimize-postgres/)
 
