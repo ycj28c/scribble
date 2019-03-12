@@ -89,8 +89,8 @@ select * from pg_stat_statements where query ilike '%<table>%'order by shared_bl
 select pg_cancel_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
 select pg_terminate_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
 ~~~
-5) optimize the queries
-a. Use ANALYZEE<table> or VACUUM ANZLYZE<table> to update the table statistic. Try to avoid run it in peer time.  
+5) optimize the queries  
+a. Use *ANALYZEE<table>* or *VACUUM ANZLYZE<table>* to update the table statistic. Try to avoid run it in peer time.  
 b. Execute explain(query text) or explain (buffers true, analyze true, verbose true) (query text) command to identify the query execution plan.  
 c. optimize the queries, remove useless join, modify UNION ALL, use JOIN CLAUSE to stable the order etc.
 
