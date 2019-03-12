@@ -73,7 +73,35 @@ select * from pg_stat_statements order by total_time desc limit 5;
 ~~~
 2) check the longest activity person  
 ~~~sql
-select datname, usename, client_addr, application_name, state, backend_start, xact_start, xact_stay, query_start, query_stay, replace(query, chr(10), ' ') as query from (select pgsa.datname as datname, pgsa.usename as usename, pgsa.client_addr client_addr, pgsa.application_name as application_name, pgsa.state as state, pgsa.backend_start as backend_start, pgsa.xact_start as xact_start, extract(epoch from (now() - pgsa.xact_start)) as xact_stay, pgsa.query_start as query_start, extract(epoch from (now() - pgsa.query_start)) as query_stay , pgsa.query as query from pg_stat_activity as pgsa where pgsa.state != 'idle' and pgsa.state != 'idle in transaction' and pgsa.state != 'idle in transaction (aborted)') idleconnections order by query_stay desc limit 5;
+SELECT
+  datname,
+  usename,
+  client_addr,
+  application_name,
+  state,
+  backend_start,
+  xact_start,
+  xact_stay,
+  query_start,
+  query_stay,
+  replace(query, chr(10), ' ') AS query
+FROM (SELECT
+        pgsa.datname                                   AS datname,
+        pgsa.usename                                   AS usename,
+        pgsa.client_addr                                  client_addr,
+        pgsa.application_name                          AS application_name,
+        pgsa.state                                     AS state,
+        pgsa.backend_start                             AS backend_start,
+        pgsa.xact_start                                AS xact_start,
+        extract(EPOCH FROM (now() - pgsa.xact_start))  AS xact_stay,
+        pgsa.query_start                               AS query_start,
+        extract(EPOCH FROM (now() - pgsa.query_start)) AS query_stay,
+        pgsa.query                                     AS query
+      FROM pg_stat_activity AS pgsa
+      WHERE pgsa.state != 'idle' AND pgsa.state != 'idle in transaction' AND
+            pgsa.state != 'idle in transaction (aborted)') idleconnections
+ORDER BY query_stay DESC
+LIMIT 5;
 ~~~
 3) check the table scan information, handle the big whole table scan case
 ~~~
