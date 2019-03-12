@@ -135,3 +135,30 @@ vacuum full verbose table1;
 --full db vaccum if don't know which broken
 vacuum analyze
 ```
+
+*  performance analyze related
+
+```sql
+--统计信息
+select * from pg_stat_database;
+--缓存命中率，如果低于1，可尝试调整shared_buffers
+select blks_hit::float/(blks_read + blks_hit) as cache_hit_ratio from pg_stat_database where datname=current_database();
+--事务提交率,低于1，检查是否死锁或其他超时太多
+select xact_commit::float/(xact_commit +xact_rollback) as successful_xact_ratio from pg_stat_database where datname=current_database();
+--优化后建议执行以下语句，方面对比优化前后数据
+--pg_stat_reset()
+--表级统计信息
+select * from pg_stat_user_tables;
+--索引使用率
+select sum(idx_scan)/(sum(idx_scan) + sum(seq_scan)) as idx_scan_ratio from pg_stat_all_tables where schemaname='insight';
+select relname,idx_scan::float/(idx_scan+seq_scan+1) as idx_scan_ratio from pg_stat_all_tables where schemaname='insight' order by idx_scan_ratio asc;
+--开启
+--shared_preload_libraries='pg_stat_statements'
+--pg_stat_statements.track=all
+create extension pg_stat_statements;
+SELECT * FROM pg_available_extension_versions WHERE name = 'pg_stat_statements';
+--语句级统计信息 通过pg_stat_statements ,postgres 日志、auto_explain 来获取
+select * from pg_stat_statements;
+--查询平均执行时间最长的3条查询
+select calls,total_time/calls as avg_time,left(query,80) from pg_stat_statements order by 2 desc limit 3;
+``
