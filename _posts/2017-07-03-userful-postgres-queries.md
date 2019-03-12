@@ -161,4 +161,4 @@ SELECT * FROM pg_available_extension_versions WHERE name = 'pg_stat_statements';
 select * from pg_stat_statements;
 --查询平均执行时间最长的3条查询
 select calls,total_time/calls as avg_time,left(query,80) from pg_stat_statements order by 2 desc limit 3;
-``
+```
