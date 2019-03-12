@@ -94,6 +94,8 @@ a.Use ANALYZEE<table> or VACUUM ANZLYZE<table> to update the table statistic. Tr
 b.Execute explain(query text) or explain (buffers true, analyze true, verbose true) (query text) command to identify the query execution plan.  
 c.optimize the queries, remove useless join, modify UNION ALL, use JOIN CLAUSE to stable the order etc.
 
+for more query optimize, check this [QUERY OPTIMIZE POSTGRES](https://ycj28c.github.io/database/2019/01/29/query-optimize-postgres/)
+
 Reference
 ---------
 [A fast PostgreSQL Log Analyzer](https://github.com/dalibo/pgbadger)
