@@ -92,7 +92,7 @@ select pg_terminate_backend(pid) from pg_stat_activity where  query like '%<quer
 5) optimize the queries  
 a. Use *ANALYZEE<table>* or *VACUUM ANZLYZE<table>* to update the table statistic. Try to avoid run it in peer time.  
 b. Execute explain(query text) or explain (buffers true, analyze true, verbose true) (query text) command to identify the query execution plan.  
-c. optimize the queries, remove useless join, modify UNION ALL, use JOIN CLAUSE to stable the order etc.
+c. optimize the queries, remove useless join, modify *UNION ALL*, use *JOIN CLAUSE* to stable the order etc.
 
 for more query optimize, check this [QUERY OPTIMIZE POSTGRES](https://ycj28c.github.io/database/2019/01/29/query-optimize-postgres/)
 
