@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Postgres Log Analyze Pgbadger 
+title: Postgres Log Analyze Pgbadger and performance issue troubleshot
 disqus: y
 share: y
 categories: [Database, Analytics]
-tags: [Postgres, Log]
+tags: [Postgres, Log, Pgbadger]
 ---
 
 Issue
