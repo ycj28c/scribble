@@ -26,7 +26,7 @@ Fortunately, there is also a super easy way to archive that, the only tool you n
 1. Open your paint Tool -> Print -> Page Setup
 ![page-setup](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/makemosaicposter/2.png)
 
-2. Change the fit to setting to what you want, in this case, fit 3 to 4 pages means 3 A4 page per column, print to 4 rows, use total 3 * 4 = 12 A4 pages
+2. Change the Scaling setting to what you want, in this case, fit 3 by 4 pages, which means 3 A4 page per column, print to 4 rows, will use total 3 * 4 = 12 A4 pages
 ![page-fit](https://raw.githubusercontent.com/ycj28c/ycj28c.github.io/master/images/posts/makemosaicposter/3.png)
 
 3. Print image, use glue to paste the 12 pages together.
