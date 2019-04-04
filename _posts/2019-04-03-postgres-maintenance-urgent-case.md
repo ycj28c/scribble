@@ -9,10 +9,10 @@ tags: [Postgres, Maintenance]
 
 BackGround
 -----------
-Previous, we did some research for Postgres, check below  
-[Useful Postgres Queries](https://ycj28c.github.io/database/2017/07/03/userful-postgres-queries/)  
-[Postgres Log Analyze Pgbadger](https://ycj28c.github.io/database/analytics/2018/04/10/postgres-log-analyze-pgbadger/)  
-[Query Optimize Postgres](https://ycj28c.github.io/database/2019/01/29/query-optimize-postgres/)  
+Previous, we did some research for Postgres, check below:  
+1.[Useful Postgres Queries](https://ycj28c.github.io/database/2017/07/03/userful-postgres-queries/)  
+2.[Postgres Log Analyze Pgbadger](https://ycj28c.github.io/database/analytics/2018/04/10/postgres-log-analyze-pgbadger/)  
+3.[Query Optimize Postgres](https://ycj28c.github.io/database/2019/01/29/query-optimize-postgres/)  
 Now we also need to do maintenance and keep the database robust.
 
 How To Maintenance
@@ -23,6 +23,8 @@ Follow below step to troubleshot the slow target
 ~~~bash
 -- check how many cpu you have 
 grep -c 'model name' /proc/cpuinfo
+-- other metrics
+top
 ~~~  
 Check other hardware performance as well, make sure memory, io and network is not the bottleneck.  
 
@@ -81,6 +83,7 @@ select * from pg_stat_statements where query ilike '%<table>%'order by shared_bl
 select pg_cancel_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
 select pg_terminate_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
 ~~~
+This is the action item, kill the query blocking.  
 5) optimize the queries  
 a. Use *ANALYZEE<table>* or *VACUUM ANZLYZE<table>* to update the table statistic. Try to avoid run it in peer time.  
 b. Execute explain(query text) or explain (buffers true, analyze true, verbose true) (query text) command to identify the query execution plan.  
