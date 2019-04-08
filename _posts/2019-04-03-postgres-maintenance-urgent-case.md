@@ -37,7 +37,21 @@ select pg_stat_statements_reset();
 --wait the plugin collect information, then run
 select * from pg_stat_statements order by total_time desc limit 5;
 
-~~~
+SELECT rolname,
+    calls,
+    total_time,
+    mean_time,
+    max_time,
+    stddev_time,
+    rows,
+    regexp_replace(query, '[ \t\n]+', ' ', 'g') AS query_text
+FROM pg_stat_statements
+JOIN pg_roles r ON r.oid = userid
+WHERE calls > 100
+AND rolname NOT LIKE '%backup'
+ORDER BY mean_time DESC
+LIMIT 15;
+~~~  
 2) check lock
 ~~~sql
 --for example, you know the 'market_index' table is frozen
@@ -80,7 +94,7 @@ ORDER BY query_stay DESC
 LIMIT 5;
 ~~~
 4) check the table scan information, handle the big whole table scan case
-~~~
+~~~sql
 -- find the most whole seq scan table
 select * from pg_stat_user_tables where n_live_tup > 100000 and seq_scan > 0 order by seq_tup_read desc limit 10;
 -- find the query is running for that table
@@ -89,7 +103,7 @@ select * from pg_stat_activity where query ilike '%<table name>%' and query_star
 select * from pg_stat_statements where query ilike '%<table>%'order by shared_blks_hit+shared_blks_read desc limit 3;
 ~~~
 5) cancel or kill the most effect query, recover business
-~~~
+~~~sql
 select pg_cancel_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
 select pg_terminate_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
 ~~~
