@@ -29,6 +29,7 @@ $ top
 Check other hardware performance as well, make sure memory, io and network is not the bottleneck.  
 
 2. If load is too high, need to identify which cause it. Use the pgbadger is good way, but it require pg_log, sometimes the normal user don't have permission. below are other ways:  
+
 1)Use pg_stat_statmenet plugin  
 ~~~sql
 create extension pg_stat_statements;
