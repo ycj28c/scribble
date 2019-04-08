@@ -135,13 +135,13 @@ Common Query Optimize tips (Chinese version)
 >15. 尽量使用数字型字段，若只含数值信息的字段尽量不要设计为字符型，这会降低查询和连接的性能，并会增加存储开销。这是因为引擎在处理查询和连接时会逐个比较字符串中每一个字符，而对于数字型而言只需要比较一次就够了。
 >16. 尽可能的使用 varchar/nvarchar 代替 char/nchar ，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率显然要高些。
 >17. 任何地方都不要使用 select * from t ，用具体的字段列表代替“*”，不要返回用不到的任何字段。
->18. 如果使用到了临时表， 在存储过程的最后务必将所有的临时表显式删除， 先 truncate table ,然后 drop table ,这样可以避免系统表的较长时间锁定。
+>18. 如果使用到了临时表， 在存储过程的最后务必将所有的临时表显式删除， 先 truncate table，然后 drop table ，这样可以避免系统表的较长时间锁定。
 >19. 尽量避免使用游标，因为游标的效率较差，如果游标操作的数据超过 1 万行，那么就应该考虑改写。
 
 
 
 Reference
 ----------
-[Chapter 14. Performance Tips](https://www.postgresql.org/docs/9.6/using-explain.html)  
-[SQL语句优化的41条建议](https://juejin.im/post/5aa7703c6fb9a028c8128739)  
-[30条SQL查询优化原则](developer.51cto.com/art/201102/245903.htm)  
+1. [Chapter 14. Performance Tips](https://www.postgresql.org/docs/9.6/using-explain.html)  
+2. [SQL语句优化的41条建议](https://juejin.im/post/5aa7703c6fb9a028c8128739)  
+3. [30条SQL查询优化原则](developer.51cto.com/art/201102/245903.htm)  

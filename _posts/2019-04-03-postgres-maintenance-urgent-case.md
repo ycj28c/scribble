@@ -53,7 +53,7 @@ ORDER BY mean_time DESC
 LIMIT 15;
 ~~~
 2) check lock
-~~~
+~~~sql
 --for example, you know the 'market_index' table is frozen
 select * from pg_locks where granted and relation = 'market_index'::regclass;
 
