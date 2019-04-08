@@ -29,7 +29,7 @@ top
 Check other hardware performance as well, make sure memory, io and network is not the bottleneck.  
 
 2. If load is too high, need to identify which cause it. Use the pgbadger is good way, but it require pg_log, sometimes the normal user don't have permission. below are other ways:  
-1) use pg_stat_statmenet plugin
+1) use pg_stat_statmenet plugin  
 ~~~sql
 create extension pg_stat_statements;
 select pg_stat_reset();
@@ -44,15 +44,15 @@ SELECT rolname,
     max_time,
     stddev_time,
     rows,
-    regexp_replace(query, '[ \t\n]+', ' ', 'g') AS query_text
+    query
 FROM pg_stat_statements
 JOIN pg_roles r ON r.oid = userid
 WHERE calls > 100
 AND rolname NOT LIKE '%backup'
 ORDER BY mean_time DESC
 LIMIT 15;
-~~~
-2) check lock
+~~~  
+2) check lock  
 ~~~sql
 --for example, you know the 'market_index' table is frozen
 select * from pg_locks where granted and relation = 'market_index'::regclass;
