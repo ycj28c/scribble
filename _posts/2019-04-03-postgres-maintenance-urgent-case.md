@@ -21,15 +21,15 @@ Follow below step to troubleshot the slow target
 1. Check the system load (cpu load) [系统负载讲解](http://www.ruanyifeng.com/blog/2011/07/linux_load_average_explained.html)  
 1 cpu can only handle 1.0 load, 2 cpu can handle max 2.0 etc. If the load is continually high, it is guarantee to be slow.  
 ~~~bash
--- check how many cpu you have 
-grep -c 'model name' /proc/cpuinfo
--- other metrics
-top
+## check how many cpu you have 
+$ grep -c 'model name' /proc/cpuinfo
+## other metrics
+$ top
 ~~~  
 Check other hardware performance as well, make sure memory, io and network is not the bottleneck.  
 
 2. If load is too high, need to identify which cause it. Use the pgbadger is good way, but it require pg_log, sometimes the normal user don't have permission. below are other ways:  
-1) use pg_stat_statmenet plugin
+1) use pg_stat_statmenet plugin  
 ~~~sql
 create extension pg_stat_statements;
 select pg_stat_reset();
@@ -52,7 +52,7 @@ AND rolname NOT LIKE '%backup'
 ORDER BY mean_time DESC
 LIMIT 15;
 ~~~  
-2) check lock
+2) check lock  
 ~~~sql
 --for example, you know the 'market_index' table is frozen
 select * from pg_locks where granted and relation = 'market_index'::regclass;
@@ -60,7 +60,7 @@ select * from pg_locks where granted and relation = 'market_index'::regclass;
 select * from pg_stat_activity where pid in (select distinct(pid) from pg_locks);
 
 select * from pg_stat_activity where pid = '28769';
-~~~
+~~~  
 3) check the longest activity person  
 ~~~sql
 SELECT
@@ -92,8 +92,8 @@ FROM (SELECT
             pgsa.state != 'idle in transaction (aborted)') idleconnections
 ORDER BY query_stay DESC
 LIMIT 5;
-~~~
-4) check the table scan information, handle the big whole table scan case
+~~~  
+4) check the table scan information, handle the big whole table scan case  
 ~~~sql
 -- find the most whole seq scan table
 select * from pg_stat_user_tables where n_live_tup > 100000 and seq_scan > 0 order by seq_tup_read desc limit 10;
@@ -101,12 +101,12 @@ select * from pg_stat_user_tables where n_live_tup > 100000 and seq_scan > 0 ord
 select * from pg_stat_activity where query ilike '%<table name>%' and query_start - now() > interval '10 seconds';
 -- can also use pg_stat_statements do the same thing
 select * from pg_stat_statements where query ilike '%<table>%'order by shared_blks_hit+shared_blks_read desc limit 3;
-~~~
-5) cancel or kill the most effect query, recover business
+~~~  
+5) cancel or kill the most effect query, recover business  
 ~~~sql
 select pg_cancel_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
 select pg_terminate_backend(pid) from pg_stat_activity where  query like '%<query text>%' and pid != pg_backend_pid();
-~~~
+~~~  
 This is the action item, kill the query blocking.  
 6) optimize the queries  
 a. Use *ANALYZEE<table>* or *VACUUM ANZLYZE<table>* to update the table statistic. Try to avoid run it in peer time.  
