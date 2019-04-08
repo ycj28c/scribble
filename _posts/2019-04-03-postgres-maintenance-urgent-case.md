@@ -34,23 +34,7 @@ Check other hardware performance as well, make sure memory, io and network is no
 create extension pg_stat_statements;
 select pg_stat_reset();
 select pg_stat_statements_reset();
---wait the plugin collect information, then run
-select * from pg_stat_statements order by total_time desc limit 5;
 
-SELECT rolname,
-    calls,
-    total_time,
-    mean_time,
-    max_time,
-    stddev_time,
-    rows,
-    regexp_replace(query, '[ \t\n]+', ' ', 'g') AS query_text
-FROM pg_stat_statements
-JOIN pg_roles r ON r.oid = userid
-WHERE calls > 100
-AND rolname NOT LIKE '%backup'
-ORDER BY mean_time DESC
-LIMIT 15;
 ~~~  
 2) check lock  
 ~~~sql
