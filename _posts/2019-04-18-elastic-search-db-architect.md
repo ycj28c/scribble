@@ -123,3 +123,4 @@ Reference
 [elasticsearch（lucene）可以代替NoSQL（mongodb）吗？](https://www.zhihu.com/question/25535889)
 [Elasticsearch--- mapping是什么](https://www.jianshu.com/p/7cf6af033823)
 [Elasticsearch如何实现SQL语句中 Group By 和 Limit 的功能](https://segmentfault.com/a/1190000014946753)
+[一文读懂非关系型数据库（NoSQL）](https://www.jianshu.com/p/2d2a951fe0df)
