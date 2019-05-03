@@ -59,8 +59,31 @@ Delete the local branchs, in this case has key words "improvement"
 git branch --merged | grep improvement | xargs git branch -D
 ```
 
+Total line change for person for period of time
+```
+git log --author="username" --pretty=tformat: --numstat --after="2019-03-01" --before=="2019-05-03"| awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }'
+```
+
+Total commit for person for period of time
+```
+git log --author="username" --oneline --after="2019-03-01" --before="2019-05-03" | wc -l
+```
+
+Code line change for everyone
+```
+git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -; done
+```
+
+Top 5 Contributor
+```
+git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 5
+```
 
 
+Reference
+---------
+[git统计历史上某一段时间代码的修改量](https://blog.csdn.net/zhangphil/article/details/79957197)  
+[git代码统计](https://segmentfault.com/a/1190000008542123)
 
 
 
