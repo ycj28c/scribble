@@ -74,12 +74,12 @@ GET cars/_search
 
 ES vs Relation DB
 -----------------
-優點：   
+__優點：__  
 * 高并发。实测es单机分配10g内存单实例，写入能力1200qps，60g内存、12核CPU起3个实例预计可达到6000qps。 
 * 横向Scale方面做的很出色，满足大数据下实时读写需求，无需分库（不存在库的概念）。数据之间无关系，这样就非常容易扩展。
 * 速度快，ES直接返回數據，没有relational db那些步骤，基本就是IO的速度。
 
-缺點：  
+__缺點：__  
 * es没有事务，而且是近实时。
 * 吃硬件，几乎靠吃内存提高性能，成本也比傳統数据库高。
 * 传统数据的多表关联操作，在es中处理会非常麻烦。比如有4，5张表想要join下然后group by order by就不容易搞定。原因在于：传统数据库设计的初衷在于特定字段的关键词匹配查询；而es倒排索引的设计更擅长全文检索。
@@ -93,19 +93,19 @@ ES vs Relation DB
 ES vs Other NoSql
 -----------------
 
-关于nosql种类：  
+__关于nosql种类：__    
 * 键值(Key-Value)存储数据库： redis，voldemort
 * 列存储数据库： Cassandra，Hbase，Riak。 这部分数据库通常是用来应对分布式存储的海量数据（大表）。键仍然存在，但是它们的特点是指向了多个列。这些列是由列家族来安排的。
 * 文档型数据库： couchDB，MongoDb。 文档型数据库可以看作是键值数据库的升级版，允许之间嵌套键值。而且文档型数据库比键值数据库的查询效率更高。
 * 图形数据库： Neo4J, InfoGrid, orientDb。 connection使用graph db來做有優勢。
 
-優點(和MongoDB比較）：    
+__優點(和MongoDB比較）：__    
 * 免費使用,當初mongoDB太贵，所以用ES，目前还在用orientDb，neo4j（connection都是用graph db做的，有优势）
 * 容错能力比mg强。比如1主多从，主片挂了从片会自动顶上（硬件上）
 * 支持较复杂的条件查询，group by、排序都不是问题（mongo不行）
 * ES还多出个全文索引功能，当然mongo3也有，但和es比就是个玩笑。es现在更多的也被归入nosql一族了而非ir系统
 
-缺點：  
+__缺點(和MongoDB比較）：__  
 * MongoDB比較簡單，輕量級，易用
 
 
