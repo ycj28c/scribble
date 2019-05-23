@@ -56,6 +56,11 @@ cd /
 locate yourfilename
 ```
 
+Find file inside war/jar
+```
+unzip -t example.war |grep filename
+```
+
 How to edit the file in ear/war
 ```
 # unzip the file
@@ -75,3 +80,4 @@ Tracking the log with the key words
 ```
 tail -f target.log | grep --line-buffered 'Keyword'
 ```
+
