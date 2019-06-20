@@ -64,19 +64,19 @@ public class TestServiceTest {
     private static ObjectMapper objectMapper;
 
     @Mock
-	// when use mock annotation, the data is in memory, it will not actually run the rest full call.
+    // when use mock annotation, the data is in memory, it will not actually run the rest full call.
     private RestTemplate restTemplate;
 
     @Mock
-	// when use mock annotation, the data is in memory, it will not actually run the database query.
+    // when use mock annotation, the data is in memory, it will not actually run the database query.
     private TestDao testDao = new TestDao();
 
     @InjectMocks
-	// InjectMocks allow us to inject the Mock object into the target object, so when the testService is using restTemplate, the test will able to catch it.
+    // InjectMocks allow us to inject the Mock object into the target object, so when the testService is using restTemplate, the test will able to catch it.
     private TestService testService = new TestService();
 
     @Captor
-	// Captor will able to pass the object to parameter
+    // Captor will able to pass the object to parameter
     private ArgumentCaptor<HttpEntity<TestPDFDownloadParameter>> httpEntityDwnParameterCaptor;
 
     private final static String MOCK_API_URL = "http://localhost/test-api";
@@ -85,24 +85,24 @@ public class TestServiceTest {
     private Long companyIdMock;
     @Before
     public void init() {
-		/*
-		* setField will allow us inject / replace the attribute for target object.		
-		* public static void setField(Object targetObject, String name, Object value) {
-		*   setField((Object)targetObject, name, value, (Class)null);
-		* }
-		*
+       /*
+        * setField will allow us inject / replace the attribute for target object.		
+        * public static void setField(Object targetObject, String name, Object value) {
+        *   setField((Object)targetObject, name, value, (Class)null);
+        * }
+        */
         ReflectionTestUtils.setField(testService, "API_URL", MOCK_API_URL);
         ReflectionTestUtils.setField(testService, "GET_PDF_DATA", MOCK_GET_PDF_DATA);
 
         userIdMock = 37817L;
         companyIdMock = 244L;
 
-		/* 
-		* return true for isOurUser mock
-		*
-		* the testDao.isOurUser is used inside the testService, use when...thenReturn to mock,
-		* every time the testDao.isOurUser is been called, will return true.
-		*/
+       /* 
+        * return true for isOurUser mock
+        *
+        * the testDao.isOurUser is used inside the testService, use when...thenReturn to mock,
+        * every time the testDao.isOurUser is been called, will return true.
+        */
         when(testDao.isOurUser(userIdMock)).thenReturn(true);
     }
 
