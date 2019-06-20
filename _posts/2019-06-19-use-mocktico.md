@@ -10,17 +10,18 @@ tags: [Unit Test]
 > Notice: All the numbers and cases in this page are fake number, just for example
 
 ## General Concept
-Why need "MOCK", because there are dependency for the software module.   
-Typical case, A and B developing on-line cart function, A is doing DAO part, B is doing service part. Apparently, B is dependency on A's code, how B doing the unit test for his code? Insert trash date into DAO class ? That is so ugly. Create the fake data? That just useless work, B will need write test again whey actual DAO is done. That's why the mock test tools come out, which let developer focus on their own unit code.
+Why need "MOCK", because there are many dependency for the software module. To better isolate the software layer, we need Mock.  
+  
+A typical case, A and B developing on-line cart function, A is doing DAO part, B is doing service part. Apparently, B is dependency on A's code, how B doing the unit test for his code? We can: 1.Insert trash data into DAO class ? That is so ugly. 2.Create the fake data? That just useless work, B will need write test again whey actual DAO is done. That's why the mock test tools come out, which let developer focus on their own unit code.
 
-For Java, there are similar framework for mock purpose: EasyMock, PowerMock, JMockit etc, the Mockito is most popular.
+For Java, there are some mock frameworks: EasyMock, PowerMock, JMockit etc, the Mockito is most popular. Here is using Mockito as example.
 
 ## Examples
 Let's check two examples I implemented and help me understand how mock works.
 
 #### DAO Example
-The DAO will do the query for database, however, we don't have final query yet, use @Mock to simulate the JdbcTemplate behavior. So the code will not actually call the db, here we only check the query has been called, if we want to test the return data behavior, we can add when...thenReturn to simulate.
-```
+The DAO will do the query for database, however, consider we don't have final query yet, use @Mock to simulate the JdbcTemplate behavior, so the code will not actually call the db. Here we only check the query has been called, if we want to test the return data behavior, we can add when...thenReturn to simulate.
+```java
 @RunWith(SpringRunner.class)
 public class TestDaoTest {
 
@@ -55,8 +56,8 @@ public class TestDaoTest {
 ```
 
 #### RESTFUL Example
-This is an service case, the service will call the Restful API, however, the remote API is not completed yet. In order to unit test the service logic, we can add mock RestTemplate to simulate the return data, then use the mock data to verify the testService.getLocalTestData logic.  
-```
+This is a service layer case, the service will call the Restful API, however, the remote API is not completed yet. In order to do unit test the service logic, we can add mock RestTemplate to simulate the API call, then use the mock data to verify the unit(testService.getLocalTestData) logic.  
+```java
 RunWith(SpringRunner.class)
 public class TestServiceTest {
 
@@ -138,7 +139,7 @@ public class TestServiceTest {
 ```
 
 ## Think
-It is tricky when I first time saw mock since I always verify data with actually return data. Just keep in mind, the purpose of mock is focus on logic in the code unit itself, anything dependent on other can be mocked.
+It is very tricky when I first time touch mock since I always verify data with actually data. Just keep in mind, the purpose of mock is focus on unit logic itself, any dependency can be mocked.
 
 ## Reference
 [Unit tests with Mockito - Tutorial](https://www.vogella.com/tutorials/Mockito/article.html)
