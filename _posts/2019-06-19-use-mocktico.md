@@ -45,7 +45,7 @@ public class TestDaoTest {
     public void getSelectedModalByUserIdTest() {
         testDao.getSelectedModalByUserId(userIdMock);
 
-        //verify the query has been called
+        // verify the query has been called
         verify(jdbcTemplate).queryForList(
                 eq(Queries.GET_BB_SELECTED_MODAL_BY_USERID),
                 refEq(new Object[] { userIdMock }),
