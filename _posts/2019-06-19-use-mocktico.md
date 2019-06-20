@@ -64,19 +64,19 @@ public class TestServiceTest {
     private static ObjectMapper objectMapper;
 
     @Mock
-	//when use mock annotation, the data is in memory, it will not actually run the rest full call.
+	// when use mock annotation, the data is in memory, it will not actually run the rest full call.
     private RestTemplate restTemplate;
 
     @Mock
-	//when use mock annotation, the data is in memory, it will not actually run the database query.
+	// when use mock annotation, the data is in memory, it will not actually run the database query.
     private TestDao testDao = new TestDao();
 
     @InjectMocks
-	//InjectMocks allow us to inject the Mock object into the target object, so when the testService is using restTemplate, the test will able to catch it.
+	// InjectMocks allow us to inject the Mock object into the target object, so when the testService is using restTemplate, the test will able to catch it.
     private TestService testService = new TestService();
 
     @Captor
-	//Captor will able to pass the object to parameter
+	// Captor will able to pass the object to parameter
     private ArgumentCaptor<HttpEntity<TestPDFDownloadParameter>> httpEntityDwnParameterCaptor;
 
     private final static String MOCK_API_URL = "http://localhost/test-api";
@@ -111,7 +111,7 @@ public class TestServiceTest {
         testService.getLocalTestData(userIdMock, companyIdMock);
         String mockUrl = (MOCK_API_URL + "/" + MOCK_GET_PDF_DATA).trim();
 
-        //verify the exchange has been called once, this just verify the exchange function has been called with required parameter
+        // verify the exchange has been called once, this just verify the exchange function has been called with required parameter
         verify(restTemplate, times(1)).exchange(
                 eq(mockUrl),
                 eq(HttpMethod.POST),
