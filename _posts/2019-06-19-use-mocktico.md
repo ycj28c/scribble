@@ -86,23 +86,23 @@ public class TestServiceTest {
     @Before
     public void init() {
 		/*
-	     * setField will allow us inject / replace the attribute for target object.		
-		 * public static void setField(Object targetObject, String name, Object value) {
-         *   setField((Object)targetObject, name, value, (Class)null);
-         * }
-		 *
+		* setField will allow us inject / replace the attribute for target object.		
+		* public static void setField(Object targetObject, String name, Object value) {
+		*   setField((Object)targetObject, name, value, (Class)null);
+		* }
+		*
         ReflectionTestUtils.setField(testService, "API_URL", MOCK_API_URL);
         ReflectionTestUtils.setField(testService, "GET_PDF_DATA", MOCK_GET_PDF_DATA);
 
         userIdMock = 37817L;
         companyIdMock = 244L;
 
-        /* 
-		 * return true for isOurUser mock
-		 *
-		 * the testDao.isOurUser is used inside the testService, use when...thenReturn to mock,
-		 * every time the testDao.isOurUser is been called, will return true.
-		 */
+		/* 
+		* return true for isOurUser mock
+		*
+		* the testDao.isOurUser is used inside the testService, use when...thenReturn to mock,
+		* every time the testDao.isOurUser is been called, will return true.
+		*/
         when(testDao.isOurUser(userIdMock)).thenReturn(true);
     }
 
