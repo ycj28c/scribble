@@ -57,8 +57,17 @@ ANALYZE raw_data_ralph;
 *5.vacuum table*
 This may happened when the table is updated many many times per day. In this case, the old data not removed from the data file, still occupy the space, the Postgres optimizer may not correctly collect the table information. Need vaccum.
 ~~~
-vacuum raw_data_ralph;
+vacuum analyze raw_data_ralph;
 ~~~ 
+check the vacuum status
+~~~
+SELECT
+  schemaname, relname,
+  last_vacuum, last_autovacuum,
+  vacuum_count, autovacuum_count  -- not available on 9.0 and earlier
+FROM pg_stat_user_tables
+	where relname = 'stock_price_on_or_before';
+~~~
 
 Now, here is a new way I just know, use temp table.
 

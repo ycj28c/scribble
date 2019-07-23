@@ -136,6 +136,39 @@ vacuum full verbose table1;
 vacuum analyze
 ```
 
+* how to use lateral
+```
+#if source data look like below
+#year         |     sh_out_dt      | sh_out          |
+#-----------------------------------------------------
+#2765265,0,34 | 2149524,287,4      | 1584011,5738,10 |
+
+#we want to convert to below
+#filed_name | document_id | field_offset | field_length |
+#--------------------------------------------------------
+#year       |  2765265    |       0      |      34      |
+#sh_out_dt  |  2149524    |     287      |       4      |
+#sh_out     |  1584011    |     5738     |      10      |
+
+SELECT
+  sub_query.name                                           AS field_name,
+  NULLIF(split_part(sub_query.col, ',', 1), '') :: BIGINT  AS document_id,
+  NULLIF(split_part(sub_query.col, ',', 2), '') :: NUMERIC AS field_offset,
+  NULLIF(split_part(sub_query.col, ',', 3), '') :: NUMERIC AS field_length
+  split_part(sub_query.col, ',', 1),
+  REGEXP_SPLIT_TO_ARRAY(col, ','),
+ARRAY_LENGTH(REGEXP_SPLIT_TO_ARRAY(col, ','), 1)
+FROM data_ddown fyd
+  LATERAL ( -- Getting column name and column data of corresponding column
+  VALUES (TEXT 'year', fyd.year),
+         (     'sh_out_dt', fyd.sh_out_dt),
+         (     'sh_out', fyd.sh_out)
+  ) sub_query(name, col)
+WHERE col IS NOT NULL
+  AND ARRAY_LENGTH(REGEXP_SPLIT_TO_ARRAY(col, ','), 1) >= 2;
+
+```
+
 *  performance analyze related
 
 ```sql
