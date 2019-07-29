@@ -136,7 +136,8 @@ vacuum full verbose table1;
 vacuum analyze
 ```
 
-* how to use lateral
+* how to use lateral  
+
 ```
 #if source data look like below
 #year         |     sh_out_dt      | sh_out          |
@@ -166,7 +167,6 @@ FROM data_ddown fyd
   ) sub_query(name, col)
 WHERE col IS NOT NULL
   AND ARRAY_LENGTH(REGEXP_SPLIT_TO_ARRAY(col, ','), 1) >= 2;
-
 ```
 
 *  performance analyze related
