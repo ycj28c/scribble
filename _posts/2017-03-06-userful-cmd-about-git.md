@@ -79,11 +79,20 @@ Top 5 Contributor
 git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 5
 ```
 
+Find the history information  
+```
+# For full path names of changed files:
+git log --name-only
+# For full path names and status of changed files:
+git log --name-status
+# For abbreviated pathnames and a diffstat of changed files:
+git log --stat
+```
 
 Reference
 ---------
 [git统计历史上某一段时间代码的修改量](https://blog.csdn.net/zhangphil/article/details/79957197)  
 [git代码统计](https://segmentfault.com/a/1190000008542123)
-
+[How to have git log show filenames like svn log -v](https://stackoverflow.com/questions/1230084/how-to-have-git-log-show-filenames-like-svn-log-v)
 
 
