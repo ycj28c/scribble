@@ -9,7 +9,7 @@ tags: [Postgres, Performance]
 
 這個系統已經超過10年了，不像新項目直接拿個新框架就上，老系統修修補補，再遷移一下十分費勁。如果升級像是Java版本還好，只要不是用什麽特殊技術，或者使用非openJDK的版本，通常向下兼容。但是大項目Maven project龐大的Jars就沒這麽方便了，儅更新了一個jar A，那麽就得改Jar B，改了Jar B發現Jar C也不行了，無窮無盡。這裏簡單闡述下更新的方法。
 
-假設我們要從springBoot 1.1.12.RELEASE升級到springBoot 2.0.9.RELEASE，全部過程靠兩個工具，1是maven dependency tree（我用的intellij自帶插件），還有https://mvnrepository.com網站。  
+假設我們要從springBoot 1.1.12.RELEASE升級到springBoot 2.0.9.RELEASE，全部過程靠兩個工具，1是maven dependency tree（我用的intellij自帶插件），還有[mvnrepository](https://mvnrepository.com)網站。  
 
 1. 確定最低依賴要求  
 在mvnrepository找到要升級的2.0.9.RELEASE的依賴，該網站提供了詳細了Compile Dependencies列表，可以知道這個Jar的以來，比如2.0.9.RELEASE，就依賴了一堆其他Jar。比如要求spring-core 5.0.13.RELEASE啦，slf4j-api 1.7.26啦，這些都是最低要求，也就說必須滿足這些依賴springBoot 2.0.9.RELEASE才能運行。通常的話都打包了，也有可能有些依賴沒有打包的，就得自己添加了。
