@@ -14,22 +14,22 @@ Introduce
 Is Binary Search really easy? No, not really. Look at the Knuth (who invent KMP algorithm) said : Although the basic idea of binary search is comparatively straightforward, the details can be surprisingly tricky...   
 Short sentence: Idea is simple, detail is devil.
 
-1. 解一直在可行区间里
-2. 每次判断后可行区间都会缩小(特别是左右端点相距为0/1的时候)
-
-1. solution always in valid area
-2. valid area shrink every time after judgment
+1. 解一直在可行区间里  
+solution always in valid area
+2. 每次判断后可行区间都会缩小(特别是左右端点相距为0/1的时候)  
+valid area shrink every time after judgment(especially the left = right or left = right-1 situation)
 
 Notes
 --------
-1. 閉包空間(closure) [low, high],[low,high)的不同  
+1. 閉包(Closure)空間 [low, high],[low,high)的不同;  
+比如：  
 while(low <= high) 代入(3,2)，不存在空間  
-while(low < high) 代入(2,2)，還是存在2這個值得  
-2. high = mid還是high = mid -1，要根據終止條件  
-3. 返回low還是high？ 這個要根據終止條件，如果while(low < high)就無所謂，因爲終止情況就是low=high，而while(low <= high)就不同了？  
-4. low更新必須 low = mid + 1，這樣才能避免奇偶的影響  
-5. 二分查找別用else了，老老實實else if來判斷較好  
-6. low + (high - low)/2 防止整數溢出範圍  
+while(low < high) 代入(2,2)，還是存在2這個值的  
+2. high = mid還是high = mid -1，要根據終止條件;  
+3. 返回low還是high? 這個要根據終止條件，如果while(low < high)就無所謂，因爲終止情況就是low=high，而while(low <= high)就不同了;  
+4. low更新必須 low = mid + 1，這樣才能避免奇偶的影響;  
+5. 二分查找別用else了，老老實實else if來判斷較好;  
+6. low + (high - low)/2 防止整數溢出範圍.  
 
 Example Code
 ------------
