@@ -29,7 +29,8 @@ Browsersync
 Karma  
 Protractor  
 HTML5 / CSS3  
-Bootstrap
+Bootstrap  
+antd
 
 ### Compile / Assemble
 Gradle
@@ -53,13 +54,20 @@ Counchbase
 Elastic Search
 
 ### Java Framework
-Spring Boot
+Spring MVC 基于Web MVC设计模式的请求驱动类型的轻量级Web框架
+Spring Boot 简化的独立的Spring应用
 Sprint Security
 
-### Big Data
-
-### ORM
+### JPA
 Hibernate 该淘汰了
+Mybatis
+
+### Middleware
+Tomcat  
+Jetty
+
+### Big Data
+Hadoop
 
 ### Data ?
 Kafka (Message queue to provide reliable data for complex system)  
@@ -77,6 +85,7 @@ Infinispan
 Netflix OSS  
 Consul  
 Liquibase  
+zookeeper
 
 
 
