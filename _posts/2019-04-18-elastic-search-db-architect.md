@@ -7,8 +7,6 @@ categories: [Architecture, Search]
 tags: [ElasticSearch]
 ---
 
-//TODO English Version
-
 本文將用中文，所有的research都是中文材料  
 
 Introduce
