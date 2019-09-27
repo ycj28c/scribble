@@ -30,7 +30,7 @@ Karma
 Protractor  
 HTML5 / CSS3  
 Bootstrap  
-antd
+antd  
 
 ### Compile / Assemble
 Gradle
@@ -54,38 +54,38 @@ Counchbase
 Elastic Search
 
 ### Java Framework
-Spring MVC 基于Web MVC设计模式的请求驱动类型的轻量级Web框架
-Spring Boot 简化的独立的Spring应用
-Sprint Security
+Spring MVC 基于Web MVC设计模式的请求驱动类型的轻量级Web框架  
+Spring Boot 简化的独立的Spring应用  
+Sprint Security  
 
 ### JPA
-Hibernate 该淘汰了
+Hibernate 该淘汰了  
 Mybatis
 
 ### Middleware
 Tomcat  
-Jetty
+Jetty  
 
 ### Big Data
 Hadoop
 
 ### Data ?
 Kafka (Message queue to provide reliable data for complex system)  
-[kafka解决了什么问题?](https://www.zhihu.com/question/53331259)
+[kafka解决了什么问题?](https://www.zhihu.com/question/53331259)  
 
 ### Design
 Sketch 專用製圖做圖標和設計  
 Invision 專門的存放Mockup設計的地方，可以方便的展示HTML，Mobile，PDF等設計  
 
 ### 未分类
-ELK Stack
-EhCache
-Hazelcast
-Infinispan
-Netflix OSS  
-Consul  
-Liquibase  
-zookeeper
+ELK Stack  
+EhCache  
+Hazelcast  
+Infinispan  
+Netflix OSS    
+Consul    
+Liquibase    
+zookeeper  
 
 
 
