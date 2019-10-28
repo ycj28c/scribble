@@ -195,3 +195,13 @@ select * from pg_stat_statements;
 --查询平均执行时间最长的3条查询
 select calls,total_time/calls as avg_time,left(query,80) from pg_stat_statements order by 2 desc limit 3;
 ```
+
+* convert the regclass in postgressql  
+```sql
+-- you may get some id from postgres log
+-- for example: "process 9097 acquired AccessShareLock on relation 220216116 of database 16387 after 2741065.823 ms"
+-- here is the query to translate
+select * from pg_class where oid = '220216116'::regclass;
+-- now we we it represent the "stock_price_on_or_after"
+```
+
