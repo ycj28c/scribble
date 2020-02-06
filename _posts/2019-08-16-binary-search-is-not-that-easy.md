@@ -21,35 +21,35 @@ valid area shrink every time after judgment(especially the left = right or left 
 
 Notes
 --------
-1. 閉包(Closure)空間 [low, high],[low,high)的不同;  
+1. 闭包(Closure)空间 [low, high],[low,high)的不同;  
 比如：  
-while(low <= high) 代入(3,2)，不存在空間  
-while(low < high) 代入(2,2)，還是存在2這個值的  
-2. high = mid還是high = mid -1，要根據終止條件;  
-3. 返回low還是high? 這個要根據終止條件，如果while(low < high)就無所謂，因爲終止情況就是low=high，而while(low <= high)就不同了;  
-4. low更新必須 low = mid + 1，這樣才能避免奇偶的影響;  
-5. 二分查找別用else了，老老實實else if來判斷較好;  
-6. low + (high - low)/2 防止整數溢出範圍.  
+while(low <= high) 代入(3,2)，不存在空间  
+while(low < high) 代入(2,2)，还是存在2这个值的  
+2. high = mid还是high = mid -1，要根据终止条件;  
+3. 返回low还是high? 这个要根据终止条件，如果while(low < high)就无所谓，因爲终止情况就是low=high，而while(low <= high)就不同了;  
+4. low更新必须 low = mid + 1，这样才能避免奇偶的影响;  
+5. 二分查找别用else了，老老实实else if来判断较好;  
+6. low + (high - low)/2 防止整数溢出范围.  
 
 Example Code
 ------------
 ```
-二分有兩種：注意取值範圍，還有是否mid-1都是由講究的。最好寫上所有if，else if來判斷3種情況>=<，不要用else
+二分有两种：注意取值范围，还有是否mid-1都是由讲究的。最好写上所有if，else if来判断3种情况>=<，不要用else
 
 //右值点不能取到的情况
 int binary_search(vector<int>& nums,int left,int right, int target) {
     //坑点（1）right究竟能不能取到的问题，这里是不能取到的情况
     int low = left;
-    int high = right; //這是[)右開包的情況
+    int high = right; //这是[)右开包的情况
     while(low<high){
         int mid = low+(high-low)/2;             //坑点（2）这里尽量这么写，因为如果写成(i+j)/2则有溢出的风险
         if(nums[mid]==target)  high = mid;   
         else if(nums[mid]<target)  high = mid;  //坑点（3）因为右值点反正不能取到，所以j就可以等于mid
-        else if(nums[mid]>target)  low = mid+1; //坑点（4）應該可以無腦這麽寫，因爲奇偶數最好每次都改變low
+        else if(nums[mid]>target)  low = mid+1; //坑点（4）应该可以无脑这么写，因爲奇偶数最好每次都改变low
     }
-    return low; //坑點(5) 要根據題目需要返回要求的邊界
+    return low; //坑点(5) 要根据题目需要返回要求的边界
 }
-//右值点能取到的情况，這是[]閉包的情況，我比較傾向這種寫法
+//右值点能取到的情况，这是[]闭包的情况，我比较倾向这种写法
 int searchInsert(vector<int>& nums,int left,int right, int target) {
     int low = left;
     int high = right;
