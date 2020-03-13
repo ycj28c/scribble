@@ -81,3 +81,12 @@ Tracking the log with the key words
 tail -f target.log | grep --line-buffered 'Keyword'
 ```
 
+Check the total open files  
+```
+lsof |wc -l
+```
+
+set the execute program resource
+```
+ulimit -a
+```
