@@ -9,7 +9,7 @@ tags: [Redis]
 
 Issue Introduce
 -------------------------
-We encouter a issue that redis server suddenly went slow, found it is relate to bgsave, this article is about how troubleshoot and solve it. 
+We encounter a issue that redis server suddenly went slow, found it is relate to bgsave, this article is about how troubleshoot and solve it. 
 
 Issue Trouble
 -------------------------
@@ -62,9 +62,12 @@ default redis configuration directory: /etc/redis/redis-insight.conf
     stop-writes-on-bgsave-error no
 ```
 
-There also other redis persistant machanism AOF, didn't research on that yet.  
+There also other redis persistant machanism AOF, is a mode of data persistence where Redis persist the dataset by taking a snapshot and then appending the snapshot with changes as those changes take place. However, this way probably save all the log, which require lot of space.
+
+So currently solution is turn off the AOF and RDB backup... manually run the save (only 1 redis server...)  
 
 Reference
 -------------------------
-[https://www.zhihu.com/question/53616538/answer/145017374](https://www.zhihu.com/question/53616538/answer/145017374)
-[http://redisdoc.com/topic/persistence.html](http://redisdoc.com/topic/persistence.html)
+[https://www.zhihu.com/question/53616538/answer/145017374](https://www.zhihu.com/question/53616538/answer/145017374)  
+[http://redisdoc.com/topic/persistence.html](http://redisdoc.com/topic/persistence.html)  
+[How to Set-up Persistence in Redis](https://kb.objectrocket.com/redis/how-to-set-up-persistence-in-redis-575)   

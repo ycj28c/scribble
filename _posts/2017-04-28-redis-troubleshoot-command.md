@@ -19,6 +19,14 @@ The common Reids cache missing situation:
 + Master/Slave Redis copy data issue, cause data lost after switch master/slave
 + Key expired, being clean
 
+Show All Redis Configuration
+-------------------------
+```shell
+$ /usr/local/bin/redis-cli -h 10.1.50.147 -p 6389
+10.1.50.147:6389> config get *
+# for example, can find log location: /var/lib/redis/redis-insight.log
+```
+
 Basic Server Check(Linux)
 -------------------------
 
