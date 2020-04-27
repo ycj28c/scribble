@@ -71,3 +71,4 @@ Reference
 [https://www.zhihu.com/question/53616538/answer/145017374](https://www.zhihu.com/question/53616538/answer/145017374)  
 [http://redisdoc.com/topic/persistence.html](http://redisdoc.com/topic/persistence.html)  
 [How to Set-up Persistence in Redis](https://kb.objectrocket.com/redis/how-to-set-up-persistence-in-redis-575)   
+[10分钟彻底理解Redis的持久化机制：RDB和AOF](https://juejin.im/post/5d09a9ff51882577eb133aa9)  
