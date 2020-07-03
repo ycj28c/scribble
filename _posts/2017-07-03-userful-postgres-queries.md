@@ -85,6 +85,16 @@ begin;
 rollback;
 ```
 
+* how to query the array contains any
+
+```sql
+select * from (
+SELECT MCS.COMPANY_ID,ARRAY_AGG(DISTINCT S.SECTOR_DESCRIPTION)::text[] SECTORS
+                    FROM MASTER_COMPANY_SECTOR MCS, SECTOR S
+           WHERE MCS.SECTOR_ID=S.SECTOR_ID GROUP BY MCS.COMPANY_ID) msc
+where msc.SECTORS && ARRAY['Technology', 'Telecom Technologies'];
+```
+
 *  recursive query
 [Find Parent Recursively using Query](https://stackoverflow.com/questions/3699395/find-parent-recursively-using-query)
 
