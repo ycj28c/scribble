@@ -33,8 +33,8 @@ for(int i=0;i<100;i++){
 ```
 这样的话可以获取每个线程的结果，然后根据结果就可以call executorService.shutdownNow()直接中断，但是future.get()会阻塞主线程，所以这个实际上就是单线程在跑了。
 
-如果解决呢，一种方式就是使用CompletionService抱在ExecutiveService之上，见[reference[1](https://www.cnblogs.com/dennyzhangdd/p/7010972.html)]
-```
+如果解决呢，一种方式就是使用CompletionService抱在ExecutiveService之上，见[reference[1]](https://www.cnblogs.com/dennyzhangdd/p/7010972.html)
+```java
 public static void main(String[] args)  {
     Long start = System.currentTimeMillis();
     //开启3个线程
@@ -73,7 +73,7 @@ CompletableFuture
 在Java1.8有了CompletableFuture，功能上比较多，可以用lambda，可以catch exception，比较好用。  
 而且最重要的是使用CompletableFuture可以在多线程的同时还处理返回数据，也就是说get()不block，性能好又好用，所以在Java8后无脑用这个就行。 
 
-[reference[1](https://www.cnblogs.com/dennyzhangdd/p/7010972.html)]的例子很好，这里再抄一个
+[reference[1]](https://www.cnblogs.com/dennyzhangdd/p/7010972.html)的例子很好，这里再抄一个
 ```java
 public static void main(String[] args) {
     Long start = System.currentTimeMillis();
