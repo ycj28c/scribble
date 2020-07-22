@@ -215,3 +215,9 @@ select * from pg_class where oid = '220216116'::regclass;
 -- now we we it represent the "stock_price_on_or_after"
 ```
 
+* find special character  
+```sql
+SELECT regexp_replace(bio, '([^[:ascii:]|’|“|”|–|…|™|è|—])', '[\1]', 'g') AS t_marked
+FROM raw_data
+WHERE bio ~ '[^[:ascii:]|’|“|”|–|…|™|è|—]' limit 20;
+```
