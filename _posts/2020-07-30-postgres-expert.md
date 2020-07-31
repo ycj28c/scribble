@@ -63,7 +63,7 @@ I/O Subsystem
 During most of the analysis period, both “normal” and “refresh”, the I/O subsystem hosting the data volume reached maximum capacity. Both the service wait time (the amount of time an individual I/O request waited to be handled) and the queue length (the number of I/O requests waiting to be handled) increased by enough to show that the I/O subsystem was a limiting factor.  The primary I/O operations were read operations, which indicates that more RAM might be helpful to provide more caching and reduce the number of I/O operations that need to be performed to fulfill queries. Of course, increasing the available bandwidth and reducing the  
 latency of the I/O subsystem will help in this case as well.   
 
-IO也是个问题，有很高的等待时间。但是disk的读取速度是固定的，增快速度往往需要增加内存。不过主要问题不是速度，而是throughput，提高系统的带库才是提高系统性能主要考虑。
+结论： IO也是个问题，有很高的等待时间。但是disk的读取速度是固定的，增快速度往往需要增加内存。不过主要问题不是速度，而是throughput，提高系统的带库才是提高系统性能主要考虑。
 
 Connection Activity  
 ---------
