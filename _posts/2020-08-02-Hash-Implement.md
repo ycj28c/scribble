@@ -116,7 +116,7 @@ hash=h^(h>>>16): 1111 1111 1111 1111 0000 1111 0001 0101
 不，扩容的时候，hashmap会transfer现有的buckets。某个线程t所持有的引用next，可能已经被转移到了新桶数组中，那么最后该线程t实际上在对新的桶数组进行transfer操作。如果有更多的线程出现这种情况，那很可能出现大量线程都在对新桶数组进行transfer，那么就会出现多个线程对同一链表无限进行链表反转的操作，极易造成死循环，数据丢失等等，因此HashMap不是线程安全的，考虑在多线程环境下使用并发工具包下的ConcurrentHashMap。
 
 13.HashMap的遍历是乱序吗？  
-iterator（）时顺着哈希桶数组来遍历，看起来是个乱序。
+iterator()时顺着哈希桶数组来遍历，看起来是个乱序。
 
 代码演示
 ----------
@@ -125,21 +125,21 @@ iterator（）时顺着哈希桶数组来遍历，看起来是个乱序。
 class MyHashSet {
 
     class Bucket {
-		private int[] arr;
-		public Bucket(){
-			this.arr = new int[1000]; //0-1000
-			Arrays.fill(arr, -1);
-		}
-		public void add(int y){
-			arr[y] = y;
-		}
-		public void delete(int y){
-			arr[y] = -1;
-		}
-		public boolean contains(int y){
-			return arr[y] != -1;
-		}
+	private int[] arr;
+	public Bucket(){
+		this.arr = new int[1000]; //0-1000
+		Arrays.fill(arr, -1);
 	}
+	public void add(int y){
+		arr[y] = y;
+	}
+	public void delete(int y){
+		arr[y] = -1;
+	}
+	public boolean contains(int y){
+		return arr[y] != -1;
+	}
+    }
     /** Initialize your data structure here. */
 	private Bucket[] buckets;
     public MyHashSet() {
