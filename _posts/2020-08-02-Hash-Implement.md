@@ -14,9 +14,9 @@ Hash表设计:
 就是使用数组的方式存储。hash就是直接mod得到在数组的index。
 
 解决冲突的方式有：  
-线性探查（Linear Probing）：最简单的场景，如果当前被占了，就顺位找下一个有空的。
-二次探查（Quadratic Probing）：线性探查的太慢，让每次检查位置空间的步长为平方倍数，不过冲突仍然存在 
-二度哈希（Rehashing）（或称为双重哈希（Double Hashing））：一组哈希函数 H1...Hn 的集合。当需要从哈希表中添加或获取元素时，首先使用哈希函数 H1。如果导致冲突，则尝试使用 H2，以此类推，直到 Hn。所有的哈希函数都与 H1 十分相似，不同的是它们选用的乘法因子（multiplicative factor）。哈希表中的所有元素值将依赖于哈希表的位置空间值，所以表中所有值也需要重新二度哈希。具体函数没有深入理解，可以看[哈希表和完美哈希](https://www.cnblogs.com/gaochundong/p/hashtable_and_perfect_hashing.html)
+1)线性探查（Linear Probing）：最简单的场景，如果当前被占了，就顺位找下一个有空的。  
+2)二次探查（Quadratic Probing）：线性探查的太慢，让每次检查位置空间的步长为平方倍数，不过冲突仍然存在   
+3)二度哈希（Rehashing）（或称为双重哈希（Double Hashing））：一组哈希函数 H1...Hn 的集合。当需要从哈希表中添加或获取元素时，首先使用哈希函数 H1。如果导致冲突，则尝试使用 H2，以此类推，直到 Hn。所有的哈希函数都与 H1 十分相似，不同的是它们选用的乘法因子（multiplicative factor）。哈希表中的所有元素值将依赖于哈希表的位置空间值，所以表中所有值也需要重新二度哈希。具体函数没有深入理解，可以看[哈希表和完美哈希](https://www.cnblogs.com/gaochundong/p/hashtable_and_perfect_hashing.html)
 
 2.链接技术：  
 链表的做法，把哈希到同一个槽中的所有元素都放到一个链表中，当冲突发生时，冲突的元素将被添加到桶（bucket）列表中，而每个桶都包含了一个链表以存储相同哈希的元素。也就是Java的做法。
