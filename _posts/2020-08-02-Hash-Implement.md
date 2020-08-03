@@ -72,8 +72,7 @@ public HashMap(int initialCapacity, float loadFactor) ;
 7.HashMap是怎么存储的？  
 先对Entry进行Hash，每个Hash结构存放于Bucket中。Java8之前使用的单向链表，在Java8后新增了默认为8的阕值。Bucket根据长短可能会有LinkedList和BSTree两种implement，在冲突大的时候使用BSTree让复杂度变为log(N)。
 
-在leetcode中也有相应的训练题，可以帮助理解Hash原理:
-705. Design HashSet [Solution](https://leetcode.com/problems/design-hashset/solution/)    
+在leetcode中也有相应的训练题，可以帮助理解Hash原理: Design HashSet[Solution](https://leetcode.com/problems/design-hashset/solution/)    
 
 8.HashMap的(桶)大小为什么是2的幂？  
 答案当然是为了性能。在HashMap通过键的哈希值进行定位桶位置的时候，调用了一个indexFor(hash, table.length);方法。
