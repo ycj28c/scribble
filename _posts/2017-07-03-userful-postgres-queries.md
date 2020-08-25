@@ -221,3 +221,14 @@ SELECT regexp_replace(bio, '([^[:ascii:]|’|“|”|–|…|™|è|—])', '[\1
 FROM raw_data
 WHERE bio ~ '[^[:ascii:]|’|“|”|–|…|™|è|—]' limit 20;
 ```
+
+* create the sequence postgres way
+```sql
+ALTER TABLE tableA ADD COLUMN IF NOT EXISTS tableA_id BIGSERIAL PRIMARY KEY;
+
+--- Above single liner equivalent to below operations
+CREATE SEQUENCE tableA_id_seq;
+ALTER TABLE tableA ADD COLUMN IF NOT EXISTS tableA_id BIGINT PRIMARY KEY DEFAULT nextval('tableA_id_seq') NOT NULL;
+ALTER SEQUENCE tableA OWNED BY tableA.tableA_id;
+```
+
