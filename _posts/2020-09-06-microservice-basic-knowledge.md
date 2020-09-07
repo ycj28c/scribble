@@ -67,9 +67,9 @@ Service Mesh（服务网格）被认为是下一代微服务架构，Service Mes
 zookeeper用来管理服务集群，kubernetes用来管容器集群。所以kubernetes管理的容器里面还可以装zookeeper。
 
 ### Reference
-1.[Mastering Chaos - A Netflix Guide to Microservices](https://www.youtube.com/watch?v=CZ3wIuvmHeM)   
-2.[微服务，一文带你彻底搞懂](https://labuladong.github.io/ebook/%E6%8A%95%E7%A8%BF/%E9%9D%A2%E8%AF%95%E9%83%BD%E5%9C%A8%E9%97%AE%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%8C%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82.html)  
-3.[微服务调用为啥用RPC框架，http不更简单吗？](https://zhuanlan.zhihu.com/p/61364466)  
-4.[Thrift 简单介绍](https://www.jianshu.com/p/8f25d057a5a9)  
-5.[十分钟带你理解Kubernetes核心概念](http://www.dockone.io/article/932)  
-6.[微服务探索与实践—服务注册与发现](https://juejin.im/post/6844903837476585480)
+1. [Mastering Chaos - A Netflix Guide to Microservices](https://www.youtube.com/watch?v=CZ3wIuvmHeM)   
+2. [微服务，一文带你彻底搞懂](https://labuladong.github.io/ebook/%E6%8A%95%E7%A8%BF/%E9%9D%A2%E8%AF%95%E9%83%BD%E5%9C%A8%E9%97%AE%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%8C%E4%B8%80%E6%96%87%E5%B8%A6%E4%BD%A0%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82.html)  
+3. [微服务调用为啥用RPC框架，http不更简单吗？](https://zhuanlan.zhihu.com/p/61364466)  
+4. [Thrift 简单介绍](https://www.jianshu.com/p/8f25d057a5a9)  
+5. [十分钟带你理解Kubernetes核心概念](http://www.dockone.io/article/932)  
+6. [微服务探索与实践—服务注册与发现](https://juejin.im/post/6844903837476585480)
