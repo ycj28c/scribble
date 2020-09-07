@@ -25,9 +25,9 @@ tags: [Microservice]
 
 *RPC(Remote Procedure Call) vs Restful:*   
 服务器之间的通讯通过RPC而不是HTTP来实现。 
-1.RPC面向过程，只发送 GET 和 POST 请求。RESTful面向资源，使用 POST、DELETE、PUT、GET等请求。
+1.RPC面向过程，只发送 GET 和 POST 请求。RESTful面向资源，使用 POST、DELETE、PUT、GET等请求。  
 2.不过HTTP要包含不少无用文件头，浪费流量。而RPC显然要高效很多（就如同java的rmi，显然比restfull来的快）。RPC也不是长链接，不需要什么3次握手之类。  
-3.HTTP(restful)是应用层，TCP是传输协议，所以支持范围最广，任何语言编写的符合HTTP标准就行，比如JSON之类。RPC有限制，不过通过thrift或者gRPC也是可以支持非常多的语言的。 
+3.HTTP(restful)是应用层，TCP是传输协议，所以支持范围最广，任何语言编写的符合HTTP标准就行，比如JSON之类。RPC有限制，不过通过thrift或者gRPC也是可以支持非常多的语言的。  
 
 *服务发现:*   
 流行的就是netflix eureka。注意微服务架构的服务器都是动态的，服务调用时，无需知道目标服务的真实地址，只需要知道服务Key，然后到服务发现系统里获取对应的地址即可。这个服务器发现包括了客户端发现和服务端发现，因为服务器也需要找其他服务。显然服务发现需要高可用，否则，客户端和服务端都无法工作了，这就需要类似zookeeper的health check以及容灾设置了。
