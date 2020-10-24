@@ -232,3 +232,31 @@ ALTER TABLE tableA ADD COLUMN IF NOT EXISTS tableA_id BIGINT PRIMARY KEY DEFAULT
 ALTER SEQUENCE tableA OWNED BY tableA.tableA_id;
 ```
 
+* find functions using certain functions
+```sql
+with raw as (
+  SELECT distinct(proname) || '\(' as dis_name
+     FROM pg_proc
+  WHERE prosrc ILIKE '%oracle%'
+    and proname !~* 'substr'
+)
+select n.nspname, r.dis_name, proname, prosrc, proargnames
+from pg_proc pp
+join pg_namespace n on n.oid = pp.pronamespace
+join raw r on pp.prosrc ~* r.dis_name
+where nspname in ('schema_space');
+```
+
+* find mview using certain functions
+```sql
+with raw as (
+  SELECT distinct(proname) || '\(' as dis_name
+     FROM pg_proc
+  WHERE prosrc ILIKE '%oracle%'
+    and proname !~* 'substr'
+)
+select schemaname, r.dis_name, matviewname, matviewowner, ispopulated, definition
+from pg_matviews pm
+join raw r on pm.definition ~* r.dis_name
+where schemaname in ('xpfeed');
+```
