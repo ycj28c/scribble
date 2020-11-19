@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Userful Cmd About Git
+title: Useful Cmd About Git
 disqus: y
 share: y
 categories: [Devops]
