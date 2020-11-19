@@ -8,11 +8,13 @@ tags: [Postgres]
 ---
 
 * convert table to json  
+
 ```sql
 select to_json(pc) from proxy_company pc;
 ```
 
 * converting a whole row to json; one row for each json  
+
 ```sql
 SELECT
   pc.company_id,
@@ -20,7 +22,8 @@ SELECT
 FROM proxy_company pc;
 ```
 
-* aggregate the result and to json; building {company_id: [{row}, {row}]}  
+* aggregate the result and to json; building {company_id: [{row}, {row}]}
+  
 ```sql
 SELECT
   t.company_id,
@@ -35,16 +38,19 @@ FROM (
 ```
 
 * check current user connection  
+
 ```sql
 SELECT * FROM pg_stat_activity where state = 'active';
 ```
 
 * check max connection setting  
+
 ```sql
 show max_connections;
 ```
 
 * find the lock the pid and kill it  
+
 ```sql
 --for example, you know the 'market_index' table is frozen
 select * from pg_locks where granted and relation = 'market_index'::regclass;
@@ -57,11 +63,13 @@ select pg_terminate_backend(28769);
 ```
 
 *  pg_dump the mview and its index  
+
 ```shell
 pg_dump -sOx -t cdna_search -h 10.1.50.35 -U insight insight_qa > cdna_search.sql
 ```
 
 *  postgres foreign link related  
+
 ```sql
 select * from pg_foreign_server;
 select * from pg_user_mappings;
@@ -70,6 +78,7 @@ alter user mapping for bserver server aserver options (set user 'usera', set pas
 ```
 
 *  rollback changes  
+
 ```sql
 begin;
 -- your query
@@ -77,6 +86,7 @@ rollback;
 ```
 
 * how to query the array contains any  
+
 ```sql
 select * from (
 SELECT MCS.COMPANY_ID,ARRAY_AGG(DISTINCT S.SECTOR_DESCRIPTION)::text[] SECTORS
@@ -87,6 +97,7 @@ where msc.SECTORS && ARRAY['Technology', 'Telecom Technologies'];
 
 *  recursive query  
 [Find Parent Recursively using Query](https://stackoverflow.com/questions/3699395/find-parent-recursively-using-query)  
+
 ```sql
 WITH RECURSIVE tree(child, root) AS (
    select c.executive_id, c.merged_to_executive_id from executive c join executive p on c.merged_to_executive_id = p.executive_id WHERE p.merged_to_executive_id IS NULL
@@ -98,6 +109,7 @@ SELECT * FROM tree where child = 135477;
 ```
 
 *  compare two query data  
+
 ```sql
 create temporary table tmp1 as select * for user where id = 1;
 create temporary table tmp2 as select * for user where id = 2;
@@ -133,6 +145,7 @@ vacuum analyze
 ```
 
 * how to use lateral  
+
 ```
 #if source data look like below
 #year         |     sh_out_dt      | sh_out          |
@@ -165,6 +178,7 @@ WHERE col IS NOT NULL
 ```
 
 *  performance analyze related  
+
 ```sql
 --统计信息
 select * from pg_stat_database;
@@ -190,7 +204,8 @@ select * from pg_stat_statements;
 select calls,total_time/calls as avg_time,left(query,80) from pg_stat_statements order by 2 desc limit 3;
 ```
 
-* convert the regclass in postgressql  
+* convert the regclass in postgressql 
+ 
 ```sql
 -- you may get some id from postgres log
 -- for example: "process 9097 acquired AccessShareLock on relation 220216116 of database 16387 after 2741065.823 ms"
@@ -200,13 +215,15 @@ select * from pg_class where oid = '220216116'::regclass;
 ```
 
 * find special character  
+
 ```sql
 SELECT regexp_replace(bio, '([^[:ascii:]|’|“|”|–|…|™|è|—])', '[\1]', 'g') AS t_marked
 FROM raw_data
 WHERE bio ~ '[^[:ascii:]|’|“|”|–|…|™|è|—]' limit 20;
 ```
 
-* create the sequence postgres way
+* create the sequence postgres way  
+
 ```sql
 ALTER TABLE tableA ADD COLUMN IF NOT EXISTS tableA_id BIGSERIAL PRIMARY KEY;
 
@@ -217,6 +234,7 @@ ALTER SEQUENCE tableA OWNED BY tableA.tableA_id;
 ```
 
 * find functions using certain functions  
+
 ```sql
 with raw as (
   SELECT distinct(proname) || '\(' as dis_name
@@ -232,6 +250,7 @@ where nspname in ('schema_space');
 ```
 
 * find mview using certain functions  
+
 ```sql
 with raw as (
   SELECT distinct(proname) || '\(' as dis_name
