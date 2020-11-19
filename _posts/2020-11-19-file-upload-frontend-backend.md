@@ -16,7 +16,7 @@ tags: [File Upload]
 这是将文件以及参数都按照form的形式传输的例子
 
 HTML
-```
+```xml
 <div class="uploadDiv">
 	<img class="uploadIcon" src="/images/uploadIcon.svg">
 	<span class='uploadTxt'>Upload your completed file form here:</span>
@@ -43,7 +43,7 @@ HTML
 ```
 
 Javascript
-```
+```xml
 uploadFile = function() {	
 	var up_file = $('#file')[0].files[0];
 	//Javascript特有的formData格式，用来替代原来的form元素标签方式
@@ -113,7 +113,7 @@ uploadFile = function() {
 ```
 
 SpringMVC
-```
+```java
 @RequestMapping(value = "/fileupload", headers = ("content-type=multipart/*"), method = RequestMethod.POST)
 	@ResponseBody //注意这里不能漏了
 	public Boolean upload(
@@ -139,13 +139,13 @@ SpringMVC
 	}
 ```
 另外为了支持upload的MultipartFile格式，还需要在Spring xml config里面加入
-```
+```java
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 ```
 
 ## Reference
 1. [js文件异步上传进度条](https://juejin.im/post/6844903776654999566)   
-2. [从前端到后端实现文件上传(https://blog.csdn.net/qq_36651625/article/details/81456254)  
+2. [从前端到后端实现文件上传](https://blog.csdn.net/qq_36651625/article/details/81456254)  
 3. [前后端文件上传过程以及方法](https://zhuanlan.zhihu.com/p/120834588)  
 4. [Upload file and JSON data in the same POST request using jquery ajax?](https://forum.jquery.com/topic/upload-file-and-json-data-in-the-same-post-request-using-jquery-ajax)  
 5. [前后分离文件上传](https://segmentfault.com/a/1190000018570206)   
