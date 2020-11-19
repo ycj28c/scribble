@@ -43,7 +43,7 @@ HTML
 ```
 
 Javascript
-```xml
+```javascript
 uploadFile = function() {	
 	var up_file = $('#file')[0].files[0];
 	//Javascript特有的formData格式，用来替代原来的form元素标签方式
@@ -139,7 +139,7 @@ SpringMVC
 	}
 ```
 另外为了支持upload的MultipartFile格式，还需要在Spring xml config里面加入
-```java
+```xml
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 ```
 
