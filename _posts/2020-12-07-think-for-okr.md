@@ -68,3 +68,4 @@ OKR本质上是试错，允许失败，那么为什么要做，不做不也行�
 ## Reference
 1. [实施okr](https://www.jianshu.com/p/d6e282cf1c2b)   
 2. [明道说管理 - 最被曲解的KPI](https://www.jianshu.com/p/ef364a2cc754)   
+3. [谷歌内部考核制度 OKR 是怎样的？](https://www.zhihu.com/question/22471467)
