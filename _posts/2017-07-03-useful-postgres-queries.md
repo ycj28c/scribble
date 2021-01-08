@@ -263,3 +263,9 @@ from pg_matviews pm
 join raw r on pm.definition ~* r.dis_name
 where schemaname in ('xpfeed');
 ```
+
+* find the table size
+
+``` sql
+select pg_size_pretty(pg_relation_size('table_name'));
+```
