@@ -65,6 +65,14 @@ OKR本质上是试错，允许失败，那么为什么要做，不做不也行�
 
 我坚信价值就是劳动创造的，社会的进步是科技推进的。
 
+## 2021-1-10补充
+通过和Googler的谈话，和我之前对OKR的理解不同：  
+1.首先Google的OKR相当于项目管理，其本身就是计划，而不是独立的部分。  
+2.其次范围上主要是针对于组的，个人OKR并不常见，OKR相当于大目标，一个组会有多个项目project，每个project要符合组的OKR目标。  
+3.关于OKR只需要完成70%的说法也不准确，每个object会设定优先级别，p0是必须完成的指标，而p3，p4可能就是写着玩的。  
+4.OKR和个人的performance无关，performance更多的会根据员工的具体成果而定（也没太多个人OKR），和领导与peers的主观可能关系比较大。  
+5.OKR是一种管理方式，每个公司的理解和应用会各不相同。  
+
 ## Reference
 1. [实施okr](https://www.jianshu.com/p/d6e282cf1c2b)   
 2. [明道说管理 - 最被曲解的KPI](https://www.jianshu.com/p/ef364a2cc754)   
