@@ -89,6 +89,12 @@ git log --name-status
 git log --stat
 ```
 
+Given the chromedriver the execute permission
+```
+$ find -name chromedriver -exec git update-index --chmod=+x {} \;
+$ git commit -a
+```
+
 Reference
 ---------
 [git统计历史上某一段时间代码的修改量](https://blog.csdn.net/zhangphil/article/details/79957197)  
