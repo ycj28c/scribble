@@ -4,12 +4,12 @@ title: About
 ---
 
 ```
- ____       _       _      __   __                
-|  _ \ __ _| |_ __ | |__   \ \ / /_ _ _ __   __ _ 
-| |_) / _` | | '_ \| '_ \   \ V / _` | '_ \ / _` |
-|  _ < (_| | | |_) | | | |   | | (_| | | | | (_| |
-|_| \_\__,_|_| .__/|_| |_|   |_|\__,_|_| |_|\__, |
-             |_|                            |___/ 
+  ____ _                       _ _              __   __                
+ / ___| |__   ___ _ __   __ _ (_|_) __ _  ___   \ \ / /_ _ _ __   __ _ 
+| |   | '_ \ / _ \ '_ \ / _` || | |/ _` |/ _ \   \ V / _` | '_ \ / _` |
+| |___| | | |  __/ | | | (_| || | | (_| | (_) |   | | (_| | | | | (_| |
+ \____|_| |_|\___|_| |_|\__, |/ |_|\__,_|\___/    |_|\__,_|_| |_|\__, |
+                        |___/__/                                 |___/ 
 ``` 
 Accomplished software engineer with many years of experience in building robust, highly scalable, multi-tier applications. Energetic, a result-driven thinker with expertise in Algorithms, Programming, Testing, Integration, and Architecture technology to deliver action-oriented solutions to complex business problems.
 
