@@ -3,13 +3,14 @@ layout: page
 title: About
 ---
 
+```
  ____       _       _      __   __                
 |  _ \ __ _| |_ __ | |__   \ \ / /_ _ _ __   __ _ 
 | |_) / _` | | '_ \| '_ \   \ V / _` | '_ \ / _` |
 |  _ < (_| | | |_) | | | |   | | (_| | | | | (_| |
 |_| \_\__,_|_| .__/|_| |_|   |_|\__,_|_| |_|\__, |
              |_|                            |___/ 
- 
+``` 
 Accomplished software engineer with many years of experience in building robust, highly scalable, multi-tier applications. Energetic, a result-driven thinker with expertise in Algorithms, Programming, Testing, Integration, and Architecture technology to deliver action-oriented solutions to complex business problems.
 
 Email: <cyangjob@gmail.com>
