@@ -11,11 +11,11 @@ links: # mid navigation bar
     url:          /about
   - name:         Tech&IT
     url:          /
-  - name:         LifeStyle
-    url:          /lifeblog
   - name:         GitHub
     url:          https://github.com/ycj28c
     external:     true
+  - name:         LifeStyle
+    url:          /lifeblog
 nav: # side bar navigation
   Home:           
     - '/'
