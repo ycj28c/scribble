@@ -39,7 +39,7 @@ sass:
 # About/contact
 author:
   name: Ralph Yang
-  description: hello, world, I'm here.
+  description: Hello, world, I'm here.
   gravatar: # md5 hash of your email address
   contact:
     linkedin:  https://www.linkedin.com/in/chengjiaoyang
