@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Git CheetSheet
+title: Git Cheat Sheet
 disqus: y
 share: y
 categories: [Devops]
