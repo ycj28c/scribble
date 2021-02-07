@@ -108,7 +108,7 @@ $ git diff lc15863C..9dgce135ds --color-words
 $ git diff lc15863C..HEAD --color-words
 ```
 
-Git log
+Git Log
 -------
 ```
 # 查看git历史
