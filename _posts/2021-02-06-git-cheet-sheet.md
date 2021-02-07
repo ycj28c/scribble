@@ -173,6 +173,7 @@ $ touch explores/.gitkeep
 ```
 
 Git Branch Management  
+---------------------
 ```
 # 列出所有本地分支
 $ git branch
@@ -268,12 +269,13 @@ $ $ git bisect reset
 
 Git Rebase
 ---------
+```
 前提：不要通过rebase对任何已经提交到公共仓库中的commit进行修改。  
 因为这是比较危险的指令，因为各个客户端code不一致，可能导致某个客户端code丢失。  
 如果只是复制某一两个提交到其他分支，建议使用更简单的命令:git cherry-pick，就是增加的方式。   
 
 应用场景主要针对本地过多meanless的commit，将之合并，是本地的commit更加清晰。或者某个只有自己操作的branch。
-```
+
 # 修改离HEAD最近的4个commit
 $ git rebase -i HEAD~4
 # 会进入vi模式，和vi操作一样，有pick,drop,edit等指令，有提示
