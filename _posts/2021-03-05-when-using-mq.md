@@ -74,23 +74,23 @@ MQ Products
 
 MQ Difference
 -------------
-模式：Kafka是发布/订阅模式（pub/sub），可以有多个订阅者，传统queue大多点对点，经典生产者消费者。
-持久化：Kafka是持久化，不会一发送就删除。
-高可用：Kafka是分布式，所以不怕宕机。
-消息重发：支持at least once，at most once机制。
-吞吐量：kafka的TPS大，可以多个Producer和多个Consumer。
-顺序消息：Kafka支持（每个分区内部是有序的），传统queue大部分不支持。
-消息确认：Kafka支持ack确定（0写了就算成功，1写入master就成功，all全分区写入才成功）模式。
-消息回溯：Kafka支持消息回溯offset控制，传统queue大部分不支持。
-消息重试：Kafka不支持，但是可以实现（通过分区offset位置回溯），传统queue大部分不支持。
-并发：Kafka高并发，可以多个Producer和多个Consumer，这个和吞吐量是一样的。
+模式：Kafka是发布/订阅模式（pub/sub），可以有多个订阅者，传统queue大多点对点，经典生产者消费者。   
+持久化：Kafka是持久化，不会一发送就删除。  
+高可用：Kafka是分布式，所以不怕宕机。  
+消息重发：支持at least once，at most once机制。  
+吞吐量：kafka的TPS大，可以多个Producer和多个Consumer。  
+顺序消息：Kafka支持（每个分区内部是有序的），传统queue大部分不支持。  
+消息确认：Kafka支持ack确定（0写了就算成功，1写入master就成功，all全分区写入才成功）模式。  
+消息回溯：Kafka支持消息回溯offset控制，传统queue大部分不支持。  
+消息重试：Kafka不支持，但是可以实现（通过分区offset位置回溯），传统queue大部分不支持。  
+并发：Kafka高并发，可以多个Producer和多个Consumer，这个和吞吐量是一样的。  
 
-可以看出Kafka很多场景可以代替传统queue，但是也有缺点:
-1.重复消息。Kafka只保证每个消息至少会送达一次（根据设置），虽然几率很小，但一条消息有可能会被送达多次。
-2.消息乱序。虽然一个Partition内部的消息是保证有序的，但是如果一个Topic有多个Partition，Partition之间的消息送达不保证有序。
-3.复杂性。Kafka需要zookeeper 集群的支持，Topic通常需要人工来创建，部署和维护较一般消息队列成本更高。
-4.消费失败不支持重试，不支持事务消息，不支持定时消息，不支持不支持消息查询。
-5.Kafka单机超过64个队列/分区，Load会发生明显的飙高现象，队列越多，load越高，发送消息响应时间变长。所以不太适合在线业务使用，主要用户大数据场景。
+可以看出Kafka很多场景可以代替传统queue，但是也有缺点:  
+1.重复消息。Kafka只保证每个消息至少会送达一次（根据设置），虽然几率很小，但一条消息有可能会被送达多次。  
+2.消息乱序。虽然一个Partition内部的消息是保证有序的，但是如果一个Topic有多个Partition，Partition之间的消息送达不保证有序。  
+3.复杂性。Kafka需要zookeeper 集群的支持，Topic通常需要人工来创建，部署和维护较一般消息队列成本更高。  
+4.消费失败不支持重试，不支持事务消息，不支持定时消息，不支持不支持消息查询。  
+5.Kafka单机超过64个队列/分区，Load会发生明显的飙高现象，队列越多，load越高，发送消息响应时间变长。所以不太适合在线业务使用，主要用户大数据场景。  
 
 Conclusion
 -----------
@@ -128,7 +128,7 @@ Message Queue Thinking
 首先queue本身有一些at most once之类的设置，此外在queue基础上进行处理，比如在后面数据库端有key的设置，那么如果有重复数据就不会被插入。
 
 3.如何保证消费的可靠性传输？ 
-不同的MQ处理机制不一样， 
+不同的MQ处理机制不一样，  
 1）生产者丢数据：producer需要ACK验证，Kafka则是通过follower和leader的同步避免丢失。  
 2）消息队列丢数据：通过数据持久化避免丢失，重启后依然存在。  
 3）消费者丢数据：通过ACK确认已经消费。  
