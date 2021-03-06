@@ -9,21 +9,21 @@ tags: [MQ]
 
 Knowledge about MQ(Message Queue), what senario to use MQ, the difference between MQ products and thinking of scale.
 
-When Use MQ
------------
+When Using MQ
+-------------
 1.解耦，和业务分离，往mq一写，其他service自己随便取。 
 ```
 # 传统模式
 # 系统间耦合性太强，如上图所示，系统 A 在代码中直接调用系统 B 和系统 C 的代码，如果将来 D 系统接入，系统 A 还需要修改代码，过于麻烦！
 系统A <-- 接入 -- 系统B
-      <-- 接入 -- 系统C
-	  ? 系统D （系统D也想接入，但是要接入系统A需要改代码）
+     <-- 接入 -- 系统C
+     ? 系统D （系统D也想接入，但是要接入系统A需要改代码）
 
 # MQ模式
 # 将消息写入消息队列，需要消息的系统自己从消息队列中订阅，从而系统 A 不需要做任何修改。
 系统A --写入--> 消息队列 <--- 系统B
-                        <--- 系统C
-						<--- 系统D
+                       <--- 系统C
+                       <--- 系统D
 ```
 2.需要异步发送消息。或者网络不通场景。
 ```
@@ -138,9 +138,10 @@ Message Queue Thinking
 
 Reference
 ---------
-[Kafka，Mq，Redis作为消息队列使用时的差异？](https://www.zhihu.com/question/43557507)  
-[高并发架构系列：Kafka、RocketMQ、RabbitMQ的优劣势比较](https://blog.csdn.net/weixin_34197488/article/details/89544910?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)  
-[一个用消息队列 的人，不知道为啥用 MQ，这就有点尴尬](https://learnku.com/articles/36282)  
+1.[Kafka，Mq，Redis作为消息队列使用时的差异？](https://www.zhihu.com/question/43557507)  
+2.[高并发架构系列：Kafka、RocketMQ、RabbitMQ的优劣势比较](https://blog.csdn.net/weixin_34197488/article/details/89544910?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)  
+3.[一个用消息队列 的人，不知道为啥用 MQ，这就有点尴尬](https://learnku.com/articles/36282)  
+
 
 
 
