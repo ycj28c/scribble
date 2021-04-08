@@ -1,6 +1,6 @@
 ---
 layout: post
-title: When Using MQ
+title: Recursion Complexity
 disqus: y
 share: y
 categories: [Algorithm]
