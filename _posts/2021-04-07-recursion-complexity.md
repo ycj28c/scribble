@@ -82,11 +82,11 @@ a = 2, b = 1, d = 0, log1(2)，因为1是无法作为底数的，所以这里是
 2.带循环的memorization的情况
 ```
 public void func(int left, int right){
-	int min = 0;
-	for(int i=left;i<=right;i++){
-		min = Math.min(min, func(left,i)+func(i,right));
-	}
-	cache[left][right] = min;
+  int min = 0;
+  for(int i=left;i<=right;i++){
+    min = Math.min(min, func(left,i)+func(i,right));
+  }
+  cache[left][right] = min;
 }
 ```
 这种情况因为cache是二维的，所以复杂度是O(n^2)，每种left和right的情况只会计算一次。  
