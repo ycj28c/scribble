@@ -25,7 +25,7 @@ T(n) = aT(n/b) + O(n^d)
 主定理计算实例
 -------------
 1.比如经典二分场景
-```
+```javascript
 public void func(int n){
   if(n < 0) {
     return 1;
@@ -40,7 +40,7 @@ public void func(int n){
 空间复杂度可以根据时间复杂度来计算，一共O(logn)次递归，每次递归O(1)空间，所以是O(logn)空间。  
 
 2.再比如在递归中进行了O(n)循环的情况
-```
+```javascript
 public void func(int n){
   if(n < 0) {
     return 1;
@@ -66,7 +66,7 @@ memorization的递归情况
 > Space complexity:|# of subproblems|  + |max recursion depth| * |space complexity of a subproblem|  
 
 1.类似fibonacci的情况
-```
+```javascript
 public void func(int n){
   if(n < 0) {
     return 1;
@@ -80,7 +80,7 @@ a = 2, b = 1, d = 0, log1(2)，因为1是无法作为底数的，所以这里是
 所以时间复杂度是O(n)，空间复杂度也是O(n)。
 
 2.带循环的memorization的情况
-```
+```javascript
 public void func(int left, int right){
   int min = 0;
   for(int i=left;i<=right;i++){
