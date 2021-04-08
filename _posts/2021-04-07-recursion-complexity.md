@@ -27,10 +27,10 @@ T(n) = aT(n/b) + O(n^d)
 1.比如经典二分场景
 ```
 public void func(int n){
-	if(n < 0) {
-		return 1;
-	}
-	return func(n/2) + func(n/2);
+  if(n < 0) {
+    return 1;
+  }
+  return func(n/2) + func(n/2);
 }
 ```
 可以套路出公式T(n) = 2 * T(n/2) + O(1)  
@@ -42,14 +42,14 @@ public void func(int n){
 2.再比如在递归中进行了O(n)循环的情况
 ```
 public void func(int n){
-	if(n < 0) {
-		return 1;
-	}
-	int s = 0;
-	for(int i=0;i<n;i++){
-		s += i;
-	}
-	return s + func(n/2) + func(n/2);
+  if(n < 0) {
+    return 1;
+  }
+  int s = 0;
+  for(int i=0;i<n;i++){
+    s += i;
+  }
+  return s + func(n/2) + func(n/2);
 }
 ```
 这里每个循环内有O(n)的操作，所以套路公式T(n) = 2 * T(n/2) + O(n)  
@@ -60,21 +60,17 @@ public void func(int n){
 memorization的递归情况
 ---------------------
 时间复杂度公式with meorization：  
-```
-Time complexity: |# of subproblems| * |exclusive running time of a subproblem|
-```
+> Time complexity: |# of subproblems| * |exclusive running time of a subproblem|  
 空间复杂度公式with meorization：  
-```
-Space complexity:|# of subproblems|  + |max recursion depth| * |space complexity of a subproblem|
-```
+> Space complexity:|# of subproblems|  + |max recursion depth| * |space complexity of a subproblem|  
 
 1.类似fibonacci的情况
 ```
 public void func(int n){
-	if(n < 0) {
-		return 1;
-	}
-	return func(n-1) + func(n-3);
+  if(n < 0) {
+    return 1;
+  }
+  return func(n-1) + func(n-3);
 }
 ```
 这种情况是比较复杂的，不好算T(n) = 2 * T(n) + O(1)  
@@ -99,12 +95,14 @@ public void func(int left, int right){
 
 排列组合复杂度
 -------------
+1.permutation排列   
 permutation的复杂度是O(n!)  
 比如{1,2,3}，就有3*2*1 = 6种，  
 {1,2,3},{1,3,2},{2,1,3},{2,3,1},{3,1,2},{3,2,1}  
 理解上就是第1位有n种可能，第2位就是剩下的n-1种可能，第3为就是n-2中可能  
 n * (n-1) * (n-2) * ... * 1 = n!  
 
+2.combination组合  
 combination的复杂度是O(2^n)，如果只是计算一种组合，复杂度是Cn(x)。  
 比如{1,2,3，4}个里面取2个的组合有C4(2) = 4 * 3 / (2 * 1) = 6种  
 {1,2},{1,3},{1,4},{2,3},{2,4},{3,4}  
