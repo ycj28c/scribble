@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Pagnation With Cache
+title: Pagination With Cache
 disqus: y
 share: y
 categories: [Architecture]
-tags: [Pagnation, Cache]
+tags: [Pagination, Cache]
 ---
 
-How to do the cache for pagnation senario.
+How to do the cache for Pagination senario.
 
 数据量较多的情况，通常是要对数据进行缓存，如果返回很多，还会需要对返回的数据进行分页，但是缓存和分页如何结合呢，这里提供了一些方案。
 
