@@ -72,7 +72,6 @@ class BoundedBlockingQueue {
 ```
 class BoundedBlockingQueue {
 
-    //lock的做法
     private Queue<Integer> queue;
     private int cap;
     public BoundedBlockingQueue(int capacity) {
@@ -82,7 +81,7 @@ class BoundedBlockingQueue {
     
     public synchronized void enqueue(int element) throws InterruptedException {
         while(queue.size() == cap){
-            wait(); //当前挂起
+            wait();
         }
         queue.offer(element);
         notifyAll();
@@ -172,9 +171,9 @@ class BoundedBlockingQueue {
 5.更优雅的读写锁  
 使用了ReentrantReadWriteLock读写锁，因为在调用size（）的时候只是读取，无需阻塞。  
 写的比较复杂，要从ReadWriteLock分出read锁和write锁，而且其中的write锁还要根据queue的大小来锁定。  
-读写锁的特点是：
-1）write的时候阻塞，只有一个线程能够执行，用于enqueue和dequeue
-2）read的时候可以独立执行，随便读，用于获取queue.size()
+读写锁的特点是：  
+1）write的时候阻塞，只有一个线程能够执行，用于enqueue和dequeue  
+2）read的时候可以独立执行，随便读，用于获取queue.size()  
 在写比较多的场景下，性能是最好的。
 ```
 class BoundedBlockingQueue {
